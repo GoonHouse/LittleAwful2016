@@ -1092,7 +1092,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1098217890}
   m_UseAutoMass: 0
   m_Mass: 0.01
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
@@ -1472,7 +1472,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1187273000}
   m_UseAutoMass: 0
   m_Mass: 0.01
-  m_LinearDrag: 1
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
@@ -2218,9 +2218,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.23303126, y: -0.3674368}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.01
+  m_Distance: 0.005
   m_DampingRatio: 1
-  m_Frequency: 10000
+  m_Frequency: 1000000
 --- !u!58 &1810962501
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2243,8 +2243,8 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1810962498}
   m_UseAutoMass: 0
-  m_Mass: 0.001
-  m_LinearDrag: 1
+  m_Mass: 0.0001
+  m_LinearDrag: 100
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
