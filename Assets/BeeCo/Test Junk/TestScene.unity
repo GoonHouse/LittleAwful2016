@@ -295,7 +295,7 @@ ConstantForce2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 205619852}
   m_Enabled: 1
-  m_Force: {x: 0, y: 1}
+  m_Force: {x: 0, y: 0.5}
   m_RelativeForce: {x: 0, y: 0}
   m_Torque: 0
 --- !u!231 &205619860
@@ -317,6 +317,32 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 5
+--- !u!1 &259583652 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: baec086904791744185aaa07a6cf55c2, type: 2}
+  m_PrefabInternal: {fileID: 1667678554}
+--- !u!114 &259583658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 259583652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad5467732270489caa1d54fe84f1618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalResolution: 320
+  verticalResolution: 200
+  numColors: 8
+  color0: {r: 0, g: 0, b: 0, a: 1}
+  color1: {r: 1, g: 1, b: 1, a: 1}
+  color2: {r: 0.0627451, g: 0.0627451, b: 0.0627451, a: 1}
+  color3: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
+  color4: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
+  color5: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+  color6: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  color7: {r: 0.5019608, g: 1, b: 0.5019608, a: 1}
 --- !u!1001 &281664040
 Prefab:
   m_ObjectHideFlags: 0
@@ -1597,7 +1623,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187273000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.555, y: 0.51, z: -0.273}
+  m_LocalPosition: {x: 2.555, y: 0.51, z: -0.539}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 28784209}
@@ -2265,7 +2291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
       propertyPath: orthographic size
-      value: 4.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
       propertyPath: m_MoveSpeed
