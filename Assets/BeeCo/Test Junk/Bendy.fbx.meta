@@ -41,7 +41,12 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Armature
+    - Armature/Bone
+    - Armature/Bone/Bone.001
+    - Armature/Bone/Bone.001/Bone.002
+    - Plane
     clipAnimations: []
     isReadable: 1
   meshes:
