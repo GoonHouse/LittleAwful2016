@@ -20,7 +20,7 @@ public class HaggleBall : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll){
-        if( coll.gameObject.CompareTag("brick") ){
+        if( coll.gameObject.tag == "Brick" ){
             Destroy(coll.gameObject);
             print("OH BABY IT'S TIME TO SHAVE ME");
 
