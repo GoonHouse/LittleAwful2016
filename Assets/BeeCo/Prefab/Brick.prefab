@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3329506}
   - 23: {fileID: 2320838}
   - 61: {fileID: 6194364}
+  - 114: {fileID: 11480438}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Brick
@@ -77,6 +78,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11480438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
