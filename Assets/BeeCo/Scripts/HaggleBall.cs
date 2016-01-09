@@ -12,8 +12,13 @@ public class HaggleBall : MonoBehaviour {
     public int combo = 0;
     public int maxCombo = 15;
 
+    public HaggleLogic haggleLogic;
+
+    public bool willFuckOff = false;
+
+    public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
+
     private Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
-    private float timerNoChangeY = 0.0f;
 
     private Vector3 lastPos;
 
@@ -26,24 +31,38 @@ public class HaggleBall : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
-        FuckOff();
+        FuckOff(speed);
     }
 
     void CancelCombo(){
         comboTimer = 0.0f;
         combo = 0;
     }
-    
-    // Update is called once per frame
-    void Update() {
-        if( Input.GetKeyDown("space") ){
-            FuckOff();
-        }
 
-        if( comboTimer > 0){
+    static float Round(float value, int digits) {
+        float mult = Mathf.Pow(10.0f, (float)digits);
+        return Mathf.Round(value * mult) / mult;
+    }
+
+    void FixedUpdate() {
+        if (comboTimer > 0) {
             comboTimer -= Time.deltaTime;
         } else {
             CancelCombo();
+        }
+
+        // Stale flag.
+        var deltaTimePayload = new Vector3(0.0f, 0.0f);
+        if (Round(lastPos.x,2) == Round(transform.localPosition.x,2)) {
+            deltaTimePayload.x = Time.deltaTime;
+        }
+        if (Round(lastPos.y,2) == Round(transform.localPosition.y,2)) {
+            deltaTimePayload.y = Time.deltaTime;
+        }
+        timerUnchanged += deltaTimePayload;
+
+        if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
+            willFuckOff = true;
         }
 
         /*
@@ -54,8 +73,17 @@ public class HaggleBall : MonoBehaviour {
 
         */
 
-        //transform.pos
-        //if( Mathf.Round(transform.position.x, 2) )
+        lastPos = transform.position;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (Input.GetKeyDown("space")) {
+            FuckOff();
+        }
+
+        // secret weapon for constant speed:
+        
     }
 
     void BumpCombo(){
@@ -64,17 +92,43 @@ public class HaggleBall : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll){
-        if( coll.gameObject.tag == "Brick" ){
+        if( coll.gameObject.CompareTag("Brick") ){
             coll.gameObject.SendMessage("TakeDamage");
             BumpCombo();
-            Camera.main.GetComponent<ShakeCamera>().Jostle( ((float)combo)/((float)maxCombo) );
+            var comboRatio = Mathf.Min( (float)combo / (float)maxCombo, 1.0f );
+            Camera.main.GetComponent<ShakeCamera>().Jostle( comboRatio );
+            haggleLogic.adjustPrice( -comboRatio );
 
             // this.GetComponent<healthScript>().health -= 1;
+        } else if( !coll.gameObject.CompareTag("Player") && willFuckOff ) {
+            Debug.Log("Initiating fuckoff.");
+            //FuckOff();
         }
     }
 
-    void FuckOff(){
+    void FuckOff(float howFast = 1.0f){
+        Debug.Log("FUCKING OFF!!!");
+        willFuckOff = false;
+        timerUnchanged.x = 0.0f;
+        timerUnchanged.y = 0.0f;
+
+        // Get a random angle.
         Vector3 v = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) * Vector3.up;
-        rigid.velocity = v * speed;
+        var vel = rigid.velocity;
+
+        // Ensure we are moving at all.
+        if ( Mathf.Abs(vel.x) <= minMoveSpeed.x ){
+            vel.x = v.x * minMoveSpeed.x;
+        }
+        if (Mathf.Abs(vel.y) <= minMoveSpeed.y ) {
+            vel.y = v.y * minMoveSpeed.y;
+        }
+
+        // Pump up our speed.
+        vel.x *= v.x * howFast;
+        vel.y *= v.y * howFast;
+
+        // Get the show on the road.
+        rigid.velocity = vel;
     }
 }
