@@ -10,6 +10,8 @@ namespace UnityStandardAssets._2D
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+        public float m_JumpTimer = 0.0f;
+        public float m_JumpDelay = 0.5f;
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
 		private Transform m_GroundCheckBack;    // A position marking where to check if the player is grounded.
@@ -54,6 +56,11 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+
+            // Decrease the jump timer.
+            if( m_JumpTimer > 0.0f){
+                m_JumpTimer -= Time.deltaTime;
+            }
         }
 
 
@@ -99,9 +106,10 @@ namespace UnityStandardAssets._2D
                 }
             }
             // If the player should jump...
-            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+            if (m_Grounded && jump && m_Anim.GetBool("Ground") && m_JumpTimer <= 0.0f)
             {
                 // Add a vertical force to the player.
+                m_JumpTimer = m_JumpDelay;
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
