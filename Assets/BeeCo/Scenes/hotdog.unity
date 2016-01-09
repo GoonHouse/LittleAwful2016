@@ -145,8 +145,8 @@ GameObject:
   - 4: {fileID: 101337653}
   - 212: {fileID: 101337657}
   - 50: {fileID: 101337656}
-  - 61: {fileID: 101337655}
   - 114: {fileID: 101337654}
+  - 68: {fileID: 101337655}
   m_Layer: 0
   m_Name: paddle
   m_TagString: Player
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   turnAroundBrake: 1
---- !u!61 &101337655
-BoxCollider2D:
+--- !u!68 &101337655
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -191,8 +191,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1.375, y: 1.375}
+  m_Points:
+  - {x: -0.6874999, y: 0}
+  - {x: 0.6403721, y: -0.042199973}
+  - {x: 0.54235786, y: -0.4111436}
+  - {x: 0.39729568, y: -0.5938783}
+  - {x: 0.110309854, y: -0.7695516}
+  - {x: -0.20068848, y: -0.7598618}
+  - {x: -0.4093673, y: -0.59908766}
+  - {x: -0.5761583, y: -0.4147598}
+  - {x: -0.6805028, y: 0.00000018768135}
 --- !u!50 &101337656
 Rigidbody2D:
   serializedVersion: 2
@@ -455,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e5288d9cf094d49b630041bf35b5c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 5
 --- !u!58 &286827201
 CircleCollider2D:
   m_ObjectHideFlags: 0
