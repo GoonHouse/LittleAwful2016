@@ -50,7 +50,7 @@ namespace UnityStandardAssets._2D
 
 
         public void Move(float move, bool crouch, bool jump)
-        {
+		{
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
             {
@@ -65,7 +65,8 @@ namespace UnityStandardAssets._2D
             m_Anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
-            if (m_Grounded || m_AirControl)
+			//if (m_Grounded || m_AirControl)
+            if (m_Grounded == false) // only move if you are in the air :V
             {
                 // Reduce the speed if crouching by the crouchSpeed multiplier
                 move = (crouch ? move*m_CrouchSpeed : move);
@@ -97,7 +98,15 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
-        }
+
+			// jump if we try to move
+			//if (jump == false)
+			{				
+				if (move > 0.1f || move < -0.1f) {
+					jump = true;
+				}
+			}
+		}
 
 
         private void Flip()
