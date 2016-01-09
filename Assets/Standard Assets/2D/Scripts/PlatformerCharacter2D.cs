@@ -12,6 +12,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
+		private Transform m_GroundCheckBack;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
@@ -24,6 +25,7 @@ namespace UnityStandardAssets._2D
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
+			m_GroundCheckBack = transform.Find("GroundCheckBack");
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -42,6 +44,12 @@ namespace UnityStandardAssets._2D
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
             }
+			Collider2D[] collidersBack = Physics2D.OverlapCircleAll(m_GroundCheckBack.position, k_GroundedRadius, m_WhatIsGround);
+			for (int i = 0; i < collidersBack.Length; i++)
+			{
+				if (collidersBack[i].gameObject != gameObject)
+					m_Grounded = true;
+			}
             m_Anim.SetBool("Ground", m_Grounded);
 
             // Set the vertical animation
@@ -98,14 +106,6 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
-
-			// jump if we try to move
-			//if (jump == false)
-			{				
-				if (move > 0.1f || move < -0.1f) {
-					jump = true;
-				}
-			}
 		}
 
 
