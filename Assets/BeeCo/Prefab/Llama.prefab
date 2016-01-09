@@ -2186,6 +2186,8 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  m_JumpTimer: 0
+  m_JumpDelay: 0.5
 --- !u!114 &11430124
 MonoBehaviour:
   m_ObjectHideFlags: 1
