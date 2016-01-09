@@ -29,15 +29,19 @@ public class HaggleLogic : MonoBehaviour {
         if( time > 0.0f) {
             timeText.text = minutes.ToString("00") + ":" + seconds.ToString("F5");
         } else {
-            timeText.text = "fuck";
+            timeText.text = "ALL SALES FINAL";
         }
         
     }
 
     public float adjustPrice(float amount) {
-        price += amount;
+        if( time > 0.0f) {
+            price += amount;
 
-        priceText.text = "$" + price.ToString("F2");
+            priceText.text = "$" + price.ToString("F2");
+        } else {
+            Debug.Log("tried to touch price after-hours!");
+        }
         return price;
     }
 }

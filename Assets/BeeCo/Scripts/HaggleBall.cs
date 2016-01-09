@@ -99,7 +99,7 @@ public class HaggleBall : MonoBehaviour {
             // this.GetComponent<healthScript>().health -= 1;
         } else if( !coll.gameObject.CompareTag("Player") && willFuckOff ) {
             Debug.Log("Initiating fuckoff.");
-            //FuckOff();
+            FuckOff();
         }
     }
 
@@ -111,21 +111,7 @@ public class HaggleBall : MonoBehaviour {
 
         // Get a random angle.
         Vector3 v = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) * Vector3.up;
-        var vel = rigid.velocity;
 
-        // Ensure we are moving at all.
-        if ( Mathf.Abs(vel.x) <= minMoveSpeed.x ){
-            vel.x = v.x * minMoveSpeed.x;
-        }
-        if (Mathf.Abs(vel.y) <= minMoveSpeed.y ) {
-            vel.y = v.y * minMoveSpeed.y;
-        }
-
-        // Pump up our speed.
-        vel.x *= v.x * howFast;
-        vel.y *= v.y * howFast;
-
-        // Get the show on the road.
-        rigid.velocity = vel;
+        rigid.AddForce(v * speed);
     }
 }
