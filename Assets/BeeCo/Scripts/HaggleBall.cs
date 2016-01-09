@@ -21,7 +21,7 @@ public class HaggleBall : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll){
         if( coll.gameObject.tag == "Brick" ){
-            Destroy(coll.gameObject);
+            coll.gameObject.SendMessage("TakeDamage");
             print("OH BABY IT'S TIME TO SHAVE ME");
 
             // this.GetComponent<healthScript>().health -= 1;
