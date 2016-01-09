@@ -81,9 +81,6 @@ public class HaggleBall : MonoBehaviour {
         if (Input.GetKeyDown("space")) {
             FuckOff();
         }
-
-        // secret weapon for constant speed:
-        
     }
 
     void BumpCombo(){
