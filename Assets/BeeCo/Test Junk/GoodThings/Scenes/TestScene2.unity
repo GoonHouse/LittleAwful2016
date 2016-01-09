@@ -9566,6 +9566,11 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
+--- !u!50 &1409510039 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 5006480, guid: b374ce48488e3ee44865c0d4cc84c396,
+    type: 2}
+  m_PrefabInternal: {fileID: 869170566}
 --- !u!1 &1415583982
 GameObject:
   m_ObjectHideFlags: 0
@@ -10670,6 +10675,29 @@ Transform:
   - {fileID: 427936893}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &1538011087 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 199360, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
+  m_PrefabInternal: {fileID: 869170566}
+--- !u!231 &1538011092
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538011087}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1409510039}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.18594389
+  m_DampingRatio: 1
+  m_Frequency: 1.5
 --- !u!1 &1542382009
 GameObject:
   m_ObjectHideFlags: 0
