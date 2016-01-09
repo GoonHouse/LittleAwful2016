@@ -16,7 +16,7 @@ namespace UnityStandardAssets.ImageEffects
         private Material separableBlurMaterial;
         private Material contrastCompositeMaterial;
 
-        [Range(0.0f,1.0f)]
+        [Range(0.0f,10.0f)]
         public float blurSpread = 1.0f;
 
         public Shader separableBlurShader = null;
