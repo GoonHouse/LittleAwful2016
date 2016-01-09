@@ -6118,7 +6118,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420952, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
       propertyPath: m_JumpForce
-      value: 2000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11420952, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
       propertyPath: m_JumpDelay
@@ -10654,6 +10654,20 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1532006881 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 159708, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
+  m_PrefabInternal: {fileID: 869170566}
+--- !u!247 &1532006889
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532006881}
+  m_Enabled: 0
+  m_Force: {x: 0, y: 200}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &1532653350
 GameObject:
   m_ObjectHideFlags: 0
