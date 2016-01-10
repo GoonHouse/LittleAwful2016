@@ -686,7 +686,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1000, y: 24}
   m_SizeDelta: {x: 0, y: 116}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!225 &290282351
@@ -726,7 +726,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 218
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1881,6 +1881,10 @@ Prefab:
       propertyPath: ballMaxSpeed
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 11453584, guid: 64282cc4187133540805fe5e798843af, type: 2}
+      propertyPath: hitTextPrefab
+      value: 
+      objectReference: {fileID: 198586, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64282cc4187133540805fe5e798843af, type: 2}
   m_IsPrefabParent: 0
