@@ -427,8 +427,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269239346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.25, y: -5, z: 0}
-  m_LocalScale: {x: 0.5, y: 8, z: 1}
+  m_LocalPosition: {x: 8.25, y: -10.53, z: 0}
+  m_LocalScale: {x: 11.767728, y: 16.940386, z: 1}
   m_Children: []
   m_Father: {fileID: 1335975372}
   m_RootOrder: 0
@@ -733,8 +733,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336214295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.87, y: -5, z: 0}
-  m_LocalScale: {x: 0.5, y: 4, z: 1}
+  m_LocalPosition: {x: -19.97, y: -10.46, z: 0}
+  m_LocalScale: {x: 4.941812, y: 8.4418125, z: 1}
   m_Children: []
   m_Father: {fileID: 1335975372}
   m_RootOrder: 4
@@ -4414,8 +4414,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1486263263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.75, y: -5, z: 0}
-  m_LocalScale: {x: 14, y: 0.5, z: 1}
+  m_LocalPosition: {x: -8.75, y: -10.5, z: 0}
+  m_LocalScale: {x: 14, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1335975372}
   m_RootOrder: 6
@@ -5347,7 +5347,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 87c316b602156405d92e616621658222, type: 3}
-    m_FontSize: 246
+    m_FontSize: 160
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -5374,7 +5374,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 412620, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.02
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 412620, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5764,7 +5764,7 @@ Transform:
   m_GameObject: {fileID: 2059491079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.75, y: 4.4, z: 0}
-  m_LocalScale: {x: 14, y: 0.5, z: 1}
+  m_LocalScale: {x: 14, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1335975372}
   m_RootOrder: 2
