@@ -6085,21 +6085,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488820910}
   m_RootOrder: 80
---- !u!1 &816441397 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 110834, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
-  m_PrefabInternal: {fileID: 869170566}
---- !u!114 &816441398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 816441397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e149c793d5cd8840b1197fe442c58c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &817347978
 GameObject:
   m_ObjectHideFlags: 0
@@ -14263,6 +14248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 120042, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
+  startPrice: 52.69
+  gameTime: 60
 --- !u!1 &1884941653
 GameObject:
   m_ObjectHideFlags: 0

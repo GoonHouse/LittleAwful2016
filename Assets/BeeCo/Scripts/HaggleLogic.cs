@@ -13,40 +13,62 @@ public class HaggleLogic : MonoBehaviour {
     public float price;
     public float time;
 
+    public bool isActive = false;
+    public bool roundEdge = true;
+    public float beginDelay = 3.0f;
+
 	// Use this for initialization
 	void Start () {
-        price = startPrice;
-        time = baseTimeLimit;
+        
 
-        priceText.text = "$" + price.ToString("F2");
     }
 
     void Awake() {
-        adjustPrice(0.0f);
+        if( priceText) {
+            priceText.text = "$" + price.ToString("F2");
+        }
     }
-	
-	// Update is called once per frame
-	void Update () {
-        time -= Time.deltaTime;
 
-        float minutes = Mathf.Floor(time / 60);
-        float seconds = (time % 60);
+    public void RoundStart() {
+        price = startPrice;
+        time = baseTimeLimit;
+        priceText.text = "$" + price.ToString("F2");
+        isActive = true;
+    }
 
-        if( time > 0.0f) {
-            timeText.text = minutes.ToString("00") + ":" + seconds.ToString("F5");
-        } else {
-            timeText.text = "ALL SALES FINAL";
+    public void OnLevelWasLoaded(int level) {
+        // breakout minigame
+        if( level == 1) {
+            priceText = GameObject.Find("price").GetComponent<Text>();
+            timeText = GameObject.Find("time").GetComponent<Text>();
+            RoundStart();
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if( isActive && beginDelay > 0) {
+            beginDelay -= Time.deltaTime;
+            priceText.text = "START IN...";
+            timeText.text = (beginDelay % 60).ToString("F5");
+        } else if( isActive && beginDelay <= 0) {
+            time -= Time.deltaTime;
+
+            float minutes = Mathf.Floor(time / 60);
+            float seconds = (time % 60);
+
+            if (time > 0.0f) {
+                timeText.text = minutes.ToString("00") + ":" + seconds.ToString("F5");
+            } else {
+                timeText.text = "ALL SALES FINAL";
+            }
         }
     }
 
     public float adjustPrice(float amount) {
-        if( time > 0.0f) {
-            price += amount;
+        price += amount;
 
-            priceText.text = "$" + price.ToString("F2");
-        } else {
-            Debug.Log("tried to touch price after-hours!");
-        }
+        priceText.text = "$" + price.ToString("F2");
         return price;
     }
 }

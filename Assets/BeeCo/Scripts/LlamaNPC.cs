@@ -4,6 +4,9 @@ using System.Collections;
 public class LlamaNPC : MonoBehaviour {
     public GameObject textPrefab;
 
+    public float startPrice = 52.69f;
+    public float gameTime = 60.0f;
+
 	// Use this for initialization
 	void Start () {
 	
