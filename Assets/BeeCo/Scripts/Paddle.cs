@@ -9,9 +9,20 @@ public class Paddle : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
+        return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        var rigid = GetComponent<Rigidbody2D>();
+
+        var newPos = new Vector2(rigid.position.x, scale(Input.mousePosition.y, 0, Screen.height, -3.25f, 3.25f));
+
+        rigid.MovePosition(newPos);
+
+        /*
         // cancel impulse only once
         if (Input.GetKeyDown("s")){
             CancelVelocity(true);
@@ -25,6 +36,7 @@ public class Paddle : MonoBehaviour {
         } else if( Input.GetKey("w") ){
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed);
         }
+        */
     }
 
     bool CancelVelocity(bool down){
