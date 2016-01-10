@@ -2618,7 +2618,7 @@ Transform:
   - {fileID: 412911327}
   - {fileID: 795680377}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &282535085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3201,20 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &332462471
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 422482, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &333495486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,7 +3553,7 @@ Transform:
   - {fileID: 2110659465}
   - {fileID: 1836863233}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &359339659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,7 +5456,7 @@ Transform:
   m_LocalScale: {x: 22.440968, y: 1.6202489, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!212 &568561066
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6084,7 +6098,7 @@ Transform:
   m_Children:
   - {fileID: 2127248101}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &670140993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13943,7 +13957,7 @@ Transform:
   - {fileID: 925164722}
   - {fileID: 922098075}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1492597006
 GameObject:
   m_ObjectHideFlags: 0
@@ -14410,7 +14424,7 @@ Transform:
   - {fileID: 427936893}
   - {fileID: 1476156473}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1542382009
 GameObject:
   m_ObjectHideFlags: 0
@@ -16590,7 +16604,7 @@ Transform:
   m_LocalScale: {x: 22.440968, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!212 &1820001396
 SpriteRenderer:
   m_ObjectHideFlags: 0
