@@ -121,16 +121,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e5288d9cf094d49b630041bf35b5c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 30000
   noChangeTime: 3
   comboTimer: 0
   minComboTimeToExtend: 0.75
   maxComboTimeToExtend: 3
   combo: 0
   maxCombo: 15
-  haggleLogic: {fileID: 11476256, guid: 55f0eb72ebfdf5b49a509496ba205b51, type: 2}
+  hurtJostle: 10000
+  haggleLogic: {fileID: 0}
   willFuckOff: 0
   minMoveSpeed: {x: 0.05, y: 0.05}
+  hitTextPrefab: {fileID: 183314, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
 --- !u!212 &21262870
 SpriteRenderer:
   m_ObjectHideFlags: 1

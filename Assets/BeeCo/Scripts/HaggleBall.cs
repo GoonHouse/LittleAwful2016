@@ -12,11 +12,15 @@ public class HaggleBall : MonoBehaviour {
     public int combo = 0;
     public int maxCombo = 15;
 
+    public float forceDownscale = 10000.0f;
+
     public HaggleLogic haggleLogic;
 
     public bool willFuckOff = false;
 
     public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
+
+    public GameObject hitTextPrefab;
 
     private Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -88,15 +92,42 @@ public class HaggleBall : MonoBehaviour {
         comboTimer = scale(Mathf.Min(combo, maxCombo), 0, maxCombo, maxComboTimeToExtend, minComboTimeToExtend);
     }
 
+    public void GetHurt(float howMuch = 1.0f) {
+        var comboRatio = (((combo+1) * 2) / 100.0f) * 2;
+        var fuckAmount = (howMuch / forceDownscale) * combo * 2;
+
+        combo = 0;
+        comboTimer = 0.0f;
+
+        Camera.main.GetComponent<ShakeCamera>().Jostle(fuckAmount);
+        var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, transform.rotation);
+        hitText.GetComponent<FloatTextAway>().SetMoney(-fuckAmount);
+
+        haggleLogic.adjustPrice(+fuckAmount);
+    }
+
+    public static float KineticEnergy(Rigidbody2D rb) {
+        // mass in kg, velocity in meters per second, result is joules
+        return 0.5f * rb.mass * Mathf.Pow(rb.velocity.magnitude, 2);
+    }
+
     void OnCollisionEnter2D(Collision2D coll){
-        if( coll.gameObject.CompareTag("Brick") ){
+        if (coll.gameObject.CompareTag("Brick")) {
             coll.gameObject.SendMessage("TakeDamage");
             BumpCombo();
-            var comboRatio = Mathf.Min( (float)combo / (float)maxCombo, 1.0f );
-            Camera.main.GetComponent<ShakeCamera>().Jostle( comboRatio );
-            haggleLogic.adjustPrice( -comboRatio );
+            var comboRatio = Mathf.Min((float)combo / (float)maxCombo, 1.0f);
+            Camera.main.GetComponent<ShakeCamera>().Jostle(comboRatio);
+
+            var priceDrop = comboRatio + (KineticEnergy(GetComponent<Rigidbody2D>()) / forceDownscale);
+
+            var hitText = (GameObject)Instantiate(hitTextPrefab, coll.gameObject.transform.position, coll.gameObject.transform.rotation);
+            hitText.GetComponent<FloatTextAway>().SetMoney(priceDrop);
+
+            haggleLogic.adjustPrice(-priceDrop);
 
             // this.GetComponent<healthScript>().health -= 1;
+        } else if(coll.gameObject.CompareTag("HurtBall")){
+            GetHurt( KineticEnergy(GetComponent<Rigidbody2D>()) );
         } else if( !coll.gameObject.CompareTag("Player") && willFuckOff ) {
             Debug.Log("Initiating fuckoff.");
             FuckOff();

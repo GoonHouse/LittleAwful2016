@@ -509,7 +509,7 @@ GameObject:
   - 61: {fileID: 336214297}
   m_Layer: 0
   m_Name: left
-  m_TagString: Untagged
+  m_TagString: HurtBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,7 +522,7 @@ Transform:
   m_GameObject: {fileID: 336214295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.87, y: -5, z: 0}
-  m_LocalScale: {x: 0.5, y: 8, z: 1}
+  m_LocalScale: {x: 0.5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1335975372}
   m_RootOrder: 4
@@ -537,9 +537,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.625, y: 0.625}
+  m_Offset: {x: 1.25, y: 1.25}
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 1.25}
+  m_Size: {x: 2.5, y: 2.5}
 --- !u!212 &336214298
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -565,8 +565,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 12ef7cbdfe0e143fa858a324456c8979, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: cbbabe9e292f5604897926494bb38fef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1098,10 +1098,6 @@ Prefab:
     - target: {fileID: 416298, guid: 64282cc4187133540805fe5e798843af, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11453584, guid: 64282cc4187133540805fe5e798843af, type: 2}
-      propertyPath: speed
-      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 11453584, guid: 64282cc4187133540805fe5e798843af, type: 2}
       propertyPath: haggleLogic
@@ -3103,6 +3099,10 @@ Prefab:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 290282352}
+    - target: {fileID: 11476256, guid: 55f0eb72ebfdf5b49a509496ba205b51, type: 2}
+      propertyPath: startPrice
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55f0eb72ebfdf5b49a509496ba205b51, type: 2}
   m_IsPrefabParent: 0

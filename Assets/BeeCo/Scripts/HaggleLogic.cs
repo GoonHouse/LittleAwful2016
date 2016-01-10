@@ -17,7 +17,13 @@ public class HaggleLogic : MonoBehaviour {
 	void Start () {
         price = startPrice;
         time = baseTimeLimit;
-	}
+
+        priceText.text = "$" + price.ToString("F2");
+    }
+
+    void Awake() {
+        adjustPrice(0.0f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -31,7 +37,6 @@ public class HaggleLogic : MonoBehaviour {
         } else {
             timeText.text = "ALL SALES FINAL";
         }
-        
     }
 
     public float adjustPrice(float amount) {
