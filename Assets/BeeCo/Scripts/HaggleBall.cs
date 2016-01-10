@@ -68,7 +68,9 @@ public class HaggleBall : MonoBehaviour {
         timerUnchanged += deltaTimePayload;
 
         if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
-            willFuckOff = true;
+            var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, transform.rotation);
+            hitText.GetComponent<FloatTextAway>().SetText("FUCK BEES");
+            FuckOff();
         }
 
         /*
