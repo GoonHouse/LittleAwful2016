@@ -581,7 +581,6 @@ GameObject:
   - 4: {fileID: 296420047}
   - 50: {fileID: 296420044}
   - 231: {fileID: 296420046}
-  - 232: {fileID: 296420045}
   m_Layer: 9
   m_Name: NeckMiddleBone
   m_TagString: Untagged
@@ -607,25 +606,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!232 &296420045
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23218378, guid: b374ce48488e3ee44865c0d4cc84c396,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 296420043}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 404161032}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.00018078677, y: 0.00027108518}
-  m_ConnectedAnchor: {x: 0.0028733895, y: 0.0043240157}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.009973921
-  m_MaxDistanceOnly: 0
 --- !u!231 &296420046
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -641,9 +621,9 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0.00027111886, y: 0.00018072141}
-  m_ConnectedAnchor: {x: 0.0004522165, y: 0.05702577}
+  m_ConnectedAnchor: {x: 0.10677243, y: 0.020624703}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.3817059
+  m_Distance: 3.9938345
   m_DampingRatio: 0.1
   m_Frequency: 1.2
 --- !u!4 &296420047
@@ -953,7 +933,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 522853942}
   - 50: {fileID: 522853940}
-  - 233: {fileID: 522853941}
+  - 231: {fileID: 522853941}
   m_Layer: 9
   m_Name: NeckBaseBone
   m_TagString: Untagged
@@ -979,11 +959,10 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!233 &522853941
-HingeJoint2D:
+--- !u!231 &522853941
+SpringJoint2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23304808, guid: b374ce48488e3ee44865c0d4cc84c396,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522853939}
   m_Enabled: 1
@@ -992,17 +971,13 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 404161032}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.37500006, y: 0.00000024438106}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+  m_ConnectedAnchor: {x: -0.37504926, y: -7.987529}
+  m_AutoConfigureDistance: 1
+  m_Distance: 3.9937642
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!4 &522853942
 Transform:
   m_ObjectHideFlags: 0
@@ -5612,11 +5587,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2056667544}
   - 50: {fileID: 2056667550}
-  - 58: {fileID: 2056667549}
   - 231: {fileID: 2056667548}
-  - 232: {fileID: 2056667547}
-  - 247: {fileID: 2056667546}
-  - 232: {fileID: 2056667545}
   m_Layer: 9
   m_Name: HeadBone
   m_TagString: Untagged
@@ -5637,55 +5608,6 @@ Transform:
   - {fileID: 77617084}
   m_Father: {fileID: 296420047}
   m_RootOrder: 0
---- !u!232 &2056667545
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23231610, guid: b374ce48488e3ee44865c0d4cc84c396,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2056667543}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 404161032}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.00042824663, y: 0.004389489}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.7491465
-  m_MaxDistanceOnly: 0
---- !u!247 &2056667546
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 24758286, guid: b374ce48488e3ee44865c0d4cc84c396,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2056667543}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 10}
-  m_RelativeForce: {x: 0, y: 0}
-  m_Torque: 0
---- !u!232 &2056667547
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23215952, guid: b374ce48488e3ee44865c0d4cc84c396,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2056667543}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 296420044}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.00016712729, y: 0.0000986919}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.7537372
-  m_MaxDistanceOnly: 0
 --- !u!231 &2056667548
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -5701,26 +5623,11 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0.000083579595, y: -0.0000986551}
-  m_ConnectedAnchor: {x: 1.167944, y: 6.683128}
+  m_ConnectedAnchor: {x: 0.3840575, y: -8.007979}
   m_AutoConfigureDistance: 1
-  m_Distance: 3.7037258
+  m_Distance: 4.000348
   m_DampingRatio: 0.1
   m_Frequency: 1.1
---- !u!58 &2056667549
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5853200, guid: b374ce48488e3ee44865c0d4cc84c396,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2056667543}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.012}
-  serializedVersion: 2
-  m_Radius: 0.005
 --- !u!50 &2056667550
 Rigidbody2D:
   serializedVersion: 2
