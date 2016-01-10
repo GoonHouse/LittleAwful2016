@@ -403,6 +403,7 @@ GameObject:
   - 61: {fileID: 6110132}
   - 58: {fileID: 5825950}
   - 61: {fileID: 6193416}
+  - 114: {fileID: 11496894}
   m_Layer: 9
   m_Name: NPCLlama
   m_TagString: NPC
@@ -2320,6 +2321,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11496894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b02897bca068314b93a0feb20246583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 120042, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
 --- !u!137 &13702562
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
