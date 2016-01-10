@@ -6010,10 +6010,6 @@ GameObject:
   - 81: {fileID: 670140988}
   - 114: {fileID: 670140993}
   - 114: {fileID: 670140994}
-  - 114: {fileID: 670140999}
-  - 114: {fileID: 670140997}
-  - 114: {fileID: 670141000}
-  - 114: {fileID: 670140996}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6121,67 +6117,6 @@ MonoBehaviour:
   - {fileID: 427936893}
   - {fileID: 1476156473}
   smoothing: 0.5
---- !u!114 &670140996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670140987}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3309686a9fbbe6e42a182d5e0257704c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensity: 0.5
-  threshold: 0
-  blurSpread: 2
-  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
-  contrastCompositeShader: {fileID: 4800000, guid: 273404942eede4ea1883ca1fb2942507,
-    type: 3}
---- !u!114 &670140997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670140987}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f19108706fdce9469603d07980eb8ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blendMode: 1
-  intensity: -1.17
-  texture: {fileID: 2800000, guid: 3dd548eac3ced6d40b4692578e38c5de, type: 3}
-  overlayShader: {fileID: 4800000, guid: 8c81db0e527d24acc9bcec04e87781bd, type: 3}
---- !u!114 &670140999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670140987}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a07a781cad112c75d0008dfa8d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: b6aa781cad112c75d0008dfa8d76c639, type: 3}
---- !u!114 &670141000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670140987}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22b3a7095a744a428c134b5e26ad68e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 1
-  quality: 1
-  blurArea: 6.85
-  maxBlurSize: 8.6
-  downsample: 0
-  tiltShiftShader: {fileID: 4800000, guid: bf34d2a25450349699e8ae6456fa7ca9, type: 3}
 --- !u!1 &672564392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8329,7 +8264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 470248, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 470248, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
       propertyPath: m_LocalRotation.x
@@ -16683,7 +16618,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 082a68c920a03314c87b1d4ddce85d5d, type: 3}
-  m_Color: {r: 1, g: 0.59999996, b: 0, a: 0.278}
+  m_Color: {r: 1, g: 0.43448275, b: 0, a: 0.278}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1 &1820055049
