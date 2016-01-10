@@ -5,6 +5,8 @@ public class Paddle : MonoBehaviour {
     public float speed = 10.0f;
     public float turnAroundBrake = 2.0f;
 
+    public GameObject haggleBall;
+
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
 

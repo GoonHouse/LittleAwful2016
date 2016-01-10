@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
@@ -19,8 +20,10 @@ public class HaggleLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
-
+        if( SceneManager.GetActiveScene().name == "breakout") {
+            EnterGame();
+            RoundStart();
+        }
     }
 
     void Awake() {
@@ -36,11 +39,15 @@ public class HaggleLogic : MonoBehaviour {
         isActive = true;
     }
 
+    public void EnterGame() {
+        priceText = GameObject.Find("price").GetComponent<Text>();
+        timeText = GameObject.Find("time").GetComponent<Text>();
+    }
+
     public void OnLevelWasLoaded(int level) {
         // breakout minigame
-        if( level == 1) {
-            priceText = GameObject.Find("price").GetComponent<Text>();
-            timeText = GameObject.Find("time").GetComponent<Text>();
+        if( level == SceneManager.GetSceneByName("breakout").buildIndex ){
+            EnterGame();
             RoundStart();
         }
     }
