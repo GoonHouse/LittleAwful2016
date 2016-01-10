@@ -5,8 +5,11 @@ public class Paddle : MonoBehaviour {
     public float speed = 10.0f;
     public float turnAroundBrake = 2.0f;
 
-	// Use this for initialization
-	void Start () {
+    // how far the paddle can move relative from its top / bottom
+    private float extents = 3.50f;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 
@@ -18,7 +21,7 @@ public class Paddle : MonoBehaviour {
     void Update () {
         var rigid = GetComponent<Rigidbody2D>();
 
-        var newPos = new Vector2(rigid.position.x, scale(Input.mousePosition.y, 0, Screen.height, -3.25f, 3.25f));
+        var newPos = new Vector2(rigid.position.x, scale(Input.mousePosition.y, 0, Screen.height, -extents, extents));
 
         rigid.MovePosition(newPos);
 

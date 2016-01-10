@@ -41,8 +41,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPrice: 5
   basePriceReduction: 0.15
-  text: {fileID: 0}
+  baseTimeLimit: 45
+  priceText: {fileID: 0}
+  timeText: {fileID: 0}
   price: 0
+  time: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
