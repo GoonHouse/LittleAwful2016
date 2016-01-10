@@ -37,6 +37,7 @@ public class HaggleBall : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
+        haggleLogic = God.main.GetComponent<HaggleLogic>();
         FuckOff(speed);
     }
 

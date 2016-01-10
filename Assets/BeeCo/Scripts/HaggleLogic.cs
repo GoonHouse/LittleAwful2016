@@ -49,9 +49,14 @@ public class HaggleLogic : MonoBehaviour {
     void Update () {
         if( isActive && beginDelay > 0) {
             beginDelay -= Time.deltaTime;
-            priceText.text = "START IN...";
-            timeText.text = (beginDelay % 60).ToString("F5");
+            priceText.text = (beginDelay % 60).ToString("F5");
+            timeText.text = "BEGINNING NEGOTIATION";
         } else if( isActive && beginDelay <= 0) {
+            // Hack for when we enter this state.
+            if( roundEdge) {
+                roundEdge = false;
+                priceText.text = "$" + price.ToString("F2");
+            }
             time -= Time.deltaTime;
 
             float minutes = Mathf.Floor(time / 60);
@@ -66,9 +71,13 @@ public class HaggleLogic : MonoBehaviour {
     }
 
     public float adjustPrice(float amount) {
-        price += amount;
+        if( time >= 0.0f) {
+            price += amount;
 
-        priceText.text = "$" + price.ToString("F2");
+            priceText.text = "$" + price.ToString("F2");
+        } else {
+            Debug.Log("tried to touch the time after-hours");
+        }
         return price;
     }
 }

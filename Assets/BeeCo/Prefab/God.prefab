@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 422482}
   - 114: {fileID: 11416394}
   - 114: {fileID: 11499260}
+  - 114: {fileID: 11470844}
   m_Layer: 0
   m_Name: God
   m_TagString: Untagged
@@ -40,6 +41,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a592742b15d0cd54faf1f62cfa19a86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11470844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e89e2c5968f1d4fa35dcad324df53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPrice: 5
+  basePriceReduction: 0.15
+  baseTimeLimit: 45
+  priceText: {fileID: 0}
+  timeText: {fileID: 0}
+  price: 0
+  time: 0
+  isActive: 0
+  roundEdge: 1
+  beginDelay: 3
 --- !u!114 &11499260
 MonoBehaviour:
   m_ObjectHideFlags: 1
