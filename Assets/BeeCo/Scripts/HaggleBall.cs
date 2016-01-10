@@ -14,6 +14,8 @@ public class HaggleBall : MonoBehaviour {
 
     public float forceDownscale = 10000.0f;
 
+    public float ballMaxSpeed = 25.0f;
+
     public HaggleLogic haggleLogic;
 
     public bool willFuckOff = false;
@@ -84,6 +86,10 @@ public class HaggleBall : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("space")) {
             FuckOff();
+        }
+
+        if( rigid.velocity.magnitude > ballMaxSpeed) {
+            rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
         }
     }
 
