@@ -23,6 +23,13 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        private void OnTriggerEnter2D(Collider2D coll) {
+            var collideParent = coll.gameObject.transform.parent;
+            if ( collideParent != null && collideParent.gameObject.CompareTag("NPC")) {
+                Debug.Log(gameObject.name + " says, HEY, FUCK YOU " + collideParent.gameObject.name);
+            }
+        }
+
         private void Awake()
         {
             // Setting up references.

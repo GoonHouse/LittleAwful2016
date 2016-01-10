@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Brick
   - HurtBall
+  - NPC
   layers:
   - Default
   - TransparentFX
