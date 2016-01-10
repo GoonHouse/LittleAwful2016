@@ -1877,6 +1877,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11453584, guid: 64282cc4187133540805fe5e798843af, type: 2}
+      propertyPath: ballMaxSpeed
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64282cc4187133540805fe5e798843af, type: 2}
   m_IsPrefabParent: 0
