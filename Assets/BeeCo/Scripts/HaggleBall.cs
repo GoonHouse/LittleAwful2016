@@ -106,7 +106,9 @@ public class HaggleBall : MonoBehaviour {
         comboTimer = 0.0f;
 
         Camera.main.GetComponent<ShakeCamera>().Jostle(fuckAmount);
-        var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, transform.rotation);
+        var pos = transform.position;
+        pos.z = -20.0f;
+        var hitText = (GameObject)Instantiate(hitTextPrefab, pos, transform.rotation);
         hitText.GetComponent<FloatTextAway>().SetMoney(-fuckAmount);
 
         haggleLogic.adjustPrice(+fuckAmount);
@@ -126,7 +128,9 @@ public class HaggleBall : MonoBehaviour {
 
             var priceDrop = comboRatio + (KineticEnergy(GetComponent<Rigidbody2D>()) / forceDownscale);
 
-            var hitText = (GameObject)Instantiate(hitTextPrefab, coll.gameObject.transform.position, coll.gameObject.transform.rotation);
+            var pos = coll.gameObject.transform.position;
+            pos.z = -20.0f;
+            var hitText = (GameObject)Instantiate(hitTextPrefab, pos, coll.gameObject.transform.rotation);
             hitText.GetComponent<FloatTextAway>().SetMoney(priceDrop);
 
             haggleLogic.adjustPrice(-priceDrop);
