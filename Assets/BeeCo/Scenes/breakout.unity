@@ -924,7 +924,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d5ec8e3a9c1143c46a0498288b11c0a8, type: 3}
+    m_Font: {fileID: 12800000, guid: bc9230a82661036418118958ec351456, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -3200,12 +3200,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseShakeAmount: 0.1
-  baseShakeTime: 0.25
+  baseShakeTime: 1.25
   baseShakeIncreaseFactor: 0.19
   baseShakeDecayFactor: 1
   baseShakeCalmFactor: 1
-  maxShakeAmount: 1.47
+  maxShakeAmount: 1
   maxShakeTime: 3
+  unfuckFactor: 0.001
 --- !u!1 &1239639931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3786,7 +3787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412284, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -13.65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 412284, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3807,6 +3808,198 @@ Prefab:
     - target: {fileID: 412284, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 434564, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 484704, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 403764, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 441936, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 403138, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 432874, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 440596, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 438078, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 484638, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 441186, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 446930, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 485872, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 454246, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 483380, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 430262, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 457388, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 449978, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 443220, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 463118, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 410144, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 493590, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 435546, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 485716, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 438122, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 421790, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 486786, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 467608, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 497920, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 474076, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 419568, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 417506, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 472522, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 423418, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 448936, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 413002, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 448024, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 439196, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 442148, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 475302, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 448182, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 481262, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 457268, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 413620, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 419992, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 498216, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 478762, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 443164, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 412762, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
@@ -4060,7 +4253,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4811,7 +5004,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d5ec8e3a9c1143c46a0498288b11c0a8, type: 3}
+    m_Font: {fileID: 12800000, guid: d6994efd4695ffc4bbb49d61124c5f1b, type: 3}
     m_FontSize: 160
     m_FontStyle: 0
     m_BestFit: 1
@@ -4927,6 +5120,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11446076, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
+      propertyPath: haggleBallPrefab
+      value: 
+      objectReference: {fileID: 157036, guid: 64282cc4187133540805fe5e798843af, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
   m_IsPrefabParent: 0
