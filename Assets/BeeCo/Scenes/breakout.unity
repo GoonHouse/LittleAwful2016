@@ -3204,7 +3204,7 @@ MonoBehaviour:
   baseShakeIncreaseFactor: 0.19
   baseShakeDecayFactor: 1
   baseShakeCalmFactor: 1
-  maxShakeAmount: 1.47
+  maxShakeAmount: 1
   maxShakeTime: 3
   unfuckFactor: 0.001
 --- !u!1 &1239639931
