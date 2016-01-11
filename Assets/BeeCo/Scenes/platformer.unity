@@ -6476,6 +6476,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 110834, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
+      propertyPath: m_TagString
+      value: Llama
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
   m_IsPrefabParent: 0
