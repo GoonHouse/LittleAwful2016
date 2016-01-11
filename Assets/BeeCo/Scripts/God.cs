@@ -8,6 +8,11 @@ using System.Collections;
 public class God : MonoBehaviour {
     public static God main;
 
+    //How much llama has!
+    public static int money;
+    //for storing llama's position during breakout games
+    public static Vector3 llamaTemporaryPosition;
+
     void Awake() {
         if (main == null) {
             DontDestroyOnLoad(gameObject);
@@ -20,7 +25,7 @@ public class God : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        money = 500;
 	}
 	
 	// Update is called once per frame

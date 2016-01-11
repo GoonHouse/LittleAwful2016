@@ -37,6 +37,8 @@ public class LlamaPlayer : MonoBehaviour {
 
     public void StartMinigame() {
         Debug.Log("scream at " + npcToEngage.name);
+        //Let's make sure to get the players current position and information to hold in the gobject
+        God.llamaTemporaryPosition = transform.localPosition;
         var lt = God.main.gameObject.GetComponent<LevelTransiton>();
         var lnpc = npcToEngage.GetComponent<LlamaNPC>();
         lt.BreakOut(lnpc.startPrice, lnpc.gameTime);
