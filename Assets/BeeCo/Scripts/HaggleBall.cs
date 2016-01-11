@@ -16,8 +16,6 @@ public class HaggleBall : MonoBehaviour {
 
     public float ballMaxSpeed = 25.0f;
 
-    public HaggleLogic haggleLogic;
-
     public bool willFuckOff = false;
 
     public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
@@ -37,7 +35,6 @@ public class HaggleBall : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
-        haggleLogic = God.main.GetComponent<HaggleLogic>();
         FuckOff(speed);
     }
 
@@ -111,10 +108,10 @@ public class HaggleBall : MonoBehaviour {
         Camera.main.GetComponent<ShakeCamera>().Jostle(fuckAmount);
         var pos = transform.position;
         pos.z = -20.0f;
-        var hitText = (GameObject)Instantiate(hitTextPrefab, pos, transform.rotation);
+        var hitText = (GameObject)Instantiate(hitTextPrefab, pos, Quaternion.identity);
         hitText.GetComponent<FloatTextAway>().SetMoney(-fuckAmount);
 
-        haggleLogic.adjustPrice(+fuckAmount);
+        God.haggleLogic.adjustPrice(+fuckAmount);
     }
 
     public static float KineticEnergy(Rigidbody2D rb) {
@@ -133,10 +130,10 @@ public class HaggleBall : MonoBehaviour {
 
             var pos = coll.gameObject.transform.position;
             pos.z = -20.0f;
-            var hitText = (GameObject)Instantiate(hitTextPrefab, pos, coll.gameObject.transform.rotation);
+            var hitText = (GameObject)Instantiate(hitTextPrefab, pos, Quaternion.identity);
             hitText.GetComponent<FloatTextAway>().SetMoney(priceDrop);
 
-            haggleLogic.adjustPrice(-priceDrop);
+            God.haggleLogic.adjustPrice(-priceDrop);
 
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){

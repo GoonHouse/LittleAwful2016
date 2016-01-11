@@ -7,6 +7,8 @@ using System.Collections;
 */
 public class God : MonoBehaviour {
     public static God main;
+    public static HaggleLogic haggleLogic;
+    public static LevelTransiton levelTransition;
 
     void Awake() {
         if (main == null) {
@@ -20,8 +22,9 @@ public class God : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        haggleLogic = GetComponent<HaggleLogic>();
+        levelTransition = GetComponent<LevelTransiton>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
