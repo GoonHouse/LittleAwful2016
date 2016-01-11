@@ -12,6 +12,8 @@ public class ShakeCamera : MonoBehaviour {
     public float maxShakeAmount = 5.0f;
     public float maxShakeTime = 3.0f;
 
+	public float unfuckFactor = 0.001f;
+
     private float shakeAmount = 0.0f;
     private float shakeTime = 0.0f;
 
@@ -31,6 +33,7 @@ public class ShakeCamera : MonoBehaviour {
         shakeAmount = baseShakeAmount;
 
         transform.localPosition = startPos;
+		SetObliqueness (0, 0);
     }
 
     void Update(){
@@ -39,6 +42,7 @@ public class ShakeCamera : MonoBehaviour {
             pos = Random.insideUnitSphere * shakeAmount;
             pos.z = startPos.z;
             transform.localPosition = pos;
+			SetObliqueness (pos.x * unfuckFactor, pos.y * unfuckFactor);
 
             if( shakeAmount > baseShakeAmount){
                 shakeAmount -= Time.deltaTime * baseShakeCalmFactor;
@@ -50,4 +54,11 @@ public class ShakeCamera : MonoBehaviour {
         }
 
     }
+
+	void SetObliqueness(float horizObl, float vertObl) {
+		Matrix4x4 mat  = Camera.main.projectionMatrix;
+		mat[0, 2] = horizObl;
+		mat[1, 2] = vertObl;
+		Camera.main.projectionMatrix = mat;
+	}
 }
