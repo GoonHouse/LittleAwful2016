@@ -41,7 +41,7 @@ public class ShakeCamera : MonoBehaviour {
             var pos = transform.localPosition;
             pos = Random.insideUnitSphere * shakeAmount;
             pos.z = startPos.z;
-            transform.localPosition = pos;
+            //transform.localPosition = pos;
 			SetObliqueness (pos.x * unfuckFactor, pos.y * unfuckFactor);
 
             if( shakeAmount > baseShakeAmount){
