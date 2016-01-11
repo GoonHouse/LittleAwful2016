@@ -27,10 +27,31 @@ public class HaggleBall : MonoBehaviour {
 
     private Vector3 lastPos;
 
+    public GameObject whoMadeMe;
+
     Rigidbody2D rigid;
+
+    public float magnetizeForce = 30000.0f;
+    private bool isMagnetized = false;
+    private GameObject magnetizeTarget;
+
+    void OnDestroy() {
+        var paddle = whoMadeMe.GetComponent<Paddle>();
+        paddle.BallGone(gameObject);
+    }
 
     private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax){
         return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
+    }
+
+    public void MagnetizeTowards(GameObject mt) {
+        isMagnetized = true;
+        magnetizeTarget = mt;
+    }
+
+    public void Demagnetize() {
+        isMagnetized = false;
+        magnetizeTarget = null;
     }
 
     // Use this for initialization
@@ -86,6 +107,12 @@ public class HaggleBall : MonoBehaviour {
                 rigid.velocity = rigid.velocity.normalized * ballMinSpeed;
             } else if (rigid.velocity.magnitude > ballMaxSpeed) {
                 rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
+            }
+
+            // Magnetization
+            if( isMagnetized && magnetizeTarget) {
+                var tPos = magnetizeTarget.transform.position;
+                rigid.AddForce(Vector3.Normalize(tPos - transform.position) * magnetizeForce);
             }
 
             // Update last logical position for comparison.
@@ -155,7 +182,7 @@ public class HaggleBall : MonoBehaviour {
     }
 
     void FuckOff(float howFast = 1.0f){
-        Debug.Log("FUCKING OFF!!!");
+        //Debug.Log("FUCKING OFF!!!");
         willFuckOff = false;
         timerUnchanged.x = 0.0f;
         timerUnchanged.y = 0.0f;

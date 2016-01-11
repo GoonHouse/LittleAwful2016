@@ -1,21 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Paddle : MonoBehaviour {
     public float speed = 10.0f;
     public float turnAroundBrake = 2.0f;
 
-    public int balls = 1;
+    public int numBallsCanSpawn = 1;
     public GameObject haggleBallPrefab;
 
-    private GameObject ball;
+    private List<GameObject> spawnedBalls;
 
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
 
     // Use this for initialization
     void Start () {
-	
+        spawnedBalls = new List<GameObject>();
 	}
 
     private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
@@ -46,11 +47,19 @@ public class Paddle : MonoBehaviour {
         }
     }
 
+    public void BallGone(GameObject ball) {
+        Debug.Log(ball.name + " reported destruction!");
+        spawnedBalls.Remove(ball);
+    }
+
     public void SpawnBall() {
-        if( balls > 0) {
+        if( numBallsCanSpawn > 0) {
             var pos = transform.position;
             pos.x += 1.0f;
-            ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
+            var ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
+            ball.GetComponent<HaggleBall>().whoMadeMe = gameObject;
+            Debug.Log(ball.name + " was spawned!");
+            spawnedBalls.Add(ball);
         }
     }
 
@@ -64,9 +73,16 @@ public class Paddle : MonoBehaviour {
             }
         }
 
-        if( Input.GetKey("f") ) {
-            ball.GetComponent<Rigidbody2D>().AddForce(Vector3.Normalize(transform.position - ball.transform.position) * 30000.0f);
+        if( Input.GetKeyDown("f") ) {
+            foreach (GameObject ball in spawnedBalls) {
+                ball.GetComponent<HaggleBall>().MagnetizeTowards(gameObject);
+            }
+        } else if( Input.GetKeyUp("f")) {
+            foreach (GameObject ball in spawnedBalls) {
+                ball.GetComponent<HaggleBall>().Demagnetize();
+            }
         }
+
     }
 
     bool CancelVelocity(bool down){
