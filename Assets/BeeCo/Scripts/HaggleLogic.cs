@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -66,11 +67,10 @@ public class HaggleLogic : MonoBehaviour {
             }
             time -= Time.deltaTime;
 
-            float minutes = Mathf.Floor(time / 60);
-            float seconds = (time % 60);
-
             if (time > 0.0f) {
-                timeText.text = minutes.ToString("00") + ":" + seconds.ToString("F5");
+                TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+                string textForTime = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+                timeText.text = textForTime;
             } else {
                 timeText.text = "ALL SALES FINAL";
             }

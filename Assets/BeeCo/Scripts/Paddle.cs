@@ -3,16 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Paddle : MonoBehaviour {
-    public float speed = 10.0f;
-    public float turnAroundBrake = 2.0f;
+    // Combo Stuff
+    public float comboTimer = 0.0f;
+    public float minComboTimeToExtend = 0.5f;
+    public float maxComboTimeToExtend = 1.0f;
+    public int combo = 0;
+    public int maxCombo = 15;
 
+    // Ball Handling
     public int numBallsCanSpawn = 1;
     public GameObject haggleBallPrefab;
-
     private List<GameObject> spawnedBalls;
 
+    // Movement Speed
+    public float speed = 10.0f;
+    public float turnAroundBrake = 2.0f;
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
+    
 
     // Use this for initialization
     void Start () {
@@ -61,13 +69,40 @@ public class Paddle : MonoBehaviour {
         }
     }
 
+    // Combo Stuff
+    public void CancelCombo() {
+        comboTimer = 0.0f;
+        combo = 0;
+    }
+
+    public void BumpCombo() {
+        combo++;
+        comboTimer = scale(Mathf.Min(combo, maxCombo), 0, maxCombo, maxComboTimeToExtend, minComboTimeToExtend);
+    }
+
+    public float GetComboRatio(bool limit = true) {
+        var comboRatio = (float)combo / (float)maxCombo;
+        if (limit) {
+            comboRatio = Mathf.Min(comboRatio, 1.0f);
+        }
+        return comboRatio;
+    }
+
     // Update is called once per frame
     void Update () {
         UpdatePositionMouse();
 
         if( God.haggleLogic.IsRoundActive()) {
+            // More balls for the ball god.
             if( Input.GetKeyDown("space")) {
                 SpawnBall();
+            }
+
+            // Combo logic.
+            if (comboTimer > 0) {
+                comboTimer -= Time.deltaTime;
+            } else {
+                CancelCombo();
             }
         }
 

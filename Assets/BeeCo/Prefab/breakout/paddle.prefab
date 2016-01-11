@@ -956,10 +956,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aabdaae3c27c154eada769b2a50c2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboTimer: 0
+  minComboTimeToExtend: 0.5
+  maxComboTimeToExtend: 1
+  combo: 0
+  maxCombo: 15
+  numBallsCanSpawn: 1
+  haggleBallPrefab: {fileID: 157036, guid: 64282cc4187133540805fe5e798843af, type: 2}
   speed: 2000
   turnAroundBrake: 9
-  balls: 1
-  haggleBall: {fileID: 157036, guid: 64282cc4187133540805fe5e798843af, type: 2}
 --- !u!137 &13700976
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

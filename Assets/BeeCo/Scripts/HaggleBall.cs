@@ -3,43 +3,34 @@ using System.Collections;
 
 public class HaggleBall : MonoBehaviour {
     public float speed = 30.0f;
-    public float noChangeTime = 3.0f;
-
-    public float comboTimer = 0.0f;
-    public float minComboTimeToExtend = 0.5f;
-    public float maxComboTimeToExtend = 1.0f;
-
-    public int combo = 0;
-    public int maxCombo = 15;
 
     public float forceDownscale = 10000.0f;
 
     public float ballMinSpeed = 5.0f;
     public float ballMaxSpeed = 25.0f;
 
-    public bool willFuckOff = false;
-
-    public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
-
     public GameObject hitTextPrefab;
 
+    // Restlessness Timer
+    public float noChangeTime = 3.0f;
+    public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
     private Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
-
     private Vector3 lastPos;
 
-    public GameObject whoMadeMe;
-
-    Rigidbody2D rigid;
-
+    // Magnetization
     public float magnetizeForce = 30000.0f;
     private bool isMagnetizedTowards = false;
     private bool isMagnetized = false;
     private GameObject magnetizeTarget;
 
+    // Other stuff.
+    public GameObject whoMadeMe;
+    public Paddle paddle;
+    Rigidbody2D rigid;
+
     void OnDestroy() {
         if( whoMadeMe != null) {
             // Don't care!
-            var paddle = whoMadeMe.GetComponent<Paddle>();
             paddle.BallGone(gameObject);
         }
     }
@@ -63,12 +54,8 @@ public class HaggleBall : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
+        paddle = whoMadeMe.GetComponent<Paddle>();
         FuckOff(speed);
-    }
-
-    void CancelCombo(){
-        comboTimer = 0.0f;
-        combo = 0;
     }
 
     static float Round(float value, int digits) {
@@ -92,13 +79,6 @@ public class HaggleBall : MonoBehaviour {
             if (rigid.constraints == RigidbodyConstraints2D.FreezeAll) {
                 Debug.Log(gameObject.name + " (BALL) UNFREEZING SELF");
                 rigid.constraints = RigidbodyConstraints2D.None;
-            }
-
-            // Combo logic.
-            if (comboTimer > 0) {
-                comboTimer -= Time.deltaTime;
-            } else {
-                CancelCombo();
             }
 
             // Stale Direction Logic
@@ -147,24 +127,17 @@ public class HaggleBall : MonoBehaviour {
         
     }
 
-    void BumpCombo(){
-        combo++;
-        comboTimer = scale(Mathf.Min(combo, maxCombo), 0, maxCombo, maxComboTimeToExtend, minComboTimeToExtend);
-    }
-
     public void GetHurt(float howMuch = 1.0f) {
-        var comboRatio = (((combo+1) * 2) / 100.0f) * 2;
-        var fuckAmount = (howMuch / forceDownscale) * combo * 2;
+        var priceIncrease = ( paddle.GetComboRatio(false) + (KineticEnergy(rigid) / forceDownscale) ) * 2;
 
-        combo = 0;
-        comboTimer = 0.0f;
+        whoMadeMe.GetComponent<Paddle>().CancelCombo();
 
-        Camera.main.GetComponent<ShakeCamera>().Jostle(fuckAmount);
+        Camera.main.GetComponent<ShakeCamera>().Jostle(priceIncrease);
         var pos = transform.position;
         pos.z = -20.0f;
-        SpeakMoney(-fuckAmount);
+        SpeakMoney(-priceIncrease);
 
-        God.haggleLogic.adjustPrice(+fuckAmount);
+        God.haggleLogic.adjustPrice(priceIncrease);
     }
 
     public static float KineticEnergy(Rigidbody2D rb) {
@@ -174,12 +147,14 @@ public class HaggleBall : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll){
         if (coll.gameObject.CompareTag("Brick")) {
-            coll.gameObject.SendMessage("TakeDamage");
-            BumpCombo();
-            var comboRatio = Mathf.Min((float)combo / (float)maxCombo, 1.0f);
+            var healthLeft = coll.gameObject.GetComponent<BrickScript>().TakeDamage();
+            paddle.BumpCombo();
+
+            var comboRatio = paddle.GetComboRatio();
+
             Camera.main.GetComponent<ShakeCamera>().Jostle(comboRatio);
 
-            var priceDrop = comboRatio + (KineticEnergy(GetComponent<Rigidbody2D>()) / forceDownscale);
+            var priceDrop = comboRatio + (KineticEnergy(rigid) / forceDownscale);
 
             var pos = coll.gameObject.transform.position;
             pos.z = -20.0f;
@@ -199,7 +174,6 @@ public class HaggleBall : MonoBehaviour {
             Speak("FUCK BEES");
         }
 
-        willFuckOff = false;
         timerUnchanged.x = 0.0f;
         timerUnchanged.y = 0.0f;
 

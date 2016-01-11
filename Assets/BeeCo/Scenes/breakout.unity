@@ -924,7 +924,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d6994efd4695ffc4bbb49d61124c5f1b, type: 3}
+    m_Font: {fileID: 12800000, guid: d5ec8e3a9c1143c46a0498288b11c0a8, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -4811,7 +4811,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d6994efd4695ffc4bbb49d61124c5f1b, type: 3}
+    m_Font: {fileID: 12800000, guid: d5ec8e3a9c1143c46a0498288b11c0a8, type: 3}
     m_FontSize: 160
     m_FontStyle: 0
     m_BestFit: 1
@@ -4927,10 +4927,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11446076, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
-      propertyPath: haggleBallPrefab
-      value: 
-      objectReference: {fileID: 157036, guid: 64282cc4187133540805fe5e798843af, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
   m_IsPrefabParent: 0
