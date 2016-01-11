@@ -8,6 +8,8 @@ public class Paddle : MonoBehaviour {
     public int balls = 1;
     public GameObject haggleBallPrefab;
 
+    private GameObject ball;
+
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
 
@@ -48,7 +50,7 @@ public class Paddle : MonoBehaviour {
         if( balls > 0) {
             var pos = transform.position;
             pos.x += 1.0f;
-            var ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
+            ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
         }
     }
 
@@ -60,6 +62,10 @@ public class Paddle : MonoBehaviour {
             if( Input.GetKeyDown("space")) {
                 SpawnBall();
             }
+        }
+
+        if( Input.GetKey("f") ) {
+            ball.GetComponent<Rigidbody2D>().AddForce(Vector3.Normalize(transform.position - ball.transform.position) * 30000.0f);
         }
     }
 
