@@ -17,13 +17,20 @@ public class LevelTransiton : MonoBehaviour {
 	
 	}
 
-    public void Platformer() {
+    public void Platformer(float moneyGot) {
         SceneManager.LoadScene("platformer");
+        if (God.llamaTemporaryPosition != Vector3.zero) {
+            GameObject.FindGameObjectWithTag("Llama").transform.position = God.llamaTemporaryPosition;
+            God.llamaTemporaryPosition = Vector3.zero;
+        }
+        God.money += moneyGot;
+        Debug.Log("NOW PLATFORMIN': " + moneyGot);
     }
 
     
 
     public void BreakOut(float price, float time) {
+        God.llamaTemporaryPosition = GameObject.FindGameObjectWithTag("Llama").transform.position;
         SceneManager.LoadScene("breakout");
         var hl = God.main.GetComponent<HaggleLogic>();
         hl.startPrice = price;
