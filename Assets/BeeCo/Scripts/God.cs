@@ -10,6 +10,11 @@ public class God : MonoBehaviour {
     public static HaggleLogic haggleLogic;
     public static LevelTransiton levelTransition;
 
+    //How much llama has!
+    public static int money;
+    //for storing llama's position during breakout games
+    public static Vector3 llamaTemporaryPosition;
+
     void Awake() {
         if (main == null) {
             DontDestroyOnLoad(gameObject);
@@ -22,6 +27,7 @@ public class God : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        money = 500;
         haggleLogic = GetComponent<HaggleLogic>();
         levelTransition = GetComponent<LevelTransiton>();
     }
