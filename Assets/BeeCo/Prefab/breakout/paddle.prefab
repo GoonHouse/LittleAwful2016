@@ -328,6 +328,8 @@ GameObject:
   - 114: {fileID: 11446076}
   - 61: {fileID: 6153590}
   - 58: {fileID: 5808450}
+  - 61: {fileID: 6151744}
+  - 58: {fileID: 5876976}
   m_Layer: 0
   m_Name: paddle
   m_TagString: Player
@@ -884,6 +886,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!58 &5876976
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!61 &6151744
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 12}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 24}
 --- !u!61 &6153590
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -928,6 +958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2000
   turnAroundBrake: 9
+  balls: 1
+  haggleBall: {fileID: 157036, guid: 64282cc4187133540805fe5e798843af, type: 2}
 --- !u!137 &13700976
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

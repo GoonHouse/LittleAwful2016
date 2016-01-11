@@ -87,4 +87,14 @@ public class HaggleLogic : MonoBehaviour {
         }
         return price;
     }
+
+    public bool IsRoundActive() {
+        if( time >= 0.0f &&
+            isActive && beginDelay <= 0
+            ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

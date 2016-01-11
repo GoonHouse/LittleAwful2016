@@ -5,7 +5,8 @@ public class Paddle : MonoBehaviour {
     public float speed = 10.0f;
     public float turnAroundBrake = 2.0f;
 
-    public GameObject haggleBall;
+    public int balls = 1;
+    public GameObject haggleBallPrefab;
 
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
@@ -19,29 +20,47 @@ public class Paddle : MonoBehaviour {
         return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
     }
 
-    // Update is called once per frame
-    void Update () {
+    void UpdatePositionMouse() {
         var rigid = GetComponent<Rigidbody2D>();
 
         var newPos = new Vector2(rigid.position.x, scale(Input.mousePosition.y, 0, Screen.height, -extents, extents));
 
         rigid.MovePosition(newPos);
+    }
 
-        /*
+    void UpdatePositionKeyboard() {
         // cancel impulse only once
-        if (Input.GetKeyDown("s")){
+        if (Input.GetKeyDown("s")) {
             CancelVelocity(true);
-        } else if (Input.GetKeyDown("w")){
+        } else if (Input.GetKeyDown("w")) {
             CancelVelocity(false);
         }
 
         // always add velocity
-        if ( Input.GetKey("s") ){
+        if (Input.GetKey("s")) {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * -speed);
-        } else if( Input.GetKey("w") ){
+        } else if (Input.GetKey("w")) {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed);
         }
-        */
+    }
+
+    public void SpawnBall() {
+        if( balls > 0) {
+            var pos = transform.position;
+            pos.x += 1.0f;
+            var ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+        UpdatePositionMouse();
+
+        if( God.haggleLogic.IsRoundActive()) {
+            if( Input.GetKeyDown("space")) {
+                SpawnBall();
+            }
+        }
     }
 
     bool CancelVelocity(bool down){

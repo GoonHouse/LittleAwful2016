@@ -7,6 +7,8 @@ using System.Collections;
 */
 public class God : MonoBehaviour {
     public static God main;
+    public static HaggleLogic haggleLogic;
+    public static LevelTransiton levelTransition;
 
     //How much llama has!
     public static int money;
@@ -26,7 +28,9 @@ public class God : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         money = 500;
-	}
+        haggleLogic = GetComponent<HaggleLogic>();
+        levelTransition = GetComponent<LevelTransiton>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
