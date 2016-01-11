@@ -14,6 +14,7 @@ public class HaggleBall : MonoBehaviour {
 
     public float forceDownscale = 10000.0f;
 
+    public float ballMinSpeed = 5.0f;
     public float ballMaxSpeed = 25.0f;
 
     public bool willFuckOff = false;
@@ -49,47 +50,56 @@ public class HaggleBall : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (comboTimer > 0) {
-            comboTimer -= Time.deltaTime;
+        if (God.haggleLogic.IsRoundActive()) {
+            // Ensure we're active.
+            if (rigid.constraints == RigidbodyConstraints2D.FreezeAll) {
+                Debug.Log("BALL UNFREEZING SELF");
+                rigid.constraints = RigidbodyConstraints2D.None;
+            }
+
+            // Combo logic.
+            if (comboTimer > 0) {
+                comboTimer -= Time.deltaTime;
+            } else {
+                CancelCombo();
+            }
+
+            // Stale Direction Logic
+            // Stale flag.
+            var deltaTimePayload = new Vector3(0.0f, 0.0f);
+            if (Round(lastPos.x, 2) == Round(transform.localPosition.x, 2)) {
+                deltaTimePayload.x = Time.deltaTime;
+            }
+            if (Round(lastPos.y, 2) == Round(transform.localPosition.y, 2)) {
+                deltaTimePayload.y = Time.deltaTime;
+            }
+            timerUnchanged += deltaTimePayload;
+
+            if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
+                var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
+                hitText.GetComponent<FloatTextAway>().SetText("FUCK BEES");
+                FuckOff();
+            }
+
+            // Stay within min/max speed.
+            if (rigid.velocity.magnitude < ballMinSpeed) {
+                rigid.velocity = rigid.velocity.normalized * ballMinSpeed;
+            } else if (rigid.velocity.magnitude > ballMaxSpeed) {
+                rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
+            }
+
+            // Update last logical position for comparison.
+            lastPos = transform.position;
         } else {
-            CancelCombo();
+            Debug.Log("BALLS FROZEN");
+            rigid.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-
-        // Stale flag.
-        var deltaTimePayload = new Vector3(0.0f, 0.0f);
-        if (Round(lastPos.x,2) == Round(transform.localPosition.x,2)) {
-            deltaTimePayload.x = Time.deltaTime;
-        }
-        if (Round(lastPos.y,2) == Round(transform.localPosition.y,2)) {
-            deltaTimePayload.y = Time.deltaTime;
-        }
-        timerUnchanged += deltaTimePayload;
-
-        if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
-            var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
-            hitText.GetComponent<FloatTextAway>().SetText("FUCK BEES");
-            FuckOff();
-        }
-
-        /*
-            Dear Future EntranceJew,
-
-            You were thinking of subclassing this and making another ball that heals blocks.
-            Additionally, you were going to punch Danny in his everything.
-
-        */
-
-        lastPos = transform.position;
     }
 
     // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown("space")) {
             FuckOff();
-        }
-
-        if( rigid.velocity.magnitude > ballMaxSpeed) {
-            rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
         }
     }
 
