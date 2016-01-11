@@ -32,26 +32,32 @@ public class HaggleBall : MonoBehaviour {
     Rigidbody2D rigid;
 
     public float magnetizeForce = 30000.0f;
+    private bool isMagnetizedTowards = false;
     private bool isMagnetized = false;
     private GameObject magnetizeTarget;
 
     void OnDestroy() {
-        var paddle = whoMadeMe.GetComponent<Paddle>();
-        paddle.BallGone(gameObject);
+        if( whoMadeMe != null) {
+            // Don't care!
+            var paddle = whoMadeMe.GetComponent<Paddle>();
+            paddle.BallGone(gameObject);
+        }
     }
 
     private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax){
         return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
     }
 
-    public void MagnetizeTowards(GameObject mt) {
+    public void Magnetize(GameObject mt, bool towards = true) {
         isMagnetized = true;
         magnetizeTarget = mt;
+        isMagnetizedTowards = towards;
     }
 
     public void Demagnetize() {
         isMagnetized = false;
         magnetizeTarget = null;
+        isMagnetizedTowards = false;
     }
 
     // Use this for initialization
@@ -70,11 +76,21 @@ public class HaggleBall : MonoBehaviour {
         return Mathf.Round(value * mult) / mult;
     }
 
+    public void SpeakMoney(float amount) {
+        var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
+        hitText.GetComponent<FloatTextAway>().SetMoney(amount);
+    }
+
+    public void Speak(string text) {
+        var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
+        hitText.GetComponent<FloatTextAway>().SetText(text);
+    }
+
     void FixedUpdate() {
         if (God.haggleLogic.IsRoundActive()) {
             // Ensure we're active.
             if (rigid.constraints == RigidbodyConstraints2D.FreezeAll) {
-                Debug.Log("BALL UNFREEZING SELF");
+                Debug.Log(gameObject.name + " (BALL) UNFREEZING SELF");
                 rigid.constraints = RigidbodyConstraints2D.None;
             }
 
@@ -97,9 +113,7 @@ public class HaggleBall : MonoBehaviour {
             timerUnchanged += deltaTimePayload;
 
             if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
-                var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
-                hitText.GetComponent<FloatTextAway>().SetText("FUCK BEES");
-                FuckOff();
+                FuckOff(1.0f, true);
             }
 
             // Stay within min/max speed.
@@ -112,22 +126,25 @@ public class HaggleBall : MonoBehaviour {
             // Magnetization
             if( isMagnetized && magnetizeTarget) {
                 var tPos = magnetizeTarget.transform.position;
-                rigid.AddForce(Vector3.Normalize(tPos - transform.position) * magnetizeForce);
+                Vector3 magDirection;
+                if( isMagnetizedTowards) {
+                    magDirection = Vector3.Normalize(tPos - transform.position);
+                } else {
+                    magDirection = Vector3.Normalize(transform.position - tPos);
+                }
+                rigid.AddForce(magDirection * magnetizeForce);
             }
 
             // Update last logical position for comparison.
             lastPos = transform.position;
         } else {
-            Debug.Log("BALLS FROZEN");
             rigid.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown("space")) {
-            FuckOff();
-        }
+        
     }
 
     void BumpCombo(){
@@ -145,8 +162,7 @@ public class HaggleBall : MonoBehaviour {
         Camera.main.GetComponent<ShakeCamera>().Jostle(fuckAmount);
         var pos = transform.position;
         pos.z = -20.0f;
-        var hitText = (GameObject)Instantiate(hitTextPrefab, pos, Quaternion.identity);
-        hitText.GetComponent<FloatTextAway>().SetMoney(-fuckAmount);
+        SpeakMoney(-fuckAmount);
 
         God.haggleLogic.adjustPrice(+fuckAmount);
     }
@@ -167,22 +183,22 @@ public class HaggleBall : MonoBehaviour {
 
             var pos = coll.gameObject.transform.position;
             pos.z = -20.0f;
-            var hitText = (GameObject)Instantiate(hitTextPrefab, pos, Quaternion.identity);
-            hitText.GetComponent<FloatTextAway>().SetMoney(priceDrop);
+            SpeakMoney(priceDrop);
 
             God.haggleLogic.adjustPrice(-priceDrop);
 
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){
             GetHurt( KineticEnergy(GetComponent<Rigidbody2D>()) );
-        } else if( !coll.gameObject.CompareTag("Player") && willFuckOff ) {
-            Debug.Log("Initiating fuckoff.");
-            FuckOff();
         }
     }
 
-    void FuckOff(float howFast = 1.0f){
+    public void FuckOff(float howFast = 1.0f, bool doShout = false){
         //Debug.Log("FUCKING OFF!!!");
+        if( doShout) {
+            Speak("FUCK BEES");
+        }
+
         willFuckOff = false;
         timerUnchanged.x = 0.0f;
         timerUnchanged.y = 0.0f;

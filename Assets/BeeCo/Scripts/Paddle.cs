@@ -48,7 +48,6 @@ public class Paddle : MonoBehaviour {
     }
 
     public void BallGone(GameObject ball) {
-        Debug.Log(ball.name + " reported destruction!");
         spawnedBalls.Remove(ball);
     }
 
@@ -58,7 +57,6 @@ public class Paddle : MonoBehaviour {
             pos.x += 1.0f;
             var ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
             ball.GetComponent<HaggleBall>().whoMadeMe = gameObject;
-            Debug.Log(ball.name + " was spawned!");
             spawnedBalls.Add(ball);
         }
     }
@@ -73,11 +71,30 @@ public class Paddle : MonoBehaviour {
             }
         }
 
-        if( Input.GetKeyDown("f") ) {
+        // Make balls scatter.
+        if (Input.GetKeyDown("h")) {
             foreach (GameObject ball in spawnedBalls) {
-                ball.GetComponent<HaggleBall>().MagnetizeTowards(gameObject);
+                ball.GetComponent<HaggleBall>().FuckOff(1.0f, true);
+            }
+        }
+
+        // Pull towards.
+        if ( Input.GetKeyDown("f") ) {
+            foreach (GameObject ball in spawnedBalls) {
+                ball.GetComponent<HaggleBall>().Magnetize(gameObject, true);
             }
         } else if( Input.GetKeyUp("f")) {
+            foreach (GameObject ball in spawnedBalls) {
+                ball.GetComponent<HaggleBall>().Demagnetize();
+            }
+        }
+
+        // Repel.
+        if (Input.GetKeyDown("g")) {
+            foreach (GameObject ball in spawnedBalls) {
+                ball.GetComponent<HaggleBall>().Magnetize(gameObject, false);
+            }
+        } else if (Input.GetKeyUp("g")) {
             foreach (GameObject ball in spawnedBalls) {
                 ball.GetComponent<HaggleBall>().Demagnetize();
             }
