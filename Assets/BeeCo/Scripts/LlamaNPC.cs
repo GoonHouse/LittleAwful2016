@@ -56,4 +56,8 @@ public class LlamaNPC : MonoBehaviour {
             yield return new WaitForSeconds(textSpeakSpeed);
         }
     }
+
+    public void BeginHaggling() {
+        God.levelTransition.BreakOut(startPrice, gameTime);
+    }
 }

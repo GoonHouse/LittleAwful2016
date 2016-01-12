@@ -32,23 +32,6 @@ public class LlamaPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*
-        if ( Input.GetKeyDown("f") && npcToEngage != null ) {
-            StartMinigame();
-        }
-        */
+
 	}
-
-    public void SaveMyState() {
-        God.playerStats.lastPos = transform.localPosition;
-    }
-
-    /*
-    public void StartMinigame() {
-        Debug.Log("scream at " + npcToEngage.name);
-
-        var lnpc = npcToEngage.GetComponent<LlamaNPC>();
-        God.levelTransition.BreakOut(lnpc.startPrice, lnpc.gameTime);
-    }
-    */
 }
