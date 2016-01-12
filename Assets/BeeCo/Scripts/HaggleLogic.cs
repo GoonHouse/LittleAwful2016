@@ -29,14 +29,14 @@ public class HaggleLogic : MonoBehaviour {
 
     void Awake() {
         if( priceText) {
-            priceText.text = "$" + price.ToString("F2");
+            priceText.text = price.ToString("C2");
         }
     }
 
     public void RoundStart() {
         price = startPrice;
         time = baseTimeLimit;
-        priceText.text = "$" + price.ToString("F2");
+        priceText.text = price.ToString("C2");
         isActive = true;
     }
 
@@ -57,13 +57,15 @@ public class HaggleLogic : MonoBehaviour {
     void Update () {
         if( isActive && beginDelay > 0) {
             beginDelay -= Time.deltaTime;
-            priceText.text = (beginDelay % 60).ToString("F5");
+            TimeSpan timeSpan = TimeSpan.FromSeconds(beginDelay);
+            string textForTime = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+            priceText.text = textForTime;
             timeText.text = "BEGINNING NEGOTIATION";
         } else if( isActive && beginDelay <= 0) {
             // Hack for when we enter this state.
             if( roundEdge) {
                 roundEdge = false;
-                priceText.text = "$" + price.ToString("F2");
+                priceText.text = price.ToString("C2");
             }
             time -= Time.deltaTime;
 
@@ -81,7 +83,7 @@ public class HaggleLogic : MonoBehaviour {
         if( time >= 0.0f) {
             price += amount;
 
-            priceText.text = "$" + price.ToString("F2");
+            priceText.text = price.ToString("C2");
         } else {
             Debug.Log("tried to touch the time after-hours");
         }

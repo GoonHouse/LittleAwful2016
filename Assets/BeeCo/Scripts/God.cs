@@ -9,11 +9,7 @@ public class God : MonoBehaviour {
     public static God main;
     public static HaggleLogic haggleLogic;
     public static LevelTransiton levelTransition;
-
-    //How much llama has!
-    public static float money;
-    //for storing llama's position during breakout games
-    public static Vector3 llamaTemporaryPosition;
+    public static PlayerStats playerStats;
 
     void Awake() {
         if (main == null) {
@@ -27,10 +23,9 @@ public class God : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        money = 500f;
-        llamaTemporaryPosition = Vector3.zero;
         haggleLogic = GetComponent<HaggleLogic>();
         levelTransition = GetComponent<LevelTransiton>();
+        playerStats = GetComponent<PlayerStats>();
     }
 	
 	// Update is called once per frame

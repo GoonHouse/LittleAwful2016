@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelTransiton : MonoBehaviour {
+    public 
+
     void Awake() {
         DontDestroyOnLoad(transform.gameObject);
     }
@@ -17,24 +19,21 @@ public class LevelTransiton : MonoBehaviour {
 	
 	}
 
-    public void Platformer(float moneyGot) {
+    public void Platformer(float adjustMoney = 0.0f) {
         SceneManager.LoadScene("platformer");
-        if (God.llamaTemporaryPosition != Vector3.zero) {
-            GameObject.FindGameObjectWithTag("Llama").transform.position = God.llamaTemporaryPosition;
-            God.llamaTemporaryPosition = Vector3.zero;
+        if( God.playerStats.lastPos != Vector3.zero ){
+            GameObject.FindGameObjectWithTag("Llama").transform.position = God.playerStats.lastPos;
+            God.playerStats.lastPos = Vector3.zero;
         }
-        God.money += moneyGot;
-        Debug.Log("NOW PLATFORMIN': " + moneyGot);
+        God.playerStats.money += adjustMoney;
+        Debug.Log("NOW PLATFORMIN': " + adjustMoney);
     }
 
-    
-
     public void BreakOut(float price, float time) {
-        God.llamaTemporaryPosition = GameObject.FindGameObjectWithTag("Llama").transform.position;
         SceneManager.LoadScene("breakout");
-        var hl = God.main.GetComponent<HaggleLogic>();
-        hl.startPrice = price;
-        hl.baseTimeLimit = time;
+
+        God.haggleLogic.startPrice = price;
+        God.haggleLogic.baseTimeLimit = time;
         Debug.Log("NOW BREAKING OUT: " + price.ToString() + ", " + time.ToString());
     }
 }
