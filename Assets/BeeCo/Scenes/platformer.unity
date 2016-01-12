@@ -5411,6 +5411,40 @@ Prefab:
       propertyPath: m_Distance
       value: 1.1565198
       objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textToSay
+      value: Oh I agree, at most I could see doing something with one other person
+        but that's it. However bear in mind, if you can somehow implement a body tracking
+        system for the vive that could easily push a single person's number of tracked
+        objects from 3 (HMD and two hands) to 20 (legs, feet, torso, hips etc etc).   I
+        know you said you don't care about it, but a VR assault rifle used to play
+        a FPS is like my dream. Or playing Chivalry with a legit sword. God damn I
+        am so excited for VR.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484176, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -131
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 22485106, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 28.125008
+      objectReference: {fileID: 0}
+    - target: {fileID: 22485106, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 524.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -12908,7 +12942,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'fuck this guy '
+  m_Text: 'Dicks for sale '
 --- !u!222 &1646350755
 CanvasRenderer:
   m_ObjectHideFlags: 0
