@@ -28,15 +28,16 @@ public class HaggleLogic : MonoBehaviour {
     }
 
     void Awake() {
-        if( priceText) {
-            priceText.text = price.ToString("C2");
+        if( priceText ) {
+            SetMoneyText(price);
         }
     }
 
     public void RoundStart() {
         price = startPrice;
         time = baseTimeLimit;
-        priceText.text = price.ToString("C2");
+        SetMoneyText(price);
+        SetTimeText(time);
         isActive = true;
     }
 
@@ -57,26 +58,32 @@ public class HaggleLogic : MonoBehaviour {
     void Update () {
         if( isActive && beginDelay > 0) {
             beginDelay -= Time.deltaTime;
-            TimeSpan timeSpan = TimeSpan.FromSeconds(beginDelay);
-            string textForTime = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
-            priceText.text = textForTime;
-            timeText.text = "BEGINNING NEGOTIATION";
+            SetTimeText(beginDelay);
+            priceText.text = "BEGINNING NEGOTIATION";
         } else if( isActive && beginDelay <= 0) {
             // Hack for when we enter this state.
             if( roundEdge) {
                 roundEdge = false;
-                priceText.text = price.ToString("C2");
+                
             }
             time -= Time.deltaTime;
 
             if (time > 0.0f) {
-                TimeSpan timeSpan = TimeSpan.FromSeconds(time);
-                string textForTime = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
-                timeText.text = textForTime;
+                SetTimeText(time);
             } else {
                 timeText.text = "ALL SALES FINAL";
             }
         }
+    }
+
+    public void SetMoneyText(float money) {
+        priceText.text = money.ToString("C2");
+    }
+
+    public void SetTimeText(float time) {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        string textForTime = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+        timeText.text = textForTime;
     }
 
     public float adjustPrice(float amount) {
