@@ -64,7 +64,7 @@ public class HaggleLogic : MonoBehaviour {
             // Hack for when we enter this state.
             if( roundEdge) {
                 roundEdge = false;
-                
+                SetMoneyText(price);
             }
             time -= Time.deltaTime;
 
