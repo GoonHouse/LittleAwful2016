@@ -7601,7 +7601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd702510dc0f392409e531185f9d6681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToChange: {fileID: 1100365117}
+  textToChange: {fileID: 1558865475}
   toReadFrom: {fileID: 276335148}
 --- !u!114 &1558865475
 MonoBehaviour:
@@ -9443,7 +9443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd702510dc0f392409e531185f9d6681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToChange: {fileID: 735414676}
+  textToChange: {fileID: 1886094732}
   toReadFrom: {fileID: 2139350939}
 --- !u!114 &1886094732
 MonoBehaviour:
