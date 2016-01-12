@@ -11,6 +11,9 @@ public class HaggleBall : MonoBehaviour {
 
     public GameObject hitTextPrefab;
 
+    // Damage
+    public float damageDone = 1.0f;
+
     // Restlessness Timer
     public float noChangeTime = 3.0f;
     public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
@@ -147,7 +150,7 @@ public class HaggleBall : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll){
         if (coll.gameObject.CompareTag("Brick")) {
-            var healthLeft = coll.gameObject.GetComponent<BrickScript>().TakeDamage();
+            var healthLeft = coll.gameObject.GetComponent<BrickScript>().TakeDamage(damageDone);
             paddle.BumpCombo();
 
             var comboRatio = paddle.GetComboRatio();

@@ -60,7 +60,7 @@ public class Paddle : MonoBehaviour {
     }
 
     public void SpawnBall() {
-        if( numBallsCanSpawn > 0) {
+        if( numBallsCanSpawn > 0 ) {
             var pos = transform.position;
             pos.x += 1.0f;
             var ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
