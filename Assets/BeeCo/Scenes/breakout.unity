@@ -5124,6 +5124,10 @@ Prefab:
       propertyPath: haggleBallPrefab
       value: 
       objectReference: {fileID: 157036, guid: 64282cc4187133540805fe5e798843af, type: 2}
+    - target: {fileID: 5024852, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
   m_IsPrefabParent: 0
