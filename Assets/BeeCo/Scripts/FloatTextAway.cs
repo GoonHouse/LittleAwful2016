@@ -61,7 +61,7 @@ public class FloatTextAway : MonoBehaviour {
 
         // Move up.
         var pos = transform.localPosition;
-        pos.y += Time.deltaTime * floatAwaySpeed;
+		pos.y += Time.deltaTime * floatAwaySpeed + (startLifeTime - lifeTime) * 0.1f;
         transform.localPosition = pos;
 
         
