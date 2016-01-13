@@ -20,6 +20,7 @@ public class HaggleLogic : MonoBehaviour {
     public bool isActive = false;
     public bool roundEdge = true;
     public float beginDelay = 3.0f;
+    public bool doSale = false;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +50,11 @@ public class HaggleLogic : MonoBehaviour {
         continueButton = GameObject.Find("Continue").GetComponent<Button>();
         continueButton.gameObject.SetActive(false);
         continueButton.onClick.AddListener(delegate {
-            God.levelTransition.Platformer(price);
+            var p = 0.0f;
+            if (God.playerStats.money >= price) {
+                p = price;
+            }
+            God.levelTransition.Platformer(p);
         });
     }
 
@@ -84,7 +89,12 @@ public class HaggleLogic : MonoBehaviour {
             if (time > 0.0f) {
                 SetTimeText(time);
             } else {
-                timeText.text = "ALL SALES FINAL";
+                if( God.playerStats.money >= price ) {
+                    timeText.text = "ALL SALES FINAL";
+                } else {
+                    timeText.text = "INSUFFICIENT FUNDS";
+                }
+                
                 if( continueButton) {
                     continueButton.gameObject.SetActive(true);
                 }

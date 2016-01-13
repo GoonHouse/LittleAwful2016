@@ -8,6 +8,7 @@ TagManager:
   - HurtBall
   - NPC
   - Llama
+  - Powerup
   layers:
   - Default
   - TransparentFX

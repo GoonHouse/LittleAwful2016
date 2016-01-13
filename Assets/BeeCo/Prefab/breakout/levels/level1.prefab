@@ -3830,11 +3830,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11400926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3846,11 +3849,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11401116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3862,11 +3868,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11401522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3878,11 +3887,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11403188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3894,11 +3906,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11406500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3910,11 +3925,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11408708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3926,11 +3944,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11408738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3942,11 +3963,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11409074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3958,11 +3982,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11411058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3974,11 +4001,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11411232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3990,11 +4020,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11415538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4006,11 +4039,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11419278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4022,11 +4058,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11427540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4038,11 +4077,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11428596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4054,11 +4096,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11429590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4070,11 +4115,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 124256, guid: 8ab68c35bf99d974ca503ef31eee693c, type: 2}
 --- !u!114 &11431156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4086,11 +4134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11432400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4102,11 +4153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11433198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4118,11 +4172,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11433250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4134,11 +4191,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11433564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4150,11 +4210,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11442404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4166,11 +4229,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11446036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4182,11 +4248,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11446230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4198,11 +4267,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11455082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4214,11 +4286,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11455392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4230,11 +4305,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11457404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4246,11 +4324,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11458734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4262,11 +4343,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11461216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4278,11 +4362,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11461642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4294,11 +4381,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11461806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4310,11 +4400,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11463822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4326,11 +4419,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11464648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4342,11 +4438,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11465494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4358,11 +4457,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11467702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4374,11 +4476,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11468030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4390,11 +4495,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11480030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4406,11 +4514,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11480992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4422,11 +4533,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11482442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4438,11 +4552,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11487554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4454,11 +4571,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11488288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4470,11 +4590,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11492478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4486,11 +4609,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11493002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4502,11 +4628,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11495110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4518,11 +4647,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11496872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4534,11 +4666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11496948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4550,11 +4685,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11497672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4566,11 +4704,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!114 &11499238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4582,18 +4723,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  powerupToSpawn: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: powerupToSpawn
+      value: 
+      objectReference: {fileID: 124256, guid: 8ab68c35bf99d974ca503ef31eee693c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185514}
