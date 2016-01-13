@@ -35,20 +35,23 @@ public class LlamaNPC : MonoBehaviour {
 	}
 
     public void Prev() {
-        if( textCurrentPage - 1 > 0 ) {
+        if( textCurrentPage - 1 >= 0 ) {
             StopCoroutine("Talk");
             StartTalking(textCurrentPage - 1);
         }
     }
 
     public void Next() {
-        if( textCurrentPage + 1 <= textsToSay.Count ){
+        if( textCurrentPage + 1 <= textsToSay.Count-1 ){
             StopCoroutine("Talk");
             StartTalking(textCurrentPage + 1);
         }
     }
 
     public void StartTalking(int page = 0) {
+        if( isTalking ) {
+            StopCoroutine("Talk");
+        }
         isTalking = true;
         textSaidPos = 0;
         textPrefab.SetActive(true);
@@ -56,7 +59,7 @@ public class LlamaNPC : MonoBehaviour {
         textObj.text = textsToSay[page];
 
         // "I'm an asshole." ~EntranceJew, 2012
-        nextButton.SetActive(textCurrentPage < textsToSay.Count);
+        nextButton.SetActive(textCurrentPage < textsToSay.Count-1);
         prevButton.SetActive(textCurrentPage != 0);
 
         StartCoroutine("Talk");
