@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class LlamaNPC : MonoBehaviour {
     public GameObject textPrefab;
     public Text textObj;
+    public GameObject prevButton;
+    public GameObject nextButton;
 
     public float startPrice = 52.69f;
     public float gameTime = 60.0f;
 
     public bool isTalking = false;
     public int textSaidPos = 0;
-    public string textToSay = "Hey buddy you want to buy some :item:?";
+    public int textCurrentPage = 0;
+    public List<string> textsToSay;
     public float textSpeakSpeed = 1.0f;
 
 	// Use this for initialization
@@ -30,11 +34,30 @@ public class LlamaNPC : MonoBehaviour {
         */
 	}
 
-    public void StartTalking() {
+    public void Prev() {
+        if( textCurrentPage - 1 > 0 ) {
+            StopCoroutine("Talk");
+            StartTalking(textCurrentPage - 1);
+        }
+    }
+
+    public void Next() {
+        if( textCurrentPage + 1 <= textsToSay.Count ){
+            StopCoroutine("Talk");
+            StartTalking(textCurrentPage + 1);
+        }
+    }
+
+    public void StartTalking(int page = 0) {
         isTalking = true;
         textSaidPos = 0;
         textPrefab.SetActive(true);
-        textObj.text = "";
+        textCurrentPage = page;
+        textObj.text = textsToSay[page];
+
+        // "I'm an asshole." ~EntranceJew, 2012
+        nextButton.SetActive(textCurrentPage < textsToSay.Count);
+        prevButton.SetActive(textCurrentPage != 0);
 
         StartCoroutine("Talk");
         //var dialog = (GameObject)Instantiate(textPrefab, transform.position, transform.rotation);
@@ -45,13 +68,14 @@ public class LlamaNPC : MonoBehaviour {
         isTalking = false;
         textSaidPos = 0;
         textPrefab.SetActive(false);
+        textCurrentPage = 0;
         textObj.text = "text gone, you shouldn't see this";
         StopCoroutine("Talk");
     }
 
     IEnumerator Talk() {
-        for (int textSaidPos = 0; textSaidPos <= textToSay.Length; textSaidPos++) {
-            textObj.text = textToSay.Substring(0, textSaidPos);
+        for (int textSaidPos = 0; textSaidPos <= textsToSay[textCurrentPage].Length; textSaidPos++) {
+            textObj.text = textsToSay[textCurrentPage].Substring(0, textSaidPos);
             GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(textSpeakSpeed);
         }
