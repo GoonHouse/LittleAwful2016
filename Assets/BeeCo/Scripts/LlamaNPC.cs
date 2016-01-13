@@ -35,6 +35,22 @@ public class LlamaNPC : MonoBehaviour {
         */
 	}
 
+    private void OnTriggerEnter2D(Collider2D coll) {
+        var collideParent = coll.gameObject.transform.parent;
+        if (collideParent != null && collideParent.gameObject.CompareTag("Player")) {
+            Debug.Log(gameObject.name + "(that's me!) touched a " + collideParent.gameObject.name);
+            StartTalking();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D coll) {
+        var collideParent = coll.gameObject.transform.parent;
+        if (collideParent != null &&
+            collideParent.gameObject.CompareTag("Player") ) {
+            ShutUp();
+        }
+    }
+
     public void Prev() {
         if( textCurrentPage - 1 >= 0 ) {
             StopCoroutine("Talk");

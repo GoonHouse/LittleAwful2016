@@ -86,7 +86,7 @@ GameObject:
   - 114: {fileID: 11443474}
   m_Layer: 9
   m_Name: Llama
-  m_TagString: Llama
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,6 +239,22 @@ GameObject:
   - 4: {fileID: 478224}
   m_Layer: 9
   m_Name: Armature
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &122990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 402710}
+  - 61: {fileID: 6113694}
+  m_Layer: 10
+  m_Name: NPCToucher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,6 +926,18 @@ Transform:
   - {fileID: 482444}
   m_Father: {fileID: 495234}
   m_RootOrder: 0
+--- !u!4 &402710
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470248}
+  m_RootOrder: 5
 --- !u!4 &409954
 Transform:
   m_ObjectHideFlags: 1
@@ -1379,6 +1407,7 @@ Transform:
   - {fileID: 459430}
   - {fileID: 415498}
   - {fileID: 468486}
+  - {fileID: 402710}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &471990
@@ -2154,6 +2183,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.007}
   serializedVersion: 2
   m_Radius: 0.005
+--- !u!61 &6113694
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 1.5, y: 1.5}
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8}
 --- !u!61 &6144786
 BoxCollider2D:
   m_ObjectHideFlags: 1

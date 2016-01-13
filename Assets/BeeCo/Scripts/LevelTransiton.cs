@@ -30,7 +30,7 @@ public class LevelTransiton : MonoBehaviour {
     }
 
     public GameObject FindPlayer() {
-        return GameObject.FindGameObjectWithTag("Llama");
+        return GameObject.FindGameObjectWithTag("Player");
     }
 
     public void BreakOut(float price, float time) {
