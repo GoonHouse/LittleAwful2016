@@ -10,15 +10,19 @@ public class HaggleBall : MonoBehaviour {
     public float ballMaxSpeed = 25.0f;
 
     public GameObject hitTextPrefab;
+    public ParticleSystem burstEffect;
 
     // Damage
     public float damageDone = 1.0f;
 
     // Restlessness Timer
     public float noChangeTime = 3.0f;
+    public float noChangeWarnTime = 2.0f;
     public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
     private Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
     private Vector3 lastPos;
+    private bool isWaitingToDisableParticles;
+    private float changeDelay;
 
     // Magnetization
     public float magnetizeForce = 30000.0f;
@@ -58,6 +62,7 @@ public class HaggleBall : MonoBehaviour {
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
         paddle = whoMadeMe.GetComponent<Paddle>();
+        changeDelay = noChangeTime - noChangeWarnTime;
         FuckOff(speed);
     }
 
@@ -74,6 +79,14 @@ public class HaggleBall : MonoBehaviour {
     public void Speak(string text) {
         var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
         hitText.GetComponent<FloatTextAway>().SetText(text);
+    }
+
+    IEnumerator StopEffect() {
+        if( isWaitingToDisableParticles ) {
+            yield return new WaitForSeconds(changeDelay);
+            isWaitingToDisableParticles = false;
+            burstEffect.Stop();
+        }
     }
 
     void FixedUpdate() {
@@ -94,6 +107,13 @@ public class HaggleBall : MonoBehaviour {
                 deltaTimePayload.y = Time.deltaTime;
             }
             timerUnchanged += deltaTimePayload;
+
+            if ( !isWaitingToDisableParticles && (timerUnchanged.x > noChangeWarnTime || timerUnchanged.y > noChangeWarnTime) ) {
+                changeDelay = noChangeTime - noChangeWarnTime;
+                burstEffect.Play();
+                isWaitingToDisableParticles = true;
+                StartCoroutine("StopEffect");
+            }
 
             if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
                 FuckOff(1.0f, true);

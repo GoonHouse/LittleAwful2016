@@ -186,6 +186,7 @@ MonoBehaviour:
   ballMinSpeed: 5
   ballMaxSpeed: 25
   hitTextPrefab: {fileID: 120042, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
+  burstEffect: {fileID: 19865466}
   damageDone: 1
   noChangeTime: 3
   minMoveSpeed: {x: 0.05, y: 0.05}
@@ -1738,7 +1739,7 @@ ParticleSystem:
   randomSeed: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 1
   scalingMode: 1
   InitialModule:
@@ -3302,6 +3303,14 @@ Prefab:
       value: 
       objectReference: {fileID: 11476256, guid: 55f0eb72ebfdf5b49a509496ba205b51,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: burstEffect
+      value: 
+      objectReference: {fileID: 19865466}
+    - target: {fileID: 0}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157036}

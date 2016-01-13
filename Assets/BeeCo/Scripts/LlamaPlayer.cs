@@ -16,6 +16,6 @@ public class LlamaPlayer : MonoBehaviour {
 
     public void SpeakMoney(float amount) {
         var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
-        hitText.GetComponent<FloatTextAway>().SetMoney(amount);
+        hitText.GetComponent<FloatTextAway>().SetMoney(-amount);
     }
 }
