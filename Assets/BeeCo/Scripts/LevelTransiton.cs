@@ -21,11 +21,7 @@ public class LevelTransiton : MonoBehaviour {
 
     public void Platformer(float adjustMoney = 0.0f) {
         SceneManager.LoadScene("platformer");
-        if( God.playerStats.lastPos != Vector3.zero ){
-            FindPlayer().transform.position = God.playerStats.lastPos;
-            God.playerStats.lastPos = Vector3.zero;
-        }
-        God.playerStats.money += adjustMoney;
+        God.playerStats.moneyAdjust = adjustMoney;
         Debug.Log("NOW PLATFORMIN': " + adjustMoney);
     }
 

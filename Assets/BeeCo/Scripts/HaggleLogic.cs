@@ -8,9 +8,11 @@ public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
     public float basePriceReduction = 0.15f;
     public float baseTimeLimit = 45.00f;
+    public float baseBeginDelay = 3.0f;
 
     public Text priceText;
     public Text timeText;
+    public Button continueButton;
 
     public float price;
     public float time;
@@ -44,6 +46,11 @@ public class HaggleLogic : MonoBehaviour {
     public void EnterGame() {
         priceText = GameObject.Find("price").GetComponent<Text>();
         timeText = GameObject.Find("time").GetComponent<Text>();
+        continueButton = GameObject.Find("Continue").GetComponent<Button>();
+        continueButton.gameObject.SetActive(false);
+        continueButton.onClick.AddListener(delegate {
+            God.levelTransition.Platformer(price);
+        });
     }
 
     public void OnLevelWasLoaded(int level) {
@@ -52,6 +59,12 @@ public class HaggleLogic : MonoBehaviour {
             EnterGame();
             RoundStart();
         }
+    }
+
+    public void ResetSelf() {
+        isActive = false;
+        roundEdge = true;
+        beginDelay = baseBeginDelay;
     }
 
     // Update is called once per frame
@@ -72,6 +85,9 @@ public class HaggleLogic : MonoBehaviour {
                 SetTimeText(time);
             } else {
                 timeText.text = "ALL SALES FINAL";
+                if( continueButton) {
+                    continueButton.gameObject.SetActive(true);
+                }
             }
         }
     }
