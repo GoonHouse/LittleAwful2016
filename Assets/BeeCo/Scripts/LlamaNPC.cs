@@ -8,6 +8,7 @@ public class LlamaNPC : MonoBehaviour {
     public Text textObj;
     public GameObject prevButton;
     public GameObject nextButton;
+    public List<AudioClip> talkSounds;
 
     public float startPrice = 52.69f;
     public float gameTime = 60.0f;
@@ -76,10 +77,17 @@ public class LlamaNPC : MonoBehaviour {
         StopCoroutine("Talk");
     }
 
+    public void RandomSound() {
+        var n = Random.Range(0, talkSounds.Count - 1);
+        var aus = GetComponent<AudioSource>();
+        aus.Stop();
+        aus.PlayOneShot(talkSounds[n]);
+    }
+
     IEnumerator Talk() {
         for (int textSaidPos = 0; textSaidPos <= textsToSay[textCurrentPage].Length; textSaidPos++) {
             textObj.text = textsToSay[textCurrentPage].Substring(0, textSaidPos);
-            GetComponent<AudioSource>().Play();
+            RandomSound();
             yield return new WaitForSeconds(textSpeakSpeed);
         }
     }
