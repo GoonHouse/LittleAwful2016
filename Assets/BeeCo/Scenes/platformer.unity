@@ -1681,7 +1681,7 @@ RectTransform:
   m_RootOrder: 199
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.440257, y: 1.6186028}
+  m_AnchoredPosition: {x: 10.05, y: 1.6186028}
   m_SizeDelta: {x: 2.3203125, y: 2.2265625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &225958275
@@ -2953,131 +2953,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488820910}
   m_RootOrder: 130
---- !u!1 &387519452
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 146912, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 387519453}
-  - 222: {fileID: 387519456}
-  - 114: {fileID: 387519455}
-  - 114: {fileID: 387519454}
-  m_Layer: 0
-  m_Name: Next
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &387519453
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 387519452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1335142851}
-  m_Father: {fileID: 716026667}
-  m_RootOrder: 3
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 196, y: -131.00006}
-  m_SizeDelta: {x: 128, y: 56}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &387519454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11496530, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 387519452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.97647065, g: 0.89019614, b: 0.8235295, a: 1}
-    m_PressedColor: {r: 0.8196079, g: 0.6313726, b: 0.48235297, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 387519455}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1872423631}
-        m_MethodName: Next
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &387519455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11437010, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 387519452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 62cc27c29b06c7a48a4efebf64ef708f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &387519456
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22286366, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 387519452}
 --- !u!1 &391934374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3011,252 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488820910}
   m_RootOrder: 186
+--- !u!1001 &403810609
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.906
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 23374216, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.0024761818
+      objectReference: {fileID: 0}
+    - target: {fileID: 23374216, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.008799899
+      objectReference: {fileID: 0}
+    - target: {fileID: 23358238, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.0010999951
+      objectReference: {fileID: 0}
+    - target: {fileID: 23358238, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.008700106
+      objectReference: {fileID: 0}
+    - target: {fileID: 23265696, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.68150294
+      objectReference: {fileID: 0}
+    - target: {fileID: 23179758, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.381706
+      objectReference: {fileID: 0}
+    - target: {fileID: 23282754, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.31801987
+      objectReference: {fileID: 0}
+    - target: {fileID: 23136060, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.7865476
+      objectReference: {fileID: 0}
+    - target: {fileID: 23168008, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.455377
+      objectReference: {fileID: 0}
+    - target: {fileID: 23230166, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.7500001
+      objectReference: {fileID: 0}
+    - target: {fileID: 23342512, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.00019999854
+      objectReference: {fileID: 0}
+    - target: {fileID: 23342512, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0068000816
+      objectReference: {fileID: 0}
+    - target: {fileID: 23163558, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.3862867
+      objectReference: {fileID: 0}
+    - target: {fileID: 23201426, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.7499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 23133906, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.5366953
+      objectReference: {fileID: 0}
+    - target: {fileID: 23250022, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.7499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 23187668, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.3375467
+      objectReference: {fileID: 0}
+    - target: {fileID: 23329672, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 97.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 23329672, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: 2.161
+      objectReference: {fileID: 0}
+    - target: {fileID: 23122208, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.6075927
+      objectReference: {fileID: 0}
+    - target: {fileID: 23326622, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 97.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 23326622, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: 2.161
+      objectReference: {fileID: 0}
+    - target: {fileID: 23224788, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.7499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 23130378, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.5050802
+      objectReference: {fileID: 0}
+    - target: {fileID: 23274498, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.47398162
+      objectReference: {fileID: 0}
+    - target: {fileID: 23128718, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.5680746
+      objectReference: {fileID: 0}
+    - target: {fileID: 23375070, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.006100008
+      objectReference: {fileID: 0}
+    - target: {fileID: 23123562, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.010356088
+      objectReference: {fileID: 0}
+    - target: {fileID: 23118564, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.1565216
+      objectReference: {fileID: 0}
+    - target: {fileID: 23137612, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.006690043
+      objectReference: {fileID: 0}
+    - target: {fileID: 23200078, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 0.31801975
+      objectReference: {fileID: 0}
+    - target: {fileID: 23293662, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.5435878
+      objectReference: {fileID: 0}
+    - target: {fileID: 23127122, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1.6018287
+      objectReference: {fileID: 0}
+    - target: {fileID: 23397288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0044000256
+      objectReference: {fileID: 0}
+    - target: {fileID: 23316026, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.004066774
+      objectReference: {fileID: 0}
+    - target: {fileID: 23273834, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Distance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[0]
+      value: I'd just like to interject for a moment. What you're referring to as
+        Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU
+        plus Linux. Linux is not an operating system unto itself, but rather
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[1]
+      value: another free component of a fully functioning GNU system made useful
+        by the GNU corelibs, shell utilities and vital system components comprising
+        a full OS as defined by POSIX.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[2]
+      value: 'Many computer users run a modified version of the GNU system every day,
+        without realizing it. Through a peculiar turn of events, the version of GNU
+        which is widely used today is often called Linux, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[3]
+      value: and many of its users are not aware that it is basically the GNU system,
+        developed by the GNU Project. There really is a Linux, and these people are
+        using it, but it is just a part of the system they use.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[4]
+      value: 'Linux is the kernel: the program in the system that allocates the machine''s
+        resources to the other programs that you run. The kernel is an essential part
+        of an operating system, but useless by itself;'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[5]
+      value: 'it can only function in the context of a complete operating system.
+        Linux is normally used in combination with the GNU operating system: the whole
+        system is basically GNU with Linux added, or GNU/Linux.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[6]
+      value: All the so-called Linux distributions are really distributions of GNU/Linux.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[7]
+      value: 'Many computer users run a modified version of the GNU system every day,
+        without realizing it. Through a peculiar turn of events, the version of GNU
+        which is widely used today is often called Linux, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[8]
+      value: 'Many computer users run a modified version of the GNU system every day,
+        without realizing it. Through a peculiar turn of events, the version of GNU
+        which is widely used today is often called Linux, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 138028, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Name
+      value: NPCLlama (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &412546057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5164,6 +5285,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 97.381
@@ -5340,6 +5465,58 @@ Prefab:
       propertyPath: m_Distance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[0]
+      value: I'd just like to interject for a moment. What you're referring to as
+        Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU
+        plus Linux. Linux is not an operating system unto itself, but rather
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[1]
+      value: another free component of a fully functioning GNU system made useful
+        by the GNU corelibs, shell utilities and vital system components comprising
+        a full OS as defined by POSIX.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[2]
+      value: 'Many computer users run a modified version of the GNU system every day,
+        without realizing it. Through a peculiar turn of events, the version of GNU
+        which is widely used today is often called Linux, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[3]
+      value: and many of its users are not aware that it is basically the GNU system,
+        developed by the GNU Project. There really is a Linux, and these people are
+        using it, but it is just a part of the system they use.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[4]
+      value: 'Linux is the kernel: the program in the system that allocates the machine''s
+        resources to the other programs that you run. The kernel is an essential part
+        of an operating system, but useless by itself;'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[5]
+      value: 'it can only function in the context of a complete operating system.
+        Linux is normally used in combination with the GNU operating system: the whole
+        system is basically GNU with Linux added, or GNU/Linux.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[6]
+      value: All the so-called Linux distributions are really distributions of GNU/Linux.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[7]
+      value: 'Many computer users run a modified version of the GNU system every day,
+        without realizing it. Through a peculiar turn of events, the version of GNU
+        which is widely used today is often called Linux, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[8]
+      value: 'Many computer users run a modified version of the GNU system every day,
+        without realizing it. Through a peculiar turn of events, the version of GNU
+        which is widely used today is often called Linux, '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
   m_IsPrefabParent: 0
@@ -5408,10 +5585,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: textsToSay.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 17.13
@@ -5444,175 +5617,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11496530, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1872423631}
-    - target: {fileID: 22387204, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 670140991}
     - target: {fileID: 138028, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_Name
       value: NPCLlama (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 11496530, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BeginHaggling
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496530, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6172288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Offset.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6172288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Size.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6172288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Size.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6172288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Offset.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 106536, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23397288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.0044000256
-      objectReference: {fileID: 0}
-    - target: {fileID: 23375070, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.0060999696
-      objectReference: {fileID: 0}
-    - target: {fileID: 23374216, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.008799975
-      objectReference: {fileID: 0}
-    - target: {fileID: 23329672, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_ConnectedAnchor.x
-      value: 17.365
-      objectReference: {fileID: 0}
-    - target: {fileID: 23326622, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_ConnectedAnchor.x
-      value: 17.365
-      objectReference: {fileID: 0}
-    - target: {fileID: 23316026, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.004066774
-      objectReference: {fileID: 0}
-    - target: {fileID: 23282754, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 0.31801963
-      objectReference: {fileID: 0}
-    - target: {fileID: 23274498, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 0.47398177
-      objectReference: {fileID: 0}
-    - target: {fileID: 23273834, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23187668, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 1.3375468
-      objectReference: {fileID: 0}
-    - target: {fileID: 23137612, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 0.0066885613
-      objectReference: {fileID: 0}
-    - target: {fileID: 23136060, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 0.7865473
-      objectReference: {fileID: 0}
-    - target: {fileID: 23123562, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 0.010356991
-      objectReference: {fileID: 0}
-    - target: {fileID: 23118564, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Distance
-      value: 1.1565198
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: textToSay
-      value: Oh I agree, at most I could see doing something with one other person
-        but that's it. However bear in mind, if you can somehow implement a body tracking
-        system for the vive that could easily push a single person's number of tracked
-        objects from 3 (HMD and two hands) to 20 (legs, feet, torso, hips etc etc).   I
-        know you said you don't care about it, but a VR assault rifle used to play
-        a FPS is like my dream. Or playing Chivalry with a legit sword. God damn I
-        am so excited for VR.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484176, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000030518
-      objectReference: {fileID: 0}
-    - target: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -131
-      objectReference: {fileID: 0}
-    - target: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 22485106, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 28.125008
-      objectReference: {fileID: 0}
-    - target: {fileID: 22485106, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 524.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 146912, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: m_Name
-      value: Haggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: prevButton
+    - target: {fileID: 22387204, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 913296437}
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: nextButton
-      value: 
-      objectReference: {fileID: 387519452}
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: textsToSay.Array.data[0]
-      value: Oh I agree, at most I could see doing something with one other person
-        but that's it. However bear in mind, if you can somehow implement a body tracking
-        system for the vive that could easily push a single person's number of
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: textsToSay.Array.data[1]
-      value: tracked objects from 3 (HMD and two hands) to 20 (legs, feet, torso,
-        hips etc etc).   I know you said you don't care about it, but a VR assault
-        rifle used to play a FPS is like my dream. Or playing Chivalry with a legit
-        sword.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-      propertyPath: textsToSay.Array.data[2]
-      value: God damn I am so excited for VR.
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 0}
+      objectReference: {fileID: 670140991}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &716026667 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 22495418, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 716026666}
 --- !u!1 &718187619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7171,131 +7186,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &913296437
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 146912, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 913296438}
-  - 222: {fileID: 913296441}
-  - 114: {fileID: 913296440}
-  - 114: {fileID: 913296439}
-  m_Layer: 0
-  m_Name: Prev
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &913296438
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22438488, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 913296437}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2045012119}
-  m_Father: {fileID: 716026667}
-  m_RootOrder: 2
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -195.1, y: -131.00006}
-  m_SizeDelta: {x: 128, y: 56}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &913296439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11496530, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 913296437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.97647065, g: 0.89019614, b: 0.8235295, a: 1}
-    m_PressedColor: {r: 0.8196079, g: 0.6313726, b: 0.48235297, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 913296440}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1872423631}
-        m_MethodName: Prev
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &913296440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11437010, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 913296437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 62cc27c29b06c7a48a4efebf64ef708f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &913296441
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22286366, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 913296437}
 --- !u!1 &913712377
 GameObject:
   m_ObjectHideFlags: 0
@@ -10618,84 +10508,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488820910}
   m_RootOrder: 134
---- !u!1 &1335142850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 192880, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1335142851}
-  - 222: {fileID: 1335142853}
-  - 114: {fileID: 1335142852}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1335142851
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22409510, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1335142850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 387519453}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1335142852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11496224, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1335142850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: fa879e883d8e64844853d0643b91fc13, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Next
-
-'
---- !u!222 &1335142853
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22252906, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1335142850}
 --- !u!1 &1344383093
 GameObject:
   m_ObjectHideFlags: 0
@@ -15070,12 +14882,6 @@ SpriteRenderer:
   m_Color: {r: 0.7794118, g: 0.7794118, b: 0.7794118, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!114 &1872423631 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 716026666}
-  m_Script: {fileID: 11500000, guid: 7b02897bca068314b93a0feb20246583, type: 3}
 --- !u!1 &1884941653
 GameObject:
   m_ObjectHideFlags: 0
@@ -16240,82 +16046,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &2045012118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 192880, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 2045012119}
-  - 222: {fileID: 2045012121}
-  - 114: {fileID: 2045012120}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2045012119
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22409510, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045012118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 913296438}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2045012120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11496224, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045012118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: fa879e883d8e64844853d0643b91fc13, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Prev
---- !u!222 &2045012121
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22252906, guid: 58d9557d1aaaf3141aad2270e412845c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045012118}
 --- !u!1 &2045375617
 GameObject:
   m_ObjectHideFlags: 0
