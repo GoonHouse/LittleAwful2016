@@ -379,6 +379,48 @@ SpriteRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 412620, guid: 0078a52f4b5f0f84d87eff92759f45da, type: 2}
   m_PrefabInternal: {fileID: 1975067665}
+--- !u!1001 &105272354
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 208865673}
+    m_Modifications:
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 447258, guid: aa09abc743294684292518aad298f859, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: aa09abc743294684292518aad298f859, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &107882355
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +595,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 929604950}
   m_RootOrder: 0
+--- !u!4 &208865673 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 484638, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+  m_PrefabInternal: {fileID: 1500124594}
 --- !u!1 &214381368
 GameObject:
   m_ObjectHideFlags: 0

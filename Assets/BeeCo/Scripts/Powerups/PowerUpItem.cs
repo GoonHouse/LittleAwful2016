@@ -40,6 +40,7 @@ public class PowerUpItem : MonoBehaviour {
 
     public virtual void ResolveSuicide() {
         if ( uses <= 0.0f ) {
+            UnDoAction();
             Detach();
             DestroyImmediate(gameObject);
         }
@@ -51,6 +52,10 @@ public class PowerUpItem : MonoBehaviour {
         ResolveSuicide();
 
         return v;
+    }
+
+    public virtual void UnDoAction() {
+        // jack and shit
     }
 
     // become glued to things

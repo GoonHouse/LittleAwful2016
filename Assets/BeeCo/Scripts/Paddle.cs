@@ -88,12 +88,20 @@ public class Paddle : MonoBehaviour {
         }
     }
 
+    public void UnDoAbility() {
+        if (powerup) {
+            powerup.UnDoAction();
+        }
+    }
+
     // Update is called once per frame
     void Update () {
         UpdatePositionMouse();
 
         if (Input.GetMouseButtonDown(0)) {
             DoAbility();
+        } else if (Input.GetMouseButtonUp(0)) {
+            UnDoAbility();
         }
 
         if ( God.haggleLogic.IsRoundActive()) {
@@ -102,17 +110,6 @@ public class Paddle : MonoBehaviour {
                 comboTimer -= Time.deltaTime;
             } else {
                 CancelCombo();
-            }
-        }
-
-        // Pull towards.
-        if ( Input.GetKeyDown("f") ) {
-            foreach (GameObject ball in spawnedBalls) {
-                ball.GetComponent<HaggleBall>().Magnetize(gameObject, true);
-            }
-        } else if( Input.GetKeyUp("f")) {
-            foreach (GameObject ball in spawnedBalls) {
-                ball.GetComponent<HaggleBall>().Demagnetize();
             }
         }
 
