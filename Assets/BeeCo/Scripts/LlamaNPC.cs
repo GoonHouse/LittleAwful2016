@@ -21,7 +21,7 @@ public class LlamaNPC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        
 	}
 	
 	// Update is called once per frame
@@ -101,9 +101,19 @@ public class LlamaNPC : MonoBehaviour {
     }
 
     IEnumerator Talk() {
-        for (int textSaidPos = 0; textSaidPos <= textsToSay[textCurrentPage].Length; textSaidPos++) {
-            textObj.text = textsToSay[textCurrentPage].Substring(0, textSaidPos);
-            RandomSound();
+        for (int textSaidPos = 1; textSaidPos <= textsToSay[textCurrentPage].Length; textSaidPos++) {
+            var theText = textsToSay[textCurrentPage].Substring(0, textSaidPos);
+            textObj.text = theText;
+
+            // determine if we can pronouce the character
+            var theLetter = theText.Substring(textSaidPos - 1, 1);
+            var theNumber = (int)System.Text.Encoding.UTF8.GetBytes(theLetter)[0];
+            if ( ( theNumber >= 48 && theNumber <= 57  ) || // ascii numbers
+                 ( theNumber >= 65 && theNumber <= 90  ) || // ascii caps
+                 ( theNumber >= 97 && theNumber <= 122 ) // ascii smalls, the lesser known rapper
+                ) {
+                RandomSound();
+            }
             yield return new WaitForSeconds(textSpeakSpeed);
         }
     }
