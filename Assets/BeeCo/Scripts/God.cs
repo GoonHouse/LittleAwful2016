@@ -51,6 +51,14 @@ public class God : MonoBehaviour {
         return prefix + "$" + Mathf.Abs(amount).ToString("F2");
     }
 
+    public static Color ColorOfMoney(float amount) {
+        if( amount < 0.0f ) {
+            return new Color(1.0f, 0.0f, 0.0f, 1.0f);
+        } else {
+            return new Color(0.0f, 1.0f, 0.0f, 1.0f);
+        }
+    }
+
     public static string FormatTime(float time) {
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
         return string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
