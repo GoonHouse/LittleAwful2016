@@ -1,122 +1,140 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
-    public float basePriceReduction = 0.15f;
     public float baseTimeLimit = 45.00f;
     public float baseBeginDelay = 3.0f;
+
+    public float price;
+    public float time;
+    public float beginDelay;
+
+    public float basePriceReduction = 0.15f;
+
+    public enum RoundStates {
+        Uninitialized,
+        WaitForPlayerStarted,
+        WaitForPlayerFinished,
+        RoundStarted,
+        RoundFinished,
+        RoundWon,
+        RoundFailed
+    }
+
+    public RoundStates theRoundState = RoundStates.Uninitialized;
 
     public Text priceText;
     public Text timeText;
     public Button continueButton;
 
-    public float price;
-    public float time;
-
-    public bool isActive = false;
-    public bool roundEdge = true;
-    public float beginDelay = 3.0f;
-    public bool doSale = false;
-
 	// Use this for initialization
 	void Start () {
         if( SceneManager.GetActiveScene().name == "breakout") {
             EnterGame();
-            RoundStart();
         }
     }
 
-    void Awake() {
-        if( priceText ) {
-            SetMoneyText(price);
+    public void OnLevelWasLoaded(int level) {
+        // breakout minigame
+        if (level == SceneManager.GetSceneByName("breakout").buildIndex) {
+            EnterGame();
         }
-    }
-
-    public void RoundStart() {
-        price = startPrice;
-        time = baseTimeLimit;
-        SetMoneyText(price);
-        SetTimeText(time);
-        isActive = true;
     }
 
     public void EnterGame() {
         priceText = GameObject.Find("price").GetComponent<Text>();
         timeText = GameObject.Find("time").GetComponent<Text>();
         continueButton = GameObject.Find("Continue").GetComponent<Button>();
-        continueButton.gameObject.SetActive(false);
         continueButton.onClick.AddListener(delegate {
             var p = 0.0f;
             if (God.playerStats.money >= price) {
                 p = price;
             }
-            God.levelTransition.Platformer(p);
+            God.levelTransition.Platformer(-p);
         });
+        OnWaitForPlayerStart();
     }
 
-    public void OnLevelWasLoaded(int level) {
-        // breakout minigame
-        if( level == SceneManager.GetSceneByName("breakout").buildIndex ){
-            EnterGame();
-            RoundStart();
-        }
-    }
-
-    public void ResetSelf() {
-        isActive = false;
-        roundEdge = true;
+    // we are entering, telling the whole scene to start the player countdown
+    public void OnWaitForPlayerStart() {
+        theRoundState = RoundStates.WaitForPlayerStarted;
+        continueButton.gameObject.SetActive(false);
+        priceText.text = "BEGINNING NEGOTIATION";
         beginDelay = baseBeginDelay;
     }
 
-    // Update is called once per frame
-    void Update () {
-        if( isActive && beginDelay > 0) {
-            beginDelay -= Time.deltaTime;
-            SetTimeText(beginDelay);
-            priceText.text = "BEGINNING NEGOTIATION";
-        } else if( isActive && beginDelay <= 0) {
-            // Hack for when we enter this state.
-            if( roundEdge) {
-                roundEdge = false;
-                SetMoneyText(price);
-            }
-            time -= Time.deltaTime;
+    public void OnWaitForPlayerFinish() {
+        theRoundState = RoundStates.WaitForPlayerFinished;
+        OnRoundStart();
+    }
 
-            if (time > 0.0f) {
-                SetTimeText(time);
-            } else {
-                if( God.playerStats.money >= price ) {
-                    timeText.text = "ALL SALES FINAL";
-                } else {
-                    timeText.text = "INSUFFICIENT FUNDS";
-                }
-                
-                if( continueButton) {
-                    continueButton.gameObject.SetActive(true);
-                }
+    public void OnRoundStart() {
+        theRoundState = RoundStates.RoundStarted;
+        price = startPrice;
+        time = baseTimeLimit;
+        SetMoneyText(price);
+        SetTimeText(time);
+    }
+
+    public void OnRoundFinish() {
+        theRoundState = RoundStates.RoundFinished;
+
+        if (God.playerStats.money >= price) {
+            OnRoundWin();
+        } else {
+            OnRoundFail();
+        }
+
+        if (continueButton) {
+            continueButton.gameObject.SetActive(true);
+        }
+    }
+
+    public void OnRoundWin() {
+        theRoundState = RoundStates.RoundWon;
+        timeText.text = "ALL SALES FINAL";
+    }
+
+    public void OnRoundFail() {
+        theRoundState = RoundStates.RoundFailed;
+        timeText.text = "INSUFFICIENT FUNDS";
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
+        if (theRoundState == RoundStates.WaitForPlayerStarted) {
+            beginDelay -= Time.fixedDeltaTime;
+            SetTimeText(beginDelay);
+            if (beginDelay <= 0.0f) {
+                beginDelay = 0.0f;
+                OnWaitForPlayerFinish();
+            }
+        } else if (theRoundState == RoundStates.RoundStarted) {
+            time -= Time.fixedDeltaTime;
+            SetTimeText(time);
+
+            if( time <= 0.0f) {
+                OnRoundFinish();
             }
         }
     }
 
     public void SetMoneyText(float money) {
-        priceText.text = money.ToString("C2");
+        priceText.text = God.FormatMoney(money);
     }
 
     public void SetTimeText(float time) {
-        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
-        string textForTime = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
-        timeText.text = textForTime;
+        timeText.text = God.FormatTime(time);
     }
 
-    public float adjustPrice(float amount) {
-        if( time >= 0.0f) {
+    public float AdjustPrice(float amount) {
+        if( IsRoundActive() ) {
             price += amount;
 
-            priceText.text = price.ToString("C2");
+            SetMoneyText(price);
         } else {
             Debug.Log("tried to touch the time after-hours");
         }
@@ -124,12 +142,6 @@ public class HaggleLogic : MonoBehaviour {
     }
 
     public bool IsRoundActive() {
-        if( time >= 0.0f &&
-            isActive && beginDelay <= 0
-            ) {
-            return true;
-        } else {
-            return false;
-        }
+        return theRoundState.Equals(RoundStates.RoundStarted);
     }
 }

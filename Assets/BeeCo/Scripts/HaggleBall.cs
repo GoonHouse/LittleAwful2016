@@ -160,7 +160,7 @@ public class HaggleBall : MonoBehaviour {
         pos.z = -20.0f;
         SpeakMoney(-priceIncrease);
 
-        God.haggleLogic.adjustPrice(priceIncrease);
+        God.haggleLogic.AdjustPrice(priceIncrease);
     }
 
     public static float KineticEnergy(Rigidbody2D rb) {
@@ -183,7 +183,7 @@ public class HaggleBall : MonoBehaviour {
             pos.z = -20.0f;
             SpeakMoney(priceDrop);
 
-            God.haggleLogic.adjustPrice(-priceDrop);
+            God.haggleLogic.AdjustPrice(-priceDrop);
 
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){

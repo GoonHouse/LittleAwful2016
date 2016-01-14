@@ -3,11 +3,6 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelTransiton : MonoBehaviour {
-    public 
-
-    void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
-    }
 
     // Use this for initialization
     void Start () {
@@ -31,7 +26,8 @@ public class LevelTransiton : MonoBehaviour {
 
     public void BreakOut(float price, float time) {
         God.playerStats.lastPos = FindPlayer().transform.position;
-        
+        God.playerStats.lastCameraPos = Camera.main.transform.position;
+
         SceneManager.LoadScene("breakout");
 
         God.haggleLogic.startPrice = price;

@@ -37,6 +37,23 @@ public class FloatTextAway : MonoBehaviour {
         tm.text = text;
     }
 
+    public void SetInvertedMoney(float number) {
+        var tm = GetComponent<TextMesh>();
+        var prefix = "";
+
+        if (number > 0) {
+            prefix = "-";
+            startColor = badColor;
+            endColor = farBadColor;
+        } else {
+            prefix = "+";
+            startColor = goodColor;
+            endColor = farGoodColor;
+        }
+
+        tm.text = prefix + "$" + Mathf.Abs(number).ToString("F2");
+    }
+
     public void SetMoney(float number) {
         var tm = GetComponent<TextMesh>();
         var prefix = "";

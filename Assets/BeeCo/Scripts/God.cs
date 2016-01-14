@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 /*
@@ -11,6 +12,10 @@ public class God : MonoBehaviour {
     public static LevelTransiton levelTransition;
     public static PlayerStats playerStats;
 
+    // very important prefab
+    public GameObject hitText;
+
+    // game object stuff
     void Awake() {
         if (main == null) {
             DontDestroyOnLoad(gameObject);
@@ -21,15 +26,34 @@ public class God : MonoBehaviour {
         }
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         haggleLogic = GetComponent<HaggleLogic>();
         levelTransition = GetComponent<LevelTransiton>();
         playerStats = GetComponent<PlayerStats>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+
+    // helpful public methods because why not
+    public static string FormatMoney(float amount, bool showPlus = false) {
+        var prefix = "";
+
+        if (amount < 0) {
+            prefix = "-";
+        } else if( amount > 0 && showPlus) {
+            prefix = "+";
+        }
+
+        return prefix + "$" + Mathf.Abs(amount).ToString("F2");
+    }
+
+    public static string FormatTime(float time) {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        return string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+    }
+
 }
