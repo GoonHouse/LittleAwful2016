@@ -102,4 +102,9 @@ public class God : MonoBehaviour {
     public static float Scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
         return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
     }
+
+    public static float KineticEnergy(Rigidbody2D rb) {
+        // mass in kg, velocity in meters per second, result is joules
+        return 0.5f * rb.mass * Mathf.Pow(rb.velocity.magnitude, 2);
+    }
 }

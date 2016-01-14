@@ -30,37 +30,36 @@ public class PowerUpItem : MonoBehaviour {
         }
 	}
 
-    public void Update() {
-        if( paddle && DoAction() ) {
-            uses--;
-
-            if (uses <= 0) {
-                DestroyImmediate(gameObject);
-            }
-        }
-    }
-
     public bool DoAction() {
-        if(Input.GetKeyDown("h")){
-            foreach( GameObject ball in paddle.spawnedBalls ){
-                ball.GetComponent<HaggleBall>().FuckOff(1.0f, true);
-            }
-            return true;
-        } else {
-            return false;
+        foreach( GameObject ball in paddle.spawnedBalls ){
+            ball.GetComponent<HaggleBall>().FuckOff(1.0f, true);
         }
+
+        uses--;
+
+        if (uses <= 0) {
+            Detach();
+            DestroyImmediate(gameObject);
+        }
+        return true;
     }
 
     // become glued to things
     public void Attach(GameObject attachTo) {
         transform.SetParent(attachTo.transform, true);
         paddle = attachTo.GetComponent<Paddle>();
+        if( paddle ) {
+            paddle.powerup = this;
+        }
         shouldMove = false;
         transform.localScale -= new Vector3(0.125f, 0.125f, 0);
     }
 
     public void Detach() {
         transform.SetParent(null, true);
+        if( paddle) {
+            paddle.powerup = null;
+        }
         paddle = null;
         shouldMove = true;
         transform.localScale += new Vector3(0.125f, 0.125f, 0);

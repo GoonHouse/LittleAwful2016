@@ -3,26 +3,24 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum RoundStates {
+    Uninitialized,
+    WaitForPlayerStarted,
+    WaitForPlayerFinished,
+    RoundStarted,
+    RoundFinished,
+    RoundWon,
+    RoundFailed
+}
+
 public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
     public float baseTimeLimit = 45.00f;
-    public float baseBeginDelay = 3.0f;
 
     public float price;
     public float time;
-    public float beginDelay;
 
     public float basePriceReduction = 0.15f;
-
-    public enum RoundStates {
-        Uninitialized,
-        WaitForPlayerStarted,
-        WaitForPlayerFinished,
-        RoundStarted,
-        RoundFinished,
-        RoundWon,
-        RoundFailed
-    }
 
     public RoundStates theRoundState = RoundStates.Uninitialized;
 
@@ -78,7 +76,6 @@ public class HaggleLogic : MonoBehaviour {
         leaveButton.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
         priceText.text = "BEGINNING NEGOTIATION";
-        beginDelay = baseBeginDelay;
     }
 
     public void OnWaitForPlayerFinish() {
@@ -121,18 +118,11 @@ public class HaggleLogic : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        if (theRoundState == RoundStates.WaitForPlayerStarted) {
-            beginDelay -= Time.fixedDeltaTime;
-            SetTimeText(beginDelay);
-            if (beginDelay <= 0.0f) {
-                beginDelay = 0.0f;
-                OnWaitForPlayerFinish();
-            }
-        } else if (theRoundState == RoundStates.RoundStarted) {
+        if ( IsRoundActive() ) {
             time -= Time.fixedDeltaTime;
             SetTimeText(time);
 
-            if( time <= 0.0f) {
+            if( time <= 0.0f ) {
                 OnRoundFinish();
             }
         }

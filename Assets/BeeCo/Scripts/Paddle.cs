@@ -13,14 +13,14 @@ public class Paddle : MonoBehaviour {
 
     // Ball Handling
     public int numBallsCanSpawn;
-    public GameObject haggleBallPrefab;
     public List<GameObject> spawnedBalls;
+    public GameObject haggleBallPrefab;
 
-    // Movement Speed
-    public float speed = 10.0f;
-    public float turnAroundBrake = 2.0f;
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
+
+    // Powerups
+    public PowerUpItem powerup;
 
     // Use this for initialization
     void Start () {
@@ -79,16 +79,24 @@ public class Paddle : MonoBehaviour {
         return comboRatio;
     }
 
+    public void DoAbility() {
+        if( God.haggleLogic.theRoundState == RoundStates.WaitForPlayerStarted ) {
+            SpawnBall();
+            God.haggleLogic.OnWaitForPlayerFinish();
+        } else if( powerup ) {
+            powerup.DoAction();
+        }
+    }
+
     // Update is called once per frame
     void Update () {
         UpdatePositionMouse();
 
-        if( God.haggleLogic.IsRoundActive()) {
-            // More balls for the ball god.
-            if( Input.GetKeyDown("space")) {
-                SpawnBall();
-            }
+        if (Input.GetMouseButtonDown(0)) {
+            DoAbility();
+        }
 
+        if ( God.haggleLogic.IsRoundActive()) {
             // Combo logic.
             if (comboTimer > 0) {
                 comboTimer -= Time.deltaTime;

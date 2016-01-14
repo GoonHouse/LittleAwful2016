@@ -39,14 +39,10 @@ public class HaggleBall : MonoBehaviour {
     Rigidbody2D rigid;
 
     void OnDestroy() {
-        if( whoMadeMe != null) {
+        if (whoMadeMe != null) {
             // Don't care!
             paddle.BallGone(gameObject);
         }
-    }
-
-    private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax){
-        return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
     }
 
     public void Gravitize() {
@@ -176,7 +172,7 @@ public class HaggleBall : MonoBehaviour {
     }
 
     public void GetHurt(float howMuch = 1.0f) {
-        var priceIncrease = ( paddle.GetComboRatio(false) + (KineticEnergy(rigid) / forceDownscale) ) * 2;
+        var priceIncrease = ( paddle.GetComboRatio(false) + (God.KineticEnergy(rigid) / forceDownscale) ) * 2;
 
         whoMadeMe.GetComponent<Paddle>().CancelCombo();
 
@@ -188,11 +184,6 @@ public class HaggleBall : MonoBehaviour {
         God.haggleLogic.AdjustPrice(priceIncrease);
     }
 
-    public static float KineticEnergy(Rigidbody2D rb) {
-        // mass in kg, velocity in meters per second, result is joules
-        return 0.5f * rb.mass * Mathf.Pow(rb.velocity.magnitude, 2);
-    }
-
     void OnCollisionEnter2D(Collision2D coll){
         if (coll.gameObject.CompareTag("Brick")) {
             var healthLeft = coll.gameObject.GetComponent<BrickScript>().TakeDamage(damageDone);
@@ -202,7 +193,7 @@ public class HaggleBall : MonoBehaviour {
 
             Camera.main.GetComponent<ShakeCamera>().Jostle(comboRatio);
 
-            var priceDrop = comboRatio + (KineticEnergy(rigid) / forceDownscale);
+            var priceDrop = comboRatio + (God.KineticEnergy(rigid) / forceDownscale);
 
             var pos = coll.gameObject.transform.position;
             pos.z = -20.0f;
@@ -212,7 +203,7 @@ public class HaggleBall : MonoBehaviour {
 
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){
-            GetHurt( KineticEnergy(GetComponent<Rigidbody2D>()) );
+            GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
         }
     }
 
