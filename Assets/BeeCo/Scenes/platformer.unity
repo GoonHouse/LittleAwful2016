@@ -3258,6 +3258,10 @@ Prefab:
       propertyPath: textSpeakSpeed
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: topSecret
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
   m_IsPrefabParent: 0
@@ -9228,6 +9232,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1187806174 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109364, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
+  m_PrefabInternal: {fileID: 332462471}
+--- !u!114 &1187806175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187806174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d534f107a84c944f951f0b535ec4dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1190378357
 GameObject:
   m_ObjectHideFlags: 0

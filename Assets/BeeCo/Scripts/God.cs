@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 /*
     While most people will discourage the use of god objects, this one exists so that
@@ -11,9 +12,14 @@ public class God : MonoBehaviour {
     public static HaggleLogic haggleLogic;
     public static LevelTransiton levelTransition;
     public static PlayerStats playerStats;
+    public static TopSecret topSecret;
 
     // very important prefab
     public GameObject hitText;
+
+    // don't worry
+    public int maxNumSignals = 100;
+    public List<string> holySignals;
 
     // game object stuff
     void Awake() {
@@ -27,9 +33,14 @@ public class God : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        Application.runInBackground = true;
+
+        holySignals = new List<string>();
         haggleLogic = GetComponent<HaggleLogic>();
         levelTransition = GetComponent<LevelTransiton>();
         playerStats = GetComponent<PlayerStats>();
+        topSecret = GetComponent<TopSecret>();
+        topSecret.messageRecievedEvent.AddListener(HandleHolySignal);
     }
 
     // Update is called once per frame
@@ -38,6 +49,31 @@ public class God : MonoBehaviour {
     }
 
     // helpful public methods because why not
+    void HandleHolySignal( string msg ) {
+        //parse from buffer.
+        int msgIndex = msg.IndexOf("PRIVMSG #");
+        string msgString = msg.Substring(msgIndex + topSecret.channelName.Length + 11);
+        string user = msg.Substring(1, msg.IndexOf('!') - 1);
+
+        //remove old messages for performance reasons.
+        if( holySignals.Count > maxNumSignals ){
+            holySignals.RemoveAt(0);
+        }
+
+        //add new message.
+        holySignals.Add(user + ": " + msgString);
+    }
+
+    public string PopSignal() {
+        if (holySignals.Count > 0 ) {
+            var s = holySignals[0];
+            holySignals.RemoveAt(0);
+            return s;
+        } else {
+            return "";
+        }
+    }
+
     public static string FormatMoney(float amount, bool showPlus = false) {
         var prefix = "";
 

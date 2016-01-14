@@ -24,8 +24,10 @@ public class LevelTransiton : MonoBehaviour {
     }
 
     public void BreakOut(float price, float time) {
-        God.playerStats.lastPos = FindPlayer().transform.position;
-        God.playerStats.lastCameraPos = Camera.main.transform.position;
+        if (SceneManager.GetActiveScene().name != "breakout") {
+            God.playerStats.lastPos = FindPlayer().transform.position;
+            God.playerStats.lastCameraPos = Camera.main.transform.position;
+        }
 
         SceneManager.LoadScene("breakout");
 

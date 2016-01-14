@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11470844}
   - 114: {fileID: 11416740}
   - 82: {fileID: 8235468}
+  - 114: {fileID: 11474346}
   m_Layer: 0
   m_Name: God
   m_TagString: Untagged
@@ -118,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitText: {fileID: 120042, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
+  maxNumSignals: 100
+  holySignals: []
 --- !u!114 &11416740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,6 +136,18 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0, z: 0}
   lastCameraPos: {x: 0, y: 0, z: 0}
   moneyAdjust: 0
+  inventory:
+  - {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
+  - {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
+  - {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
+  basePrices:
+  - 69.99
+  - 3.2
+  - 40.2
+  pricesPaid:
+  - 50
+  - 9
+  - 40
 --- !u!114 &11470844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,18 +160,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPrice: 5
-  basePriceReduction: 0.15
   baseTimeLimit: 45
   baseBeginDelay: 3
+  price: 0
+  time: 0
+  beginDelay: 3
+  basePriceReduction: 0.15
+  theRoundState: 0
   priceText: {fileID: 0}
   timeText: {fileID: 0}
   continueButton: {fileID: 0}
-  price: 0
-  time: 0
-  isActive: 0
-  roundEdge: 1
-  beginDelay: 3
-  doSale: 0
+  retryButton: {fileID: 0}
+  leaveButton: {fileID: 0}
+--- !u!114 &11474346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109364}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d534f107a84c944f951f0b535ec4dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11499260
 MonoBehaviour:
   m_ObjectHideFlags: 1

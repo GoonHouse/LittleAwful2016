@@ -29,9 +29,11 @@ public class HaggleLogic : MonoBehaviour {
     public Text priceText;
     public Text timeText;
     public Button continueButton;
+    public Button retryButton;
+    public Button leaveButton;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         if( SceneManager.GetActiveScene().name == "breakout") {
             EnterGame();
         }
@@ -47,6 +49,15 @@ public class HaggleLogic : MonoBehaviour {
     public void EnterGame() {
         priceText = GameObject.Find("price").GetComponent<Text>();
         timeText = GameObject.Find("time").GetComponent<Text>();
+        retryButton = GameObject.Find("Retry").GetComponent<Button>();
+        retryButton.onClick.AddListener(delegate {
+            theRoundState = RoundStates.Uninitialized;
+            God.levelTransition.BreakOut(startPrice, baseTimeLimit);
+        });
+        leaveButton = GameObject.Find("Leave").GetComponent<Button>();
+        leaveButton.onClick.AddListener(delegate {
+            God.levelTransition.Platformer();
+        });
         continueButton = GameObject.Find("Continue").GetComponent<Button>();
         continueButton.onClick.AddListener(delegate {
             var p = 0.0f;
@@ -61,6 +72,8 @@ public class HaggleLogic : MonoBehaviour {
     // we are entering, telling the whole scene to start the player countdown
     public void OnWaitForPlayerStart() {
         theRoundState = RoundStates.WaitForPlayerStarted;
+        retryButton.gameObject.SetActive(false);
+        leaveButton.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
         priceText.text = "BEGINNING NEGOTIATION";
         beginDelay = baseBeginDelay;
@@ -82,14 +95,15 @@ public class HaggleLogic : MonoBehaviour {
     public void OnRoundFinish() {
         theRoundState = RoundStates.RoundFinished;
 
+        leaveButton.gameObject.SetActive(true);
+        retryButton.gameObject.SetActive(true);
+
         if (God.playerStats.money >= price) {
+            continueButton.gameObject.SetActive(true);
             OnRoundWin();
         } else {
+            continueButton.gameObject.SetActive(false);
             OnRoundFail();
-        }
-
-        if (continueButton) {
-            continueButton.gameObject.SetActive(true);
         }
     }
 

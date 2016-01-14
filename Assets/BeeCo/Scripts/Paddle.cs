@@ -7,11 +7,12 @@ public class Paddle : MonoBehaviour {
     public float comboTimer = 0.0f;
     public float minComboTimeToExtend = 0.5f;
     public float maxComboTimeToExtend = 1.0f;
+    public int baseNumBallsCanSpawn = 1;
     public int combo = 0;
     public int maxCombo = 15;
 
     // Ball Handling
-    public int numBallsCanSpawn = 1;
+    public int numBallsCanSpawn;
     public GameObject haggleBallPrefab;
     private List<GameObject> spawnedBalls;
 
@@ -25,6 +26,7 @@ public class Paddle : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spawnedBalls = new List<GameObject>();
+        numBallsCanSpawn = baseNumBallsCanSpawn;
 	}
 
     private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
@@ -53,6 +55,16 @@ public class Paddle : MonoBehaviour {
         } else if (Input.GetKey("w")) {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed);
         }
+    }
+
+    public void Reset() {
+        CancelCombo();
+
+        foreach (GameObject ball in spawnedBalls) {
+            Destroy(ball);
+        }
+
+        numBallsCanSpawn = baseNumBallsCanSpawn;
     }
 
     public void BallGone(GameObject ball) {

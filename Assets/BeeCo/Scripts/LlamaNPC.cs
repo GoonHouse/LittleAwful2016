@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class LlamaNPC : MonoBehaviour {
     public GameObject textPrefab;
@@ -19,10 +20,10 @@ public class LlamaNPC : MonoBehaviour {
     public List<string> textsToSay;
     public float textSpeakSpeed = 1.0f;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
+    // Use this for initialization
+    void Start () {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -64,10 +65,23 @@ public class LlamaNPC : MonoBehaviour {
         }
     }
 
+    public void AbsorbSignals() {
+        var signals = God.main.holySignals;
+        if ( signals.Count > 0) {
+            var s = God.main.PopSignal();
+            if( s != "" ){
+                textsToSay.Insert(textCurrentPage + 1, s);
+            }
+        }
+    }
+
     public void StartTalking(int page = 0) {
         if( isTalking ) {
             StopCoroutine("Talk");
         }
+
+        AbsorbSignals();
+
         isTalking = true;
         textSaidPos = 0;
         textPrefab.SetActive(true);
