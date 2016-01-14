@@ -105,18 +105,6 @@ public class Paddle : MonoBehaviour {
             }
         }
 
-        // Turn off balls.
-        if (Input.GetKeyDown("j")) {
-            foreach (GameObject ball in spawnedBalls) {
-                var hb = ball.GetComponent<HaggleBall>();
-                if ( hb.isGravitized ) {
-                    hb.Degravitize();
-                } else {
-                    hb.Gravitize();
-                }
-            }
-        }
-
         // Pull towards.
         if ( Input.GetKeyDown("f") ) {
             foreach (GameObject ball in spawnedBalls) {

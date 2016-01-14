@@ -26,6 +26,8 @@ public class HaggleBall : MonoBehaviour {
 
     // Gravitation
     public bool isGravitized = false;
+    public float baseGravitizationTime = 3.0f;
+    public float gravitizationTime;
 
     // Magnetization
     public float magnetizeForce = 30000.0f;
@@ -45,20 +47,23 @@ public class HaggleBall : MonoBehaviour {
         }
     }
 
-    public void Gravitize() {
+    public float Gravitize(float strength = 1.0f) {
         isGravitized = true;
+        gravitizationTime += strength * baseGravitizationTime;
         rigid.gravityScale = 1;
-        rigid.mass *= 50.0f;
+        rigid.mass += 50.0f;
         var coll = GetComponent<CircleCollider2D>();
         coll.sharedMaterial.bounciness = 0;
         coll.sharedMaterial.friction = 1;
         rigid.velocity = Vector3.zero;
+        return gravitizationTime;
     }
 
     public void Degravitize() {
         isGravitized = false;
+        gravitizationTime = 0.0f;
         rigid.gravityScale = 0;
-        rigid.mass /= 50.0f;
+        rigid.mass -= 50.0f;
         var coll = GetComponent<CircleCollider2D>();
         coll.sharedMaterial.bounciness = 1;
         coll.sharedMaterial.friction = 0;
@@ -82,11 +87,6 @@ public class HaggleBall : MonoBehaviour {
         paddle = whoMadeMe.GetComponent<Paddle>();
         changeDelay = noChangeTime - noChangeWarnTime;
         FuckOff(speed);
-    }
-
-    static float Round(float value, int digits) {
-        float mult = Mathf.Pow(10.0f, (float)digits);
-        return Mathf.Round(value * mult) / mult;
     }
 
     public void SpeakMoney(float amount) {
@@ -114,14 +114,18 @@ public class HaggleBall : MonoBehaviour {
                 rigid.constraints = RigidbodyConstraints2D.None;
             }
 
-            if ( !isGravitized ) {
+            if ( gravitizationTime <= 0.0f ) {
+                if( isGravitized) {
+                    Degravitize();
+                }
+
                 // Stale Direction Logic
                 // Stale flag.
                 var deltaTimePayload = new Vector3(0.0f, 0.0f);
-                if (Round(lastPos.x, 2) == Round(transform.localPosition.x, 2)) {
+                if (God.Round(lastPos.x, 2) == God.Round(transform.localPosition.x, 2)) {
                     deltaTimePayload.x = Time.deltaTime;
                 }
-                if (Round(lastPos.y, 2) == Round(transform.localPosition.y, 2)) {
+                if (God.Round(lastPos.y, 2) == God.Round(transform.localPosition.y, 2)) {
                     deltaTimePayload.y = Time.deltaTime;
                 }
                 timerUnchanged += deltaTimePayload;
@@ -144,7 +148,7 @@ public class HaggleBall : MonoBehaviour {
                     rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
                 }
             } else {
-                Debug.Log("gravitized");
+                gravitizationTime -= Time.fixedDeltaTime;
             }
 
             // Magnetization

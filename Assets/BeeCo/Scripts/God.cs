@@ -107,4 +107,9 @@ public class God : MonoBehaviour {
         // mass in kg, velocity in meters per second, result is joules
         return 0.5f * rb.mass * Mathf.Pow(rb.velocity.magnitude, 2);
     }
+
+    public static float Round(float value, int digits) {
+        float mult = Mathf.Pow(10.0f, (float)digits);
+        return Mathf.Round(value * mult) / mult;
+    }
 }
