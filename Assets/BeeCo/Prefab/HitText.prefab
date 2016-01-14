@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatAwaySpeed: 3
-  colorLerpTime: 2
-  startLifeTime: 5
-  lifeTime: 5
+  colorLerpTime: 1
+  startLifeTime: 1.5
+  lifeTime: 1.5
   badColor: {r: 1, g: 0, b: 0, a: 1}
   farBadColor: {r: 1, g: 0, b: 0, a: 0.039215688}
   goodColor: {r: 0, g: 1, b: 0, a: 1}
@@ -203,6 +203,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startLifeTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colorLerpTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
