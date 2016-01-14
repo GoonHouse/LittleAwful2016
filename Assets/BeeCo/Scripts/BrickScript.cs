@@ -10,8 +10,6 @@ public class BrickScript : MonoBehaviour {
 
     private bool gonnaDie = false;
 
-    public GameObject powerupToSpawn;
-
     public float TakeDamage(float amount = 1.0f){
         health -= amount;
         
@@ -23,21 +21,17 @@ public class BrickScript : MonoBehaviour {
         return health;
     }
 
-    void Update(){
+    void FixedUpdate(){
         if( health <= 0.0f && !gonnaDie ){
             gonnaDie = true;
-            StartCoroutine("Die");
+
+            var pui = GetComponentInChildren<PowerUpItem>();
+
+            if (pui != null) {
+                pui.Detach();
+            }
+
+            Destroy(gameObject, damageDelay);
         }
-    }
-
-    IEnumerator Die() {
-        yield return new WaitForSeconds(damageDelay);
-
-        if ( powerupToSpawn != null) {
-            var powerUp = (GameObject)Instantiate(powerupToSpawn, transform.position, Quaternion.identity);
-            powerUp.GetComponent<PowerUpItem>().Born();
-        }
-
-        Destroy(gameObject);
     }
 }
