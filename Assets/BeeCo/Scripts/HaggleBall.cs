@@ -24,6 +24,9 @@ public class HaggleBall : MonoBehaviour {
     private bool isWaitingToDisableParticles;
     private float changeDelay;
 
+    // Gravitation
+    public bool isGravitized = false;
+
     // Magnetization
     public float magnetizeForce = 30000.0f;
     private bool isMagnetizedTowards = false;
@@ -44,6 +47,25 @@ public class HaggleBall : MonoBehaviour {
 
     private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax){
         return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
+    }
+
+    public void Gravitize() {
+        isGravitized = true;
+        rigid.gravityScale = 1;
+        rigid.mass *= 50.0f;
+        var coll = GetComponent<CircleCollider2D>();
+        coll.sharedMaterial.bounciness = 0;
+        coll.sharedMaterial.friction = 1;
+        rigid.velocity = Vector3.zero;
+    }
+
+    public void Degravitize() {
+        isGravitized = false;
+        rigid.gravityScale = 0;
+        rigid.mass /= 50.0f;
+        var coll = GetComponent<CircleCollider2D>();
+        coll.sharedMaterial.bounciness = 1;
+        coll.sharedMaterial.friction = 0;
     }
 
     public void Magnetize(GameObject mt, bool towards = true) {
@@ -96,33 +118,37 @@ public class HaggleBall : MonoBehaviour {
                 rigid.constraints = RigidbodyConstraints2D.None;
             }
 
-            // Stale Direction Logic
-            // Stale flag.
-            var deltaTimePayload = new Vector3(0.0f, 0.0f);
-            if (Round(lastPos.x, 2) == Round(transform.localPosition.x, 2)) {
-                deltaTimePayload.x = Time.deltaTime;
-            }
-            if (Round(lastPos.y, 2) == Round(transform.localPosition.y, 2)) {
-                deltaTimePayload.y = Time.deltaTime;
-            }
-            timerUnchanged += deltaTimePayload;
+            if ( !isGravitized ) {
+                // Stale Direction Logic
+                // Stale flag.
+                var deltaTimePayload = new Vector3(0.0f, 0.0f);
+                if (Round(lastPos.x, 2) == Round(transform.localPosition.x, 2)) {
+                    deltaTimePayload.x = Time.deltaTime;
+                }
+                if (Round(lastPos.y, 2) == Round(transform.localPosition.y, 2)) {
+                    deltaTimePayload.y = Time.deltaTime;
+                }
+                timerUnchanged += deltaTimePayload;
 
-            if ( !isWaitingToDisableParticles && (timerUnchanged.x > noChangeWarnTime || timerUnchanged.y > noChangeWarnTime) ) {
-                changeDelay = noChangeTime - noChangeWarnTime;
-                burstEffect.Play();
-                isWaitingToDisableParticles = true;
-                StartCoroutine("StopEffect");
-            }
+                if (!isWaitingToDisableParticles && (timerUnchanged.x > noChangeWarnTime || timerUnchanged.y > noChangeWarnTime)) {
+                    changeDelay = noChangeTime - noChangeWarnTime;
+                    burstEffect.Play();
+                    isWaitingToDisableParticles = true;
+                    StartCoroutine("StopEffect");
+                }
 
-            if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
-                FuckOff(1.0f, true);
-            }
+                if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
+                    FuckOff(1.0f, true);
+                }
 
-            // Stay within min/max speed.
-            if (rigid.velocity.magnitude < ballMinSpeed) {
-                rigid.velocity = rigid.velocity.normalized * ballMinSpeed;
-            } else if (rigid.velocity.magnitude > ballMaxSpeed) {
-                rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
+                // Stay within min/max speed.
+                if (rigid.velocity.magnitude < ballMinSpeed) {
+                    rigid.velocity = rigid.velocity.normalized * ballMinSpeed;
+                } else if (rigid.velocity.magnitude > ballMaxSpeed) {
+                    rigid.velocity = rigid.velocity.normalized * ballMaxSpeed;
+                }
+            } else {
+                Debug.Log("gravitized");
             }
 
             // Magnetization
