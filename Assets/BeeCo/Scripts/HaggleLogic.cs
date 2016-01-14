@@ -135,8 +135,6 @@ public class HaggleLogic : MonoBehaviour {
             price += amount;
 
             SetMoneyText(price);
-        } else {
-            Debug.Log("tried to touch the time after-hours");
         }
         return price;
     }

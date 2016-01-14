@@ -63,7 +63,7 @@ public class Paddle : MonoBehaviour {
         if( numBallsCanSpawn > 0 ) {
             var pos = transform.position;
             pos.x += 1.0f;
-            var ball = (GameObject)Instantiate(haggleBallPrefab, pos, transform.rotation);
+            var ball = (GameObject)Instantiate(haggleBallPrefab, pos, Quaternion.identity);
             ball.GetComponent<HaggleBall>().whoMadeMe = gameObject;
             spawnedBalls.Add(ball);
         }
@@ -146,7 +146,6 @@ public class Paddle : MonoBehaviour {
             (!down && vel.y < 0)
             )
         {
-            Debug.Log("fuck going this way");
             vel.y = vel.y / turnAroundBrake;
             rigid.velocity = vel;
             return true;

@@ -14,9 +14,9 @@ public class PowerUpItem : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 	    if( shouldMove) {
-            var pos = transform.position;
-            pos.x -= moveRate * Time.fixedDeltaTime;
-            transform.position = pos;
+            //var pos = transform.position;
+            //pos.x -= moveRate * Time.fixedDeltaTime;
+            //transform.position = pos;
         }
 	}
 

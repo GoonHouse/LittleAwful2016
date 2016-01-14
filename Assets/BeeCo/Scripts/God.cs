@@ -21,7 +21,6 @@ public class God : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
             main = this;
         } else if (main != this) {
-            Debug.Log("False prophet detected.");
             DestroyImmediate(gameObject);
         }
     }

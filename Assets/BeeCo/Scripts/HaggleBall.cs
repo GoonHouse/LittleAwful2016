@@ -93,7 +93,6 @@ public class HaggleBall : MonoBehaviour {
         if (God.haggleLogic.IsRoundActive()) {
             // Ensure we're active.
             if (rigid.constraints == RigidbodyConstraints2D.FreezeAll) {
-                Debug.Log(gameObject.name + " (BALL) UNFREEZING SELF");
                 rigid.constraints = RigidbodyConstraints2D.None;
             }
 
@@ -192,7 +191,6 @@ public class HaggleBall : MonoBehaviour {
     }
 
     public void FuckOff(float howFast = 1.0f, bool doShout = false){
-        //Debug.Log("FUCKING OFF!!!");
         if( doShout) {
             Speak("FUCK BEES");
         }

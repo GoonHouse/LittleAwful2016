@@ -17,7 +17,6 @@ public class LevelTransiton : MonoBehaviour {
     public void Platformer(float adjustMoney = 0.0f) {
         SceneManager.LoadScene("platformer");
         God.playerStats.moneyAdjust = adjustMoney;
-        Debug.Log("NOW PLATFORMIN': " + adjustMoney);
     }
 
     public GameObject FindPlayer() {
@@ -32,6 +31,5 @@ public class LevelTransiton : MonoBehaviour {
 
         God.haggleLogic.startPrice = price;
         God.haggleLogic.baseTimeLimit = time;
-        Debug.Log("NOW BREAKING OUT: " + price.ToString() + ", " + time.ToString());
     }
 }
