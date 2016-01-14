@@ -18,7 +18,11 @@ public class LlamaNPC : MonoBehaviour {
     public int textSaidPos = 0;
     public int textCurrentPage = 0;
     public List<string> textsToSay;
+    public List<string> postSellTexts;
     public float textSpeakSpeed = 1.0f;
+
+    // this determnies what save data is loaded from the player state
+    public int npcIndex = 0;
 
     // Use this for initialization
     void Start () {
@@ -65,18 +69,29 @@ public class LlamaNPC : MonoBehaviour {
         }
     }
 
+    public List<string> GetTextPool() {
+        var npcs = God.playerStats.npcsThatSold;
+        if ( npcs.Count > 0 && npcs[npcIndex] ) {
+            return postSellTexts;
+        } else {
+            return textsToSay;
+        }
+    }
+
     public void AbsorbSignals() {
+        var t = GetTextPool();
         var signals = God.main.holySignals;
         if ( signals.Count > 0) {
             var s = God.main.PopSignal();
             if( s != "" ){
-                textsToSay.Insert(textCurrentPage + 1, s);
+                t.Insert(textCurrentPage + 1, s);
             }
         }
     }
 
     public void StartTalking(int page = 0) {
-        if( isTalking ) {
+        var t = GetTextPool();
+        if ( isTalking ) {
             StopCoroutine("Talk");
         }
 
@@ -86,10 +101,10 @@ public class LlamaNPC : MonoBehaviour {
         textSaidPos = 0;
         textPrefab.SetActive(true);
         textCurrentPage = page;
-        textObj.text = textsToSay[page];
+        textObj.text = t[page];
 
         // "I'm an asshole." ~EntranceJew, 2012
-        nextButton.SetActive(textCurrentPage < textsToSay.Count-1);
+        nextButton.SetActive(textCurrentPage < t.Count-1);
         prevButton.SetActive(textCurrentPage != 0);
 
         StartCoroutine("Talk");
@@ -114,8 +129,9 @@ public class LlamaNPC : MonoBehaviour {
     }
 
     IEnumerator Talk() {
-        for (int textSaidPos = 1; textSaidPos <= textsToSay[textCurrentPage].Length; textSaidPos++) {
-            var theText = textsToSay[textCurrentPage].Substring(0, textSaidPos);
+        var t = GetTextPool();
+        for (int textSaidPos = 1; textSaidPos <= t[textCurrentPage].Length; textSaidPos++) {
+            var theText = t[textCurrentPage].Substring(0, textSaidPos);
             textObj.text = theText;
 
             // determine if we can pronouce the character

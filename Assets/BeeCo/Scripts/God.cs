@@ -99,4 +99,7 @@ public class God : MonoBehaviour {
         return string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
     }
 
+    public static float Scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
+        return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
+    }
 }

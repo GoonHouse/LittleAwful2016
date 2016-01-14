@@ -14,14 +14,13 @@ public class Paddle : MonoBehaviour {
     // Ball Handling
     public int numBallsCanSpawn;
     public GameObject haggleBallPrefab;
-    private List<GameObject> spawnedBalls;
+    public List<GameObject> spawnedBalls;
 
     // Movement Speed
     public float speed = 10.0f;
     public float turnAroundBrake = 2.0f;
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
-    
 
     // Use this for initialization
     void Start () {
@@ -29,32 +28,12 @@ public class Paddle : MonoBehaviour {
         numBallsCanSpawn = baseNumBallsCanSpawn;
 	}
 
-    private float scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
-        return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
-    }
-
     void UpdatePositionMouse() {
         var rigid = GetComponent<Rigidbody2D>();
 
-        var newPos = new Vector2(rigid.position.x, scale(Input.mousePosition.y, 0, Screen.height, -extents, extents));
+        var newPos = new Vector2(rigid.position.x, God.Scale(Input.mousePosition.y, 0, Screen.height, -extents, extents));
 
         rigid.MovePosition(newPos);
-    }
-
-    void UpdatePositionKeyboard() {
-        // cancel impulse only once
-        if (Input.GetKeyDown("s")) {
-            CancelVelocity(true);
-        } else if (Input.GetKeyDown("w")) {
-            CancelVelocity(false);
-        }
-
-        // always add velocity
-        if (Input.GetKey("s")) {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * -speed);
-        } else if (Input.GetKey("w")) {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed);
-        }
     }
 
     public void Reset() {
@@ -89,7 +68,7 @@ public class Paddle : MonoBehaviour {
 
     public void BumpCombo() {
         combo++;
-        comboTimer = scale(Mathf.Min(combo, maxCombo), 0, maxCombo, maxComboTimeToExtend, minComboTimeToExtend);
+        comboTimer = God.Scale(Mathf.Min(combo, maxCombo), 0, maxCombo, maxComboTimeToExtend, minComboTimeToExtend);
     }
 
     public float GetComboRatio(bool limit = true) {
@@ -130,13 +109,6 @@ public class Paddle : MonoBehaviour {
             }
         }
 
-        // Make balls scatter.
-        if (Input.GetKeyDown("h")) {
-            foreach (GameObject ball in spawnedBalls) {
-                ball.GetComponent<HaggleBall>().FuckOff(1.0f, true);
-            }
-        }
-
         // Pull towards.
         if ( Input.GetKeyDown("f") ) {
             foreach (GameObject ball in spawnedBalls) {
@@ -159,22 +131,18 @@ public class Paddle : MonoBehaviour {
             }
         }
 
+        // Update status.
+        var s = string.Format("Combo: {0:D2}/{1:D2} {2:F3}; Balls: {3:D2}/{4:D2};", 
+            combo, maxCombo, comboTimer, numBallsCanSpawn, spawnedBalls.Count
+        );
+        God.haggleLogic.statusText.text = s;
     }
 
-    bool CancelVelocity(bool down){
-        var rigid = GetComponent<Rigidbody2D>();
-        var vel = rigid.velocity;
-
-        if (
-            (down && vel.y > 0) || 
-            (!down && vel.y < 0)
-            )
-        {
-            vel.y = vel.y / turnAroundBrake;
-            rigid.velocity = vel;
-            return true;
-        } else {
-            return false;
+    void OnTriggerEnter2D(Collider2D coll) {
+        var g = coll.gameObject;
+        if ( g.CompareTag("Powerup")) {
+            var p = g.GetComponent<PowerUpItem>();
+            p.Attach(gameObject);
         }
     }
 }

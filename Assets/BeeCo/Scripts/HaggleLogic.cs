@@ -26,6 +26,7 @@ public class HaggleLogic : MonoBehaviour {
 
     public RoundStates theRoundState = RoundStates.Uninitialized;
 
+    public Text statusText;
     public Text priceText;
     public Text timeText;
     public Button continueButton;
@@ -47,6 +48,7 @@ public class HaggleLogic : MonoBehaviour {
     }
 
     public void EnterGame() {
+        statusText = GameObject.Find("status").GetComponent<Text>();
         priceText = GameObject.Find("price").GetComponent<Text>();
         timeText = GameObject.Find("time").GetComponent<Text>();
         retryButton = GameObject.Find("Retry").GetComponent<Button>();

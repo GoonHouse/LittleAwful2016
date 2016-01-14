@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour {
     public List<GameObject> inventory;
     public List<float> basePrices;
     public List<float> pricesPaid;
+    public List<bool> npcsThatSold;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +24,9 @@ public class PlayerStats : MonoBehaviour {
         }
         if (pricesPaid == null) {
             pricesPaid = new List<float>();
+        }
+        if (npcsThatSold == null) {
+            npcsThatSold = new List<bool>();
         }
     }
 	
