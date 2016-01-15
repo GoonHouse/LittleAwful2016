@@ -14539,7 +14539,6 @@ GameObject:
   - 4: {fileID: 1836863233}
   - 212: {fileID: 1836863232}
   - 61: {fileID: 1836863231}
-  - 50: {fileID: 1836863230}
   m_Layer: 8
   m_Name: Block
   m_TagString: Untagged
@@ -14547,23 +14546,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1836863230
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1836863229}
-  m_UseAutoMass: 0
-  m_Mass: 500
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &1836863231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14615,7 +14597,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836863229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.03, y: 3.2651591, z: -20}
+  m_LocalPosition: {x: 22.14, y: 1.95, z: -20}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 359218556}
