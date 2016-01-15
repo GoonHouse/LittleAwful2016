@@ -59,7 +59,7 @@ namespace UnityStandardAssets._2D
 
             // Decrease the jump timer.
             if( m_JumpTimer > 0.0f){
-                m_JumpTimer -= Time.deltaTime;
+                m_JumpTimer -= Time.fixedDeltaTime;
             }
         }
 
