@@ -9,7 +9,6 @@ public class PowerUpMagnetize : PowerUpItem {
         foreach (GameObject ball in paddle.spawnedBalls) {
             ball.GetComponent<HaggleBall>().Demagnetize();
         }
-        ResolveSuicide();
     }
 
     public override float BallEffect() {
@@ -25,7 +24,7 @@ public class PowerUpMagnetize : PowerUpItem {
         base.FixedUpdate();
         if( toggleDrain ) {
             uses -= usePerAction * Time.fixedDeltaTime;
-            ResolveSuicide();
         }
+        ResolveSuicide();
     }
 }
