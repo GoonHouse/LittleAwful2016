@@ -113,17 +113,6 @@ public class Paddle : MonoBehaviour {
             }
         }
 
-        // Repel.
-        if (Input.GetKeyDown("g")) {
-            foreach (GameObject ball in spawnedBalls) {
-                ball.GetComponent<HaggleBall>().Magnetize(gameObject, false);
-            }
-        } else if (Input.GetKeyUp("g")) {
-            foreach (GameObject ball in spawnedBalls) {
-                ball.GetComponent<HaggleBall>().Demagnetize();
-            }
-        }
-
         // Update status.
         var s = string.Format("Combo: {0:D2}/{1:D2} {2:F3}; Balls: {3:D2}/{4:D2};", 
             combo, maxCombo, comboTimer, numBallsCanSpawn, spawnedBalls.Count
@@ -133,9 +122,14 @@ public class Paddle : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll) {
         var g = coll.gameObject;
-        if ( g.CompareTag("Powerup")) {
+        if ( g.tag == "Powerup" ) {
             var p = g.GetComponent<PowerUpItem>();
-            p.Attach(gameObject);
+            if( p ) {
+                if (powerup) {
+                    powerup.Suicide();
+                }
+                p.SendMessage("Attach", gameObject);
+            }
         }
     }
 }

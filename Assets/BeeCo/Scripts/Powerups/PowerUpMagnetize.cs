@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PowerUpMagnetize : PowerUpItem {
     public bool toggleDrain = false;
-
+    public bool magneticDirection = true;
     public override void UnDoAction() {
         toggleDrain = false;
         foreach (GameObject ball in paddle.spawnedBalls) {
@@ -16,7 +16,7 @@ public class PowerUpMagnetize : PowerUpItem {
         toggleDrain = true;
 
         foreach (GameObject ball in paddle.spawnedBalls) {
-            ball.GetComponent<HaggleBall>().Magnetize(paddle.gameObject, true);
+            ball.GetComponent<HaggleBall>().Magnetize(paddle.gameObject, magneticDirection);
         }
         return 0.0f;
     }

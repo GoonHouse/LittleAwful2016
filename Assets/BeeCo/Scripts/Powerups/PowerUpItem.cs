@@ -38,11 +38,15 @@ public class PowerUpItem : MonoBehaviour {
         return 1.0f;
     }
 
+    public virtual void Suicide() {
+        UnDoAction();
+        Detach();
+        Destroy(gameObject);
+    }
+
     public virtual void ResolveSuicide() {
         if ( uses <= 0.0f ) {
-            UnDoAction();
-            Detach();
-            DestroyImmediate(gameObject);
+            Suicide();
         }
     }
 
@@ -55,23 +59,33 @@ public class PowerUpItem : MonoBehaviour {
     }
 
     public virtual void UnDoAction() {
+        ;
         // jack and shit
     }
 
     // become glued to things
     public virtual void Attach(GameObject attachTo) {
+        Debug.Log(gameObject.name + " trying to get on a " + attachTo.name);
         transform.SetParent(attachTo.transform, true);
         paddle = attachTo.GetComponent<Paddle>();
+
         if( paddle ) {
+            if( paddle.powerup ) {
+                Debug.Log(gameObject.name + " junking a " + paddle.powerup.gameObject);
+                Destroy(paddle.powerup.gameObject);
+            }
+
             paddle.powerup = this;
         }
+
         shouldMove = false;
         transform.localScale -= new Vector3(0.125f, 0.125f, 0);
     }
 
     public virtual void Detach() {
+        Debug.Log(gameObject.name + " detaching from a " + transform.parent.gameObject.name);
         transform.SetParent(null, true);
-        if( paddle) {
+        if( paddle ) {
             paddle.powerup = null;
         }
         paddle = null;
