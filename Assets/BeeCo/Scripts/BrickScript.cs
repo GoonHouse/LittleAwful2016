@@ -14,6 +14,9 @@ public class BrickScript : MonoBehaviour {
         health -= amount;
         
         if( health > 0.0f ) {
+            if( health > startHealth) {
+                health = startHealth;
+            }
             var rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[Mathf.RoundToInt(health) - 1];
         }

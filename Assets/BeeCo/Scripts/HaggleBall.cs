@@ -45,14 +45,14 @@ public class HaggleBall : MonoBehaviour {
     public Paddle paddle;
     Rigidbody2D rigid;
 
-    void OnDestroy() {
+    public virtual void OnDestroy() {
         if (whoMadeMe != null) {
             // Don't care!
             paddle.BallGone(gameObject);
         }
     }
 
-    public float Gravitize(float strength = 1.0f) {
+    public virtual float Gravitize(float strength = 1.0f) {
         isGravitized = true;
         gravitizationTime += strength * baseGravitizationTime;
         rigid.gravityScale = 1;
@@ -64,7 +64,7 @@ public class HaggleBall : MonoBehaviour {
         return gravitizationTime;
     }
 
-    public void Degravitize() {
+    public virtual void Degravitize() {
         isGravitized = false;
         gravitizationTime = 0.0f;
         rigid.gravityScale = 0;
@@ -74,26 +74,26 @@ public class HaggleBall : MonoBehaviour {
         coll.sharedMaterial.friction = 0;
     }
 
-    public void Magnetize(GameObject mt, bool towards = true) {
+    public virtual void Magnetize(GameObject mt, bool towards = true) {
         isMagnetized = true;
         magnetizeTarget = mt;
         isMagnetizedTowards = towards;
     }
 
-    public void Demagnetize() {
+    public virtual void Demagnetize() {
         isMagnetized = false;
         magnetizeTarget = null;
         isMagnetizedTowards = false;
     }
 
-    public void SlowMotion() {
+    public virtual void SlowMotion() {
         isSlowMotion = true;
         ballPrevVelocity = rigid.velocity.magnitude;
         ballMinSpeed /= slowMoFactor;
         ballMaxSpeed /= slowMoFactor;
     }
 
-    public void NormalMotion() {
+    public virtual void NormalMotion() {
         isSlowMotion = false;
         ballMinSpeed *= slowMoFactor;
         ballMaxSpeed *= slowMoFactor;
@@ -113,26 +113,26 @@ public class HaggleBall : MonoBehaviour {
     public Color preAngerColor;
 
     // Use this for initialization
-    void Start () {
+    public virtual void Start () {
         rigid = GetComponent<Rigidbody2D>();
-        if( whoMadeMe) {
+        if( whoMadeMe ) {
             paddle = whoMadeMe.GetComponent<Paddle>();
         }
         changeDelay = noChangeTime - noChangeWarnTime;
         FuckOff(speed);
     }
 
-    public void SpeakMoney(float amount) {
+    public virtual void SpeakMoney(float amount) {
         var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
         hitText.GetComponent<FloatTextAway>().SetMoney(amount);
     }
 
-    public void Speak(string text) {
+    public virtual void Speak(string text) {
         var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
         hitText.GetComponent<FloatTextAway>().SetText(text);
     }
 
-    public void AccumulateStaleness() {
+    public virtual void AccumulateStaleness() {
         // Stale Direction Logic
         // Stale flag.
         var deltaTimePayload = new Vector3(0.0f, 0.0f);
@@ -145,15 +145,15 @@ public class HaggleBall : MonoBehaviour {
         timerUnchanged += deltaTimePayload;
     }
 
-    public bool IsTimeToWarn() {
+    public virtual bool IsTimeToWarn() {
         return (timerUnchanged.x > noChangeWarnTime) || (timerUnchanged.y > noChangeWarnTime);
     }
 
-    public bool IsTimeToFuckOff() {
+    public virtual bool IsTimeToFuckOff() {
         return (timerUnchanged.x > noChangeTime) || (timerUnchanged.y > noChangeTime);
     }
 
-    void FixedUpdate() {
+    public virtual void FixedUpdate() {
         if (God.haggleLogic.IsRoundActive()) {
             // Ensure we're active.
             if (rigid.constraints == RigidbodyConstraints2D.FreezeAll) {
@@ -212,29 +212,36 @@ public class HaggleBall : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    public virtual void Update() {
 
     }
 
-    public void GetHurt(float howMuch = 1.0f) {
-        var priceIncrease = ( paddle.GetComboRatio(false) + (God.KineticEnergy(rigid) / forceDownscale) ) * 2;
+    public virtual void GetHurt(float howMuch = 1.0f) {
+        if( paddle) {
+            var priceIncrease = (paddle.GetComboRatio(false) + (God.KineticEnergy(rigid) / forceDownscale)) * 2;
 
-        whoMadeMe.GetComponent<Paddle>().CancelCombo();
+            whoMadeMe.GetComponent<Paddle>().CancelCombo();
 
-        Camera.main.GetComponent<ShakeCamera>().Jostle(priceIncrease);
-        var pos = transform.position;
-        pos.z = -20.0f;
-        SpeakMoney(-priceIncrease);
+            Camera.main.GetComponent<ShakeCamera>().Jostle(priceIncrease);
+            var pos = transform.position;
+            pos.z = -20.0f;
+            SpeakMoney(-priceIncrease);
 
-        God.haggleLogic.AdjustPrice(priceIncrease);
+            God.haggleLogic.AdjustPrice(priceIncrease);
+        }
+        
     }
 
-    void OnCollisionEnter2D(Collision2D coll){
+    public virtual void OnCollisionEnter2D(Collision2D coll){
         if (coll.gameObject.CompareTag("Brick")) {
             var healthLeft = coll.gameObject.GetComponent<BrickScript>().TakeDamage(damageDone);
-            paddle.BumpCombo();
+            var comboRatio = healthLeft;
+            if( paddle ) {
+                paddle.BumpCombo();
 
-            var comboRatio = paddle.GetComboRatio();
+                comboRatio = paddle.GetComboRatio();
+            }
+            
 
             Camera.main.GetComponent<ShakeCamera>().Jostle(comboRatio);
 
@@ -252,7 +259,7 @@ public class HaggleBall : MonoBehaviour {
         }
     }
 
-    public void FuckOff(float howFast = 1.0f, bool doShout = false){
+    public virtual void FuckOff(float howFast = 1.0f, bool doShout = false){
         if( preAngerColor != null ) {
             var sr = GetComponent<SpriteRenderer>();
             sr.color = preAngerColor;
