@@ -12,7 +12,7 @@ GameObject:
   - 212: {fileID: 21298992}
   - 114: {fileID: 11483280}
   m_Layer: 0
-  m_Name: Powerup
+  m_Name: PowerupNope
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   moveRate: 1
   paddle: {fileID: 0}
   baseUses: 3
+  usePerAction: 1
   uses: 0
 --- !u!212 &21298992
 SpriteRenderer:

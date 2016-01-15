@@ -62,6 +62,7 @@ MonoBehaviour:
   usePerAction: 0.5
   uses: 0
   toggleDrain: 0
+  magneticDirection: 1
 --- !u!212 &21259060
 SpriteRenderer:
   m_ObjectHideFlags: 1
