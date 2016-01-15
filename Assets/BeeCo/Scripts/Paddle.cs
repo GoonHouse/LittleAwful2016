@@ -128,7 +128,7 @@ public class Paddle : MonoBehaviour {
                 if (powerup) {
                     powerup.Suicide();
                 }
-                p.SendMessage("Attach", gameObject);
+                p.Attach(gameObject);
             }
         }
     }
