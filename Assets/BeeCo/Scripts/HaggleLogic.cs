@@ -24,6 +24,9 @@ public class HaggleLogic : MonoBehaviour {
 
     public RoundStates theRoundState = RoundStates.Uninitialized;
 
+    public int totalNumberOfBricks = 0;
+    public int numberOfBricks = 0;
+
     public Text statusText;
     public Text priceText;
     public Text timeText;
@@ -66,6 +69,13 @@ public class HaggleLogic : MonoBehaviour {
             }
             God.levelTransition.Platformer(-p);
         });
+
+        var bricks = GameObject.FindGameObjectsWithTag("Brick");
+        foreach (GameObject brick in bricks) {
+            totalNumberOfBricks += 1;
+            numberOfBricks += 1;
+        }
+
         OnWaitForPlayerStart();
     }
 
@@ -123,7 +133,7 @@ public class HaggleLogic : MonoBehaviour {
             time -= Time.fixedDeltaTime;
             SetTimeText(time);
 
-            if( time <= 0.0f ) {
+            if( time <= 0.0f || numberOfBricks == 0 ) {
                 OnRoundFinish();
             }
         }

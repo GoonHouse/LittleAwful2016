@@ -37,4 +37,8 @@ public class BrickScript : MonoBehaviour {
             Destroy(gameObject, damageDelay);
         }
     }
+
+    void OnDestroy() {
+        God.haggleLogic.numberOfBricks -= 1;
+    }
 }
