@@ -75,7 +75,8 @@ public class HaggleLogic : MonoBehaviour {
         retryButton.gameObject.SetActive(false);
         leaveButton.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
-        priceText.text = "BEGINNING NEGOTIATION";
+        priceText.text = "HAGGLE";
+        timeText.text = "CLICK TO DROP PRICES";
     }
 
     public void OnWaitForPlayerFinish() {
