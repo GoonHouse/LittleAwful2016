@@ -31,9 +31,9 @@ public class HaggleBall : MonoBehaviour {
 
     // Magnetization
     public float magnetizeForce = 30000.0f;
-    private bool isMagnetizedTowards = false;
-    private bool isMagnetized = false;
-    private GameObject magnetizeTarget;
+    public bool isMagnetizedTowards = false;
+    public bool isMagnetized = false;
+    public GameObject magnetizeTarget;
 
     // Other stuff.
     public GameObject whoMadeMe;
@@ -132,6 +132,7 @@ public class HaggleBall : MonoBehaviour {
 
                 if (!isWaitingToDisableParticles && (timerUnchanged.x > noChangeWarnTime || timerUnchanged.y > noChangeWarnTime)) {
                     changeDelay = noChangeTime - noChangeWarnTime;
+                    Debug.Log("WHOA BURSTS!");
                     burstEffect.Play();
                     isWaitingToDisableParticles = true;
                     StartCoroutine("StopEffect");
@@ -213,7 +214,7 @@ public class HaggleBall : MonoBehaviour {
 
     public void FuckOff(float howFast = 1.0f, bool doShout = false){
         if( doShout) {
-            Speak("FUCK BEES");
+            Speak("NOPE");
         }
 
         timerUnchanged.x = 0.0f;

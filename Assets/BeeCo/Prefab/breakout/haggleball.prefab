@@ -191,6 +191,9 @@ MonoBehaviour:
   noChangeTime: 3
   noChangeWarnTime: 2
   minMoveSpeed: {x: 0.05, y: 0.05}
+  isGravitized: 0
+  baseGravitizationTime: 3
+  gravitizationTime: 0
   magnetizeForce: 30000
   whoMadeMe: {fileID: 0}
   paddle: {fileID: 0}
@@ -1700,7 +1703,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153790}
   serializedVersion: 2
-  lengthInSec: 5
+  lengthInSec: 1
   startDelay:
     scalar: 0
     maxCurve:
@@ -1738,7 +1741,7 @@ ParticleSystem:
     minMaxState: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   moveWithTransform: 1
@@ -3322,6 +3325,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lengthInSec
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
