@@ -62,6 +62,18 @@ public class God : MonoBehaviour {
         return Instantiate(go, pos, Quaternion.identity) as GameObject;
     }
 
+    public GameObject SpeakMoney(GameObject self, float amount) {
+        var ht = SpawnAt(hitText, self.transform.position);
+        ht.GetComponent<FloatTextAway>().SetMoney(amount);
+        return ht;
+    }
+
+    public GameObject Speak(GameObject self, string text) {
+        var ht = SpawnAt(hitText, self.transform.position);
+        ht.GetComponent<FloatTextAway>().SetText(text);
+        return ht;
+    }
+
     void HandleHolySignal( string msg ) {
         //parse from buffer.
         int msgIndex = msg.IndexOf("PRIVMSG #");
