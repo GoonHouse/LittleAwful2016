@@ -16,13 +16,16 @@ public class HaggleBall : MonoBehaviour {
     public float ballMinSpeed = 5.0f;
     public float ballMaxSpeed = 25.0f;
 
+    // slow motion
+    public bool isSlowMotion = false;
+    public float ballPrevVelocity;
+    public float slowMoFactor = 2.0f;
+
     public GameObject hitTextPrefab;
     public GameObject burstEffect;
 
     // Damage
     public float damageDone = 1.0f;
-
-
 
     #region // Gravitation
     public bool isGravitized = false;
@@ -81,6 +84,21 @@ public class HaggleBall : MonoBehaviour {
         isMagnetized = false;
         magnetizeTarget = null;
         isMagnetizedTowards = false;
+    }
+
+    public void SlowMotion() {
+        isSlowMotion = true;
+        ballPrevVelocity = rigid.velocity.magnitude;
+        ballMinSpeed /= slowMoFactor;
+        ballMaxSpeed /= slowMoFactor;
+    }
+
+    public void NormalMotion() {
+        isSlowMotion = false;
+        ballMinSpeed *= slowMoFactor;
+        ballMaxSpeed *= slowMoFactor;
+        rigid.velocity = rigid.velocity.normalized * ballPrevVelocity;
+        ballPrevVelocity = 0.0f;
     }
 
     // Restlessness Timer
