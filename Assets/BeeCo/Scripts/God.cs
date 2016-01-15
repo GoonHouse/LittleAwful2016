@@ -14,6 +14,9 @@ public class God : MonoBehaviour {
     public static PlayerStats playerStats;
     public static TopSecret topSecret;
 
+    public static Color redFull = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+    public static Color greenFull = new Color(0.0f, 1.0f, 0.0f, 1.0f);
+
     // very important prefab
     public GameObject hitText;
 
@@ -49,6 +52,16 @@ public class God : MonoBehaviour {
     }
 
     // helpful public methods because why not
+    public static GameObject SpawnChild(GameObject go, GameObject self, bool extra = true) {
+        var i = Instantiate(go, self.transform.position, Quaternion.identity) as GameObject;
+        i.transform.SetParent(self.transform, extra);
+        return i;
+    }
+
+    public static GameObject SpawnAt(GameObject go, Vector3 pos) {
+        return Instantiate(go, pos, Quaternion.identity) as GameObject;
+    }
+
     void HandleHolySignal( string msg ) {
         //parse from buffer.
         int msgIndex = msg.IndexOf("PRIVMSG #");

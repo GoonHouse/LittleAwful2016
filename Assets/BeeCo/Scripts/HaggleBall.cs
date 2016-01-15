@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum BallRestlessness {
+    Normal,
+    Puffing,
+    StoppingPuff,
+    DidFuckOff,
+}
+
 public class HaggleBall : MonoBehaviour {
     public float speed = 30.0f;
 
@@ -10,30 +17,25 @@ public class HaggleBall : MonoBehaviour {
     public float ballMaxSpeed = 25.0f;
 
     public GameObject hitTextPrefab;
-    public ParticleSystem burstEffect;
+    public GameObject burstEffect;
 
     // Damage
     public float damageDone = 1.0f;
 
-    // Restlessness Timer
-    public float noChangeTime = 3.0f;
-    public float noChangeWarnTime = 2.0f;
-    public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
-    public Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
-    public Vector3 lastPos;
-    public bool isWaitingToDisableParticles;
-    public float changeDelay;
 
-    // Gravitation
+
+    #region // Gravitation
     public bool isGravitized = false;
     public float baseGravitizationTime = 3.0f;
     public float gravitizationTime;
+    #endregion
 
-    // Magnetization
+    #region // Magnetization
     public float magnetizeForce = 30000.0f;
     public bool isMagnetizedTowards = false;
     public bool isMagnetized = false;
     public GameObject magnetizeTarget;
+    #endregion
 
     // Other stuff.
     public GameObject whoMadeMe;
@@ -81,10 +83,23 @@ public class HaggleBall : MonoBehaviour {
         isMagnetizedTowards = false;
     }
 
+    // Restlessness Timer
+    public BallRestlessness restlessness = BallRestlessness.Normal;
+    public float noChangeTime = 3.0f;
+    public float noChangeWarnTime = 2.0f;
+    public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
+    public Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 lastPos;
+    public bool isWaitingToDisableParticles;
+    public float changeDelay;
+    public Color preAngerColor;
+
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
-        paddle = whoMadeMe.GetComponent<Paddle>();
+        if( whoMadeMe) {
+            paddle = whoMadeMe.GetComponent<Paddle>();
+        }
         changeDelay = noChangeTime - noChangeWarnTime;
         FuckOff(speed);
     }
@@ -99,12 +114,25 @@ public class HaggleBall : MonoBehaviour {
         hitText.GetComponent<FloatTextAway>().SetText(text);
     }
 
-    IEnumerator StopEffect() {
-        if( isWaitingToDisableParticles ) {
-            yield return new WaitForSeconds(changeDelay);
-            isWaitingToDisableParticles = false;
-            burstEffect.Stop();
+    public void AccumulateStaleness() {
+        // Stale Direction Logic
+        // Stale flag.
+        var deltaTimePayload = new Vector3(0.0f, 0.0f);
+        if (God.Round(lastPos.x, 2) == God.Round(transform.localPosition.x, 2)) {
+            deltaTimePayload.x = Time.fixedDeltaTime;
         }
+        if (God.Round(lastPos.y, 2) == God.Round(transform.localPosition.y, 2)) {
+            deltaTimePayload.y = Time.fixedDeltaTime;
+        }
+        timerUnchanged += deltaTimePayload;
+    }
+
+    public bool IsTimeToWarn() {
+        return (timerUnchanged.x > noChangeWarnTime) || (timerUnchanged.y > noChangeWarnTime);
+    }
+
+    public bool IsTimeToFuckOff() {
+        return (timerUnchanged.x > noChangeTime) || (timerUnchanged.y > noChangeTime);
     }
 
     void FixedUpdate() {
@@ -119,26 +147,20 @@ public class HaggleBall : MonoBehaviour {
                     Degravitize();
                 }
 
-                // Stale Direction Logic
-                // Stale flag.
-                var deltaTimePayload = new Vector3(0.0f, 0.0f);
-                if (God.Round(lastPos.x, 2) == God.Round(transform.localPosition.x, 2)) {
-                    deltaTimePayload.x = Time.deltaTime;
-                }
-                if (God.Round(lastPos.y, 2) == God.Round(transform.localPosition.y, 2)) {
-                    deltaTimePayload.y = Time.deltaTime;
-                }
-                timerUnchanged += deltaTimePayload;
+                AccumulateStaleness();
 
-                if (!isWaitingToDisableParticles && (timerUnchanged.x > noChangeWarnTime || timerUnchanged.y > noChangeWarnTime)) {
+                if( restlessness == BallRestlessness.Normal && IsTimeToWarn() ) {
+                    restlessness = BallRestlessness.StoppingPuff;
+                    var sr = GetComponent<SpriteRenderer>();
+                    preAngerColor = sr.color;
+                    sr.color = God.redFull;
                     changeDelay = noChangeTime - noChangeWarnTime;
                     Debug.Log("WHOA BURSTS!");
-                    burstEffect.Play();
-                    isWaitingToDisableParticles = true;
-                    StartCoroutine("StopEffect");
+                    var g = God.SpawnAt(burstEffect, transform.position);
+                    Destroy(g, changeDelay);
                 }
 
-                if (timerUnchanged.x > noChangeTime || timerUnchanged.y > noChangeTime) {
+                if ( restlessness == BallRestlessness.StoppingPuff && IsTimeToFuckOff() ) {
                     FuckOff(1.0f, true);
                 }
 
@@ -173,7 +195,7 @@ public class HaggleBall : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+
     }
 
     public void GetHurt(float howMuch = 1.0f) {
@@ -208,12 +230,17 @@ public class HaggleBall : MonoBehaviour {
 
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){
-            GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
+           // GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
         }
     }
 
     public void FuckOff(float howFast = 1.0f, bool doShout = false){
-        if( doShout) {
+        if( preAngerColor != null ) {
+            var sr = GetComponent<SpriteRenderer>();
+            sr.color = preAngerColor;
+        }
+
+        if ( doShout ) {
             Speak("NOPE");
         }
 
@@ -224,5 +251,6 @@ public class HaggleBall : MonoBehaviour {
         Vector3 v = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) * Vector3.up;
 
         rigid.AddForce(v * speed);
+        restlessness = BallRestlessness.Normal;
     }
 }
