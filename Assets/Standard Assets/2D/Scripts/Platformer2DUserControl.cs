@@ -38,7 +38,7 @@ namespace UnityStandardAssets._2D
             bool crouch = Input.GetKey(KeyCode.LeftControl);
             float h = 0.0f;
             if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
-                float offsetDistance = 5.0f;
+                float offsetDistance = 1.0f;
                 var mp = Input.mousePosition;
                 mp.z = Camera.main.nearClipPlane;
                 var p = Camera.main.ScreenToWorldPoint(mp);

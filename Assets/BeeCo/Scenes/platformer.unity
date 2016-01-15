@@ -6909,6 +6909,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5011502, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
+      propertyPath: m_Mass
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 24782184, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
+      propertyPath: m_Force.y
+      value: 3000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
   m_IsPrefabParent: 0
@@ -14543,7 +14551,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836863229}
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 500
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
