@@ -19,10 +19,10 @@ public class HaggleBall : MonoBehaviour {
     public float noChangeTime = 3.0f;
     public float noChangeWarnTime = 2.0f;
     public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
-    private Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
-    private Vector3 lastPos;
-    private bool isWaitingToDisableParticles;
-    private float changeDelay;
+    public Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 lastPos;
+    public bool isWaitingToDisableParticles;
+    public float changeDelay;
 
     // Gravitation
     public bool isGravitized = false;
