@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: b209607664005a243869fbe47613ccc1
+timeCreated: 1452968461
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MoonJunk_0
+    21300002: MoonJunk_1
+    21300004: MoonJunk_2
+    21300006: MoonJunk_3
+    21300008: MoonJunk_4
+    21300010: MoonJunk_5
+    21300012: MoonJunk_6
+    21300014: MoonJunk_7
+    21300016: MoonJunk_8
+    21300018: MoonJunk_9
+    21300020: MoonJunk_10
+    21300022: MoonJunk_11
+    21300024: MoonJunk_12
+    21300026: MoonJunk_13
+    21300028: MoonJunk_14
+    21300030: MoonJunk_15
+    21300032: MoonJunk_16
+    21300034: MoonJunk_17
+    21300036: MoonJunk_18
+    21300038: MoonJunk_19
+    21300040: MoonJunk_20
+    21300042: MoonJunk_21
+    21300044: MoonJunk_22
+    21300046: MoonJunk_23
+    21300048: MoonJunk_24
+    21300050: MoonJunk_25
+    21300052: MoonJunk_26
+    21300054: MoonJunk_27
+    21300056: MoonJunk_28
+    21300058: MoonJunk_29
+    21300060: MoonJunk_30
+    21300062: MoonJunk_31
+    21300064: MoonJunk_32
+    21300066: MoonJunk_33
+    21300068: MoonJunk_34
+    21300070: MoonJunk_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 128
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MoonJunk_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 496
+        width: 30
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 495
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 491
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_3
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 492
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 484
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_5
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 491
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_6
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 492
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_7
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 488
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 492
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_9
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 492
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_10
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 488
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 480
+        width: 42
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 480
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_13
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 483
+        width: 26
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_14
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 483
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_15
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 480
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_16
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 475
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_17
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 476
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 481
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_19
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 480
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_20
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 464
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_21
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 461
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_22
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 464
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_23
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 458
+        width: 63
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_24
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 392
+        width: 105
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.5, y: 20.5}
+        - {x: -52.5, y: 12.5}
+        - {x: -52.5, y: -20.5}
+        - {x: 52.5, y: -20.5}
+        - {x: 52.5, y: 15.5}
+        - {x: 33.5, y: 20.5}
+    - name: MoonJunk_25
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 395
+        width: 87
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 20.5}
+        - {x: -43.5, y: 4.5}
+        - {x: -43.5, y: -19.5}
+        - {x: -42.5, y: -20.5}
+        - {x: 43.5, y: -20.5}
+        - {x: 43.5, y: 4.5}
+        - {x: 24.5, y: 20.5}
+    - name: MoonJunk_26
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 392
+        width: 126
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 23}
+        - {x: -63, y: 8}
+        - {x: -63, y: -23}
+        - {x: 62, y: -23}
+        - {x: 63, y: -22}
+        - {x: 63, y: 3}
+        - {x: 31, y: 23}
+    - name: MoonJunk_27
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 351
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_28
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 348
+        width: 73
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 355
+        width: 84
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MoonJunk_30
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 340
+        width: 65
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: -16}
+        - {x: 32.5, y: -16}
+        - {x: 32.5, y: 4}
+        - {x: 29.5, y: 14}
+        - {x: 5.5, y: 16}
+        - {x: -17.5, y: 16}
+        - {x: -32.5, y: 3}
+    - name: MoonJunk_31
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 248
+        width: 136
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 26.5}
+        - {x: -68, y: 17.5}
+        - {x: -68, y: -26.5}
+        - {x: 68, y: -26.5}
+        - {x: 68, y: 9.5}
+        - {x: 54, y: 26.5}
+    - name: MoonJunk_32
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 252
+        width: 156
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78, y: -17.5}
+        - {x: 78, y: -7.5}
+        - {x: 75, y: -8.5}
+        - {x: 76, y: -7.5}
+        - {x: 78, y: -2.5}
+        - {x: 58, y: 9.5}
+        - {x: 30, y: 24.5}
+        - {x: -22, y: 24.5}
+        - {x: -47, y: 21.5}
+        - {x: -52, y: 19.5}
+        - {x: -59, y: 14.5}
+        - {x: -78, y: -0.5}
+        - {x: -78, y: -24.5}
+        - {x: 71, y: -24.5}
+        - {x: 74, y: -19.5}
+        - {x: 74, y: -15.5}
+        - {x: 76, y: -18.5}
+    - name: MoonJunk_33
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 83
+        width: 419
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 209.5, y: -7.5}
+        - {x: 199.5, y: 0.5}
+        - {x: 123.5, y: 48.5}
+        - {x: 92.5, y: 63.5}
+        - {x: 63.5, y: 66.5}
+        - {x: 3.5, y: 66.5}
+        - {x: -30.5, y: 63.5}
+        - {x: -95.5, y: 54.5}
+        - {x: -126.5, y: 42.5}
+        - {x: -167.5, y: 11.5}
+        - {x: -208.5, y: 6.5}
+        - {x: -209.5, y: -0.5}
+        - {x: -209.5, y: -61.5}
+        - {x: -208.5, y: -61.5}
+        - {x: -203.5, y: -66.5}
+        - {x: 209.5, y: -66.5}
+    - name: MoonJunk_34
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 230
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 31}
+        - {x: -32, y: 31}
+        - {x: -112, y: 3}
+        - {x: -112, y: -31}
+        - {x: 111, y: -31}
+        - {x: 115, y: -29}
+        - {x: 115, y: -7}
+      - - {x: -115, y: -26}
+        - {x: -112, y: -25}
+        - {x: -112, y: -16}
+        - {x: -114, y: -14}
+        - {x: -115, y: -14}
+    - name: MoonJunk_35
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 7
+        width: 224
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 32.5}
+        - {x: -59, y: 25.5}
+        - {x: -110, y: -4.5}
+        - {x: -112, y: -11.5}
+        - {x: -112, y: -32.5}
+        - {x: 83, y: -32.5}
+        - {x: 112, y: -30.5}
+        - {x: 112, y: 3.5}
+        - {x: 48, y: 32.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
