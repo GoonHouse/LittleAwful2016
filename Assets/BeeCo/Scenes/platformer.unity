@@ -781,65 +781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488820910}
   m_RootOrder: 127
---- !u!1 &125305577
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 125305578}
-  - 212: {fileID: 125305579}
-  m_Layer: 0
-  m_Name: SpaceHelmet_0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &125305578
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 125305577}
-  m_LocalRotation: {x: 0.00000029502806, y: 0.0000000056667218, z: 0.00000032782563,
-    w: 1}
-  m_LocalPosition: {x: 0.0022, y: 0.012, z: 0.1}
-  m_LocalScale: {x: 0.026666664, y: 0.02666667, z: 0.020000001}
-  m_Children: []
-  m_Father: {fileID: 1824893085}
-  m_RootOrder: 0
---- !u!212 &125305579
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 125305577}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 50d7afca80c9eab41a10b2edcf976504, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1 &137041469
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,7 +7039,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 427130, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
@@ -14592,10 +14533,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!4 &1824893085 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 497604, guid: b374ce48488e3ee44865c0d4cc84c396, type: 2}
-  m_PrefabInternal: {fileID: 869170566}
 --- !u!1 &1826520149
 GameObject:
   m_ObjectHideFlags: 0
