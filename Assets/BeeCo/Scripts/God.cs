@@ -19,6 +19,7 @@ public class God : MonoBehaviour {
 
     // very important prefab
     public GameObject hitText;
+    public GameObject bird;
 
     // don't worry
     public int maxNumSignals = 100;
@@ -48,7 +49,18 @@ public class God : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        if( Input.GetKeyDown("h")) {
+            var pos = levelTransition.FindPlayer().transform.position;
+            pos.x += 5;
+            pos.y -= 13;
+            var b = SpawnAt(bird, pos);
+            var bs = b.GetComponent<BirdScript>();
+            bs.startPos = pos;
+            b.transform.position = pos;
+            pos.y += 10;
+            bs.endPos = pos;
+            bs.shouldBird = true;
+        }
     }
 
     // helpful public methods because why not
