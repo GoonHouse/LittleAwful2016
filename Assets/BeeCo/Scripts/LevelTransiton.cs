@@ -14,6 +14,10 @@ public class LevelTransiton : MonoBehaviour {
 	
 	}
 
+    public void Quit() {
+        Application.Quit();
+    }
+
     public void StartGamePlatformer(string nextSceneName = "platformer") {
         SceneManager.LoadScene(nextSceneName);
     }
