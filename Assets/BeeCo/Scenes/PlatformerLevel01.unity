@@ -5081,7 +5081,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 23329672, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 97.616
+      value: 92.835
       objectReference: {fileID: 0}
     - target: {fileID: 23329672, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_ConnectedAnchor.y
@@ -5093,7 +5093,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 23326622, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 97.616
+      value: 92.835
       objectReference: {fileID: 0}
     - target: {fileID: 23326622, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_ConnectedAnchor.y
@@ -5203,6 +5203,14 @@ Prefab:
         without realizing it. Through a peculiar turn of events, the version of GNU
         which is widely used today is often called Linux, '
       objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: levelPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: theLevel
+      value: 
+      objectReference: {fileID: 185514, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
   m_IsPrefabParent: 0

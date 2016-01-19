@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class LlamaNPC : MonoBehaviour {
     public GameObject textPrefab;
-	public GameObject levelPrefab;
     public Text textObj;
     public GameObject prevButton;
     public GameObject nextButton;
