@@ -6547,7 +6547,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 23.322546
+      value: 39.5
       objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8727,6 +8727,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 90.24
@@ -8922,7 +8926,23 @@ Prefab:
     - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: theLevel
       value: 
-      objectReference: {fileID: 185514, guid: b2f0065074999dd42aa7ae6694142091, type: 2}
+      objectReference: {fileID: 185514, guid: 55ef7051ff64c1a4d847f26726744a0b, type: 2}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: nextSceneName
+      value: PlatformerLevel02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[1]
+      value: May I interest you in some fine foods today?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[2]
+      value: God damn I am so excited for VR.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[0]
+      value: Welcome friend!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
   m_IsPrefabParent: 0
@@ -13095,6 +13115,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488820910}
   m_RootOrder: 158
+--- !u!1001 &1711225278
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 64.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.6362983
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439008, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_Text
+      value: 'Market '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[1]
+      value: Be careful as not all Llama play fair.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[2]
+      value: Tlachti or 'Haggle Ball' as it is now know is a brutal game played by
+        vicious Llama.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[0]
+      value: Some Llamas have special house rules.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[3]
+      value: Be careful in the market when you haggle, it may cost you dearly.
+      objectReference: {fileID: 0}
+    - target: {fileID: 151700, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_Name
+      value: TalkingSign (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1714496370
 GameObject:
   m_ObjectHideFlags: 0
