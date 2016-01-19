@@ -5,6 +5,7 @@ public class Parallax : MonoBehaviour {
 
 	public Transform[] backgrounds;
 	public float smoothing;
+	public float factor = 1f;
 	private float[] parallaxScales;
 	private Transform camera;
 	private Vector3 previousCameraPosition;
@@ -23,11 +24,11 @@ public class Parallax : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		for (int i = 0; i < backgrounds.Length; i++) {
-			float parallax = (previousCameraPosition.x - camera.position.x) * parallaxScales [i];
+			float parallax = (previousCameraPosition.x - camera.position.x) * parallaxScales [i] * factor;
 			float backgroundTargetPositionX = backgrounds [i].position.x + parallax;
 			Vector3 backgroundTargetPosition = new Vector3 (backgroundTargetPositionX, backgrounds [i].position.y, backgrounds [i].position.z);
 
-			backgrounds [i].position = Vector3.Lerp (backgrounds [i].position, backgroundTargetPosition, smoothing * Time.smoothDeltaTime);		
+			backgrounds [i].position = Vector3.Lerp (backgrounds [i].position, backgroundTargetPosition, smoothing * Time.deltaTime);		
 		}
 		previousCameraPosition = camera.position;
 	}
