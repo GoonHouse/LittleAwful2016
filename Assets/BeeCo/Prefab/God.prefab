@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitText: {fileID: 120042, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
+  bird: {fileID: 123700, guid: 7f81ccde8f5469d4096dc2041770c9a6, type: 2}
   maxNumSignals: 100
   holySignals: []
 --- !u!114 &11416740
@@ -148,6 +149,7 @@ MonoBehaviour:
   - 50
   - 9
   - 40
+  npcsThatSold: 01
 --- !u!114 &11470844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,12 +163,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPrice: 5
   baseTimeLimit: 45
-  baseBeginDelay: 3
   price: 0
   time: 0
-  beginDelay: 3
   basePriceReduction: 0.15
   theRoundState: 0
+  totalNumberOfBricks: 0
+  numberOfBricks: 0
+  statusText: {fileID: 0}
   priceText: {fileID: 0}
   timeText: {fileID: 0}
   continueButton: {fileID: 0}
@@ -183,6 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d534f107a84c944f951f0b535ec4dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oauth: 
+  nickName: 
+  channelName: 
 --- !u!114 &11499260
 MonoBehaviour:
   m_ObjectHideFlags: 1
