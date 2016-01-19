@@ -14,8 +14,8 @@ public class LevelTransiton : MonoBehaviour {
 	
 	}
 
-    public void Platformer(float adjustMoney = 0.0f) {
-        SceneManager.LoadScene("platformer");
+    public void Platformer(float adjustMoney = 0.0f, string nextSceneName = "platformer") {
+        SceneManager.LoadScene(nextSceneName);
         God.playerStats.moneyAdjust = adjustMoney;
     }
 
@@ -23,7 +23,7 @@ public class LevelTransiton : MonoBehaviour {
         return GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void BreakOut(float price, float time, GameObject theLevel) {
+    public void BreakOut(float price, float time, GameObject theLevel, string nextSceneName) {
         if (SceneManager.GetActiveScene().name != "breakout") {
             God.playerStats.lastPos = FindPlayer().transform.position;
             God.playerStats.lastCameraPos = Camera.main.transform.position;
@@ -34,5 +34,6 @@ public class LevelTransiton : MonoBehaviour {
         God.haggleLogic.startPrice = price;
         God.haggleLogic.baseTimeLimit = time;
         God.haggleLogic.theLevel = theLevel;
+        God.haggleLogic.nextSceneName = nextSceneName;
     }
 }
