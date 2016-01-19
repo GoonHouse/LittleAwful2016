@@ -17,6 +17,7 @@ public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
 	public GameObject level;
     public float baseTimeLimit = 45.00f;
+    public GameObject theLevel;
 
     public float price;
     public float time;
@@ -56,7 +57,7 @@ public class HaggleLogic : MonoBehaviour {
         retryButton = GameObject.Find("Retry").GetComponent<Button>();
         retryButton.onClick.AddListener(delegate {
             theRoundState = RoundStates.Uninitialized;
-            God.levelTransition.BreakOut(startPrice, baseTimeLimit);
+            God.levelTransition.BreakOut(startPrice, baseTimeLimit, theLevel);
         });
         leaveButton = GameObject.Find("Leave").GetComponent<Button>();
         leaveButton.onClick.AddListener(delegate {
@@ -76,6 +77,8 @@ public class HaggleLogic : MonoBehaviour {
             totalNumberOfBricks += 1;
             numberOfBricks += 1;
         }
+
+        God.SpawnAt(theLevel, Vector3.zero);
 
         OnWaitForPlayerStart();
     }
