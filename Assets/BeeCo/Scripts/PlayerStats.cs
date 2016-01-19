@@ -9,16 +9,12 @@ public class PlayerStats : MonoBehaviour {
     public Vector3 lastCameraPos = Vector3.zero;
     public float moneyAdjust = 0f;
 
-    public List<GameObject> inventory;
     public List<float> basePrices;
     public List<float> pricesPaid;
     public List<bool> npcsThatSold;
 
     // Use this for initialization
     void Start () {
-        if( inventory == null) {
-            inventory = new List<GameObject>();
-        }
         if (basePrices == null) {
             basePrices = new List<float>();
         }
@@ -55,8 +51,7 @@ public class PlayerStats : MonoBehaviour {
         }
     }
 
-    public void AddItemToInventory(GameObject obj, float basePrice, float paidPrice) {
-        inventory.Add(obj);
+    public void AddItemToInventory(float basePrice, float paidPrice) {
         basePrices.Add(basePrice);
         pricesPaid.Add(paidPrice);
     }

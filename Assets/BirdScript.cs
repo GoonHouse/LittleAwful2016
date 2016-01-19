@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BirdScript : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class BirdScript : MonoBehaviour {
     public bool shouldBird = false;
 
     public GameObject speech;
+    public Text words;
 
 	// Use this for initialization
 	void Start () {
