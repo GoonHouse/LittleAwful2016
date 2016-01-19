@@ -87,7 +87,7 @@ public class LlamaNPC : MonoBehaviour {
             StopCoroutine("Talk");
         }
 
-        AbsorbSignals();
+        //AbsorbSignals();
 
         isTalking = true;
         textSaidPos = 0;
