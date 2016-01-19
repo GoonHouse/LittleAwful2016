@@ -17,6 +17,7 @@ public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
     public float baseTimeLimit = 45.00f;
     public GameObject theLevel;
+    public string nextSceneName = "platformer";
 
     public float price;
     public float time;
@@ -56,11 +57,7 @@ public class HaggleLogic : MonoBehaviour {
         retryButton = GameObject.Find("Retry").GetComponent<Button>();
         retryButton.onClick.AddListener(delegate {
             theRoundState = RoundStates.Uninitialized;
-            God.levelTransition.BreakOut(startPrice, baseTimeLimit, theLevel);
-        });
-        leaveButton = GameObject.Find("Leave").GetComponent<Button>();
-        leaveButton.onClick.AddListener(delegate {
-            God.levelTransition.Platformer();
+            God.levelTransition.BreakOut(startPrice, baseTimeLimit, theLevel, nextSceneName);
         });
         continueButton = GameObject.Find("Continue").GetComponent<Button>();
         continueButton.onClick.AddListener(delegate {
@@ -68,7 +65,7 @@ public class HaggleLogic : MonoBehaviour {
             if (God.playerStats.money >= price) {
                 p = price;
             }
-            God.levelTransition.Platformer(-p);
+            God.levelTransition.Platformer(-p, nextSceneName);
         });
 
         God.SpawnAt(theLevel, new Vector3(8.5f, 0.5f));
@@ -86,7 +83,6 @@ public class HaggleLogic : MonoBehaviour {
     public void OnWaitForPlayerStart() {
         theRoundState = RoundStates.WaitForPlayerStarted;
         retryButton.gameObject.SetActive(false);
-        leaveButton.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
         priceText.text = "HAGGLE";
         timeText.text = "CLICK TO DROP PRICES";
@@ -108,7 +104,6 @@ public class HaggleLogic : MonoBehaviour {
     public void OnRoundFinish() {
         theRoundState = RoundStates.RoundFinished;
 
-        leaveButton.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
 
         if (God.playerStats.money >= price) {

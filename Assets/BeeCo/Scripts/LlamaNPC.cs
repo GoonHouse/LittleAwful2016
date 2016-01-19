@@ -12,6 +12,7 @@ public class LlamaNPC : MonoBehaviour {
     public List<AudioClip> talkSounds;
 
     public GameObject theLevel;
+    public string nextSceneName;
 
     public float startPrice = 52.69f;
     public float gameTime = 60.0f;
@@ -139,6 +140,6 @@ public class LlamaNPC : MonoBehaviour {
     }
 
     public void BeginHaggling() {
-        God.levelTransition.BreakOut(startPrice, gameTime, theLevel);
+        God.levelTransition.BreakOut(startPrice, gameTime, theLevel, nextSceneName);
     }
 }
