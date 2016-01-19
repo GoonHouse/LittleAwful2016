@@ -4072,11 +4072,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490674, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -416.8
+      value: -262
       objectReference: {fileID: 0}
     - target: {fileID: 22490674, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 833.6
+      value: 524
       objectReference: {fileID: 0}
     - target: {fileID: 175006, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_IsActive
@@ -4084,7 +4084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22414690, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.78096306
+      value: 0.6914753
       objectReference: {fileID: 0}
     - target: {fileID: 22414690, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_AnchorMax.x
@@ -4232,6 +4232,14 @@ Prefab:
     - target: {fileID: 11406388, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417450, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
+      propertyPath: m_Text
+      value: "<size=60>The Team</size> \n<color=teal><i><size=40>Beeconomic Advisors</size></i></color>\n\n<color=navy><size=35>TomR</size></color>\n2D
+        Art, Visual Design\n<color=navy><size=35>MockingQuantum</size></color>\nSound
+        Design, Sound Scripts\n<color=navy><size=30>EntranceJew</size></color>\nProgramming\n<color=navy><size=30>Noyemi</size></color>\nMusic\n\n<size=50>Special
+        Thanks</size>\n<color=teal><i><size=40>From EntranceJew</size></i></color>\n<color=navy><size=35>EntranceJew</size></color>\nFor
+        Entrance & Jew."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
