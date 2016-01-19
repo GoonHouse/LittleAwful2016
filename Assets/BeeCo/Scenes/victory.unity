@@ -7150,6 +7150,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11414004, guid: 27d32e830752e8041a3576cdfaf5e304, type: 2}
+      propertyPath: thingsToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400666, guid: 27d32e830752e8041a3576cdfaf5e304, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.61
@@ -7243,6 +7247,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.241
       objectReference: {fileID: 0}
+    - target: {fileID: 11414004, guid: 27d32e830752e8041a3576cdfaf5e304, type: 2}
+      propertyPath: thingsToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27d32e830752e8041a3576cdfaf5e304, type: 2}
   m_IsPrefabParent: 0
@@ -11802,11 +11810,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11416740, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
       propertyPath: basePrices.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11416740, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
       propertyPath: pricesPaid.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 422482, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
       propertyPath: m_LocalPosition.x

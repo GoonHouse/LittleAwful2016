@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class StewPot : MonoBehaviour {
     public float timeSpawnDelay = 2.0f;
@@ -9,6 +10,7 @@ public class StewPot : MonoBehaviour {
     public int spawnIndex = 0;
 
     public GameObject spawnPoint;
+    public List<GameObject> thingsToSpawn;
 
     public float totalCost;
     public float totalSpent;
@@ -30,14 +32,15 @@ public class StewPot : MonoBehaviour {
 	void FixedUpdate () {
         timeSpawn -= Time.fixedDeltaTime;
 
-        if( timeSpawn < 0.0f && spawnIndex <= God.playerStats.inventory.Count - 1 ) {
+        if( timeSpawn < 0.0f && spawnIndex <= God.playerStats.pricesPaid.Count - 1 ) {
             Spawn();
         }
 	}
 
     public void Spawn() {
         timeSpawn = timeSpawnDelay;
-        var foodItem = (GameObject)Instantiate(God.playerStats.inventory[spawnIndex], spawnPoint.transform.position, Quaternion.identity);
+        var ind = Random.Range(0, thingsToSpawn.Count - 1);
+        God.SpawnAt(thingsToSpawn[ind], spawnPoint.transform.position);
         spawnIndex++;
     }
 

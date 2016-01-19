@@ -65,6 +65,7 @@ public class HaggleLogic : MonoBehaviour {
             if (God.playerStats.money >= price) {
                 p = price;
             }
+            God.playerStats.AddItemToInventory(startPrice, price);
             God.levelTransition.Platformer(-p, nextSceneName);
         });
 

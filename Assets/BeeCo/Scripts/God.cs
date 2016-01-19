@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 /*
     While most people will discourage the use of god objects, this one exists so that
@@ -50,6 +52,14 @@ public class God : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if( Input.GetKeyDown("h")) {
+            Bird("hail satan");
+        }
+    }
+
+    public void Bird(string msg) {
+        if (SceneManager.GetActiveScene().name != "breakout" ||
+            SceneManager.GetActiveScene().name == "breakout") {
+
             var pos = levelTransition.FindPlayer().transform.position;
             pos.x += 5;
             pos.y -= 13;
@@ -60,6 +70,7 @@ public class God : MonoBehaviour {
             pos.y += 10;
             bs.endPos = pos;
             bs.shouldBird = true;
+            bs.words.text = msg;
         }
     }
 
@@ -99,6 +110,8 @@ public class God : MonoBehaviour {
 
         //add new message.
         holySignals.Add(user + ": " + msgString);
+
+        Bird(user + ": " + msgString);
     }
 
     public string PopSignal() {
