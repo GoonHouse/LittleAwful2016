@@ -57,8 +57,9 @@ public class God : MonoBehaviour {
     }
 
     public void Bird(string msg) {
-        if (SceneManager.GetActiveScene().name != "breakout" ||
-            SceneManager.GetActiveScene().name == "breakout") {
+        if (SceneManager.GetActiveScene().name != "breakout" &&
+            SceneManager.GetActiveScene().name != "title" &&
+            SceneManager.GetActiveScene().name != "victory") {
 
             var pos = levelTransition.FindPlayer().transform.position;
             pos.x += 5;
@@ -69,7 +70,6 @@ public class God : MonoBehaviour {
             b.transform.position = pos;
             pos.y += 10;
             bs.endPos = pos;
-            bs.shouldBird = true;
             bs.words.text = msg;
         }
     }
