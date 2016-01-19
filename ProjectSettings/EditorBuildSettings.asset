@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/BeeCo/Scenes/platformer.unity
   - enabled: 1
     path: Assets/BeeCo/Scenes/PlatformerLevel01.unity
+  - enabled: 1
+    path: Assets/BeeCo/Scenes/victory.unity

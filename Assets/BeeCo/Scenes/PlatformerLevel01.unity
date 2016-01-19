@@ -8987,7 +8987,7 @@ Prefab:
       objectReference: {fileID: 185514, guid: 55ef7051ff64c1a4d847f26726744a0b, type: 2}
     - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: nextSceneName
-      value: PlatformerLevel02
+      value: victory
       objectReference: {fileID: 0}
     - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: textsToSay.Array.data[1]
