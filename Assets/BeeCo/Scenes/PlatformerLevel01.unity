@@ -6541,6 +6541,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 23.322546
@@ -6572,6 +6576,22 @@ Prefab:
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439008, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_Text
+      value: 'Market '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[1]
+      value: Llamas do not have set prices, instead they play an ancient sport.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: textsToSay.Array.data[0]
+      value: The Market is where Llamas go to buy ingredients for their meals.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
