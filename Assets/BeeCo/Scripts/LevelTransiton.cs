@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class LevelTransiton : MonoBehaviour {
+
+    public AudioMixerSnapshot maingame;
+    public AudioMixerSnapshot ballgame;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +27,7 @@ public class LevelTransiton : MonoBehaviour {
     }
 
     public void Platformer(float adjustMoney = 0.0f, string nextSceneName = "platformer") {
+        maingame.TransitionTo(1.0f);
         SceneManager.LoadScene(nextSceneName);
         God.playerStats.moneyAdjust = adjustMoney;
     }
@@ -37,6 +42,7 @@ public class LevelTransiton : MonoBehaviour {
             God.playerStats.lastCameraPos = Camera.main.transform.position;
         }
 
+        ballgame.TransitionTo(0.5f);
         SceneManager.LoadScene("breakout");
 
         God.haggleLogic.startPrice = price;
