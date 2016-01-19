@@ -24,6 +24,8 @@ public class HaggleBall : MonoBehaviour {
     public GameObject hitTextPrefab;
     public GameObject burstEffect;
 
+    public AudioSource brickhit;
+
     // Damage
     public float damageDone = 1.0f;
 
@@ -236,13 +238,13 @@ public class HaggleBall : MonoBehaviour {
         if (coll.gameObject.CompareTag("Brick")) {
             var healthLeft = coll.gameObject.GetComponent<BrickScript>().TakeDamage(damageDone);
             var comboRatio = healthLeft;
+            brickhit.Play();
             if( paddle ) {
                 paddle.BumpCombo();
 
                 comboRatio = paddle.GetComboRatio();
             }
             
-
             Camera.main.GetComponent<ShakeCamera>().Jostle(comboRatio);
 
             var priceDrop = comboRatio + (God.KineticEnergy(rigid) / forceDownscale);

@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2320838}
   - 61: {fileID: 6194364}
   - 114: {fileID: 11480438}
+  - 82: {fileID: 8258728}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Brick
@@ -78,6 +79,81 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!82 &8258728
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162250}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24392940, guid: d5ae5dddbf4af4147b9c04bfd9625dc9,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: a40db0a6817b44e418ba6604cec56d31, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11480438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,11 +165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302a66e892bfc7418ee00f7d11f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 3
   health: 3
   materials:
   - {fileID: 2100000, guid: 093e91f41ebeb9c46bcbbc6e4b476bf7, type: 2}
   - {fileID: 2100000, guid: e7f38f5b8bdf93b47b2b92415aad68fb, type: 2}
   - {fileID: 2100000, guid: 151a0a2420dcc324db92a49852f8184a, type: 2}
+  damageDelay: 0.05
+  brickhit: {fileID: 8258728}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -141,6 +220,35 @@ Prefab:
       propertyPath: m_UseLightProbes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a40db0a6817b44e418ba6604cec56d31, type: 3}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24392940, guid: d5ae5dddbf4af4147b9c04bfd9625dc9,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: brickhit
+      value: 
+      objectReference: {fileID: 8258728}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162250}
