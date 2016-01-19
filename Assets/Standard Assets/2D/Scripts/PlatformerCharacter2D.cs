@@ -22,6 +22,7 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        public AudioSource jumpsound; 
 
         private void Awake()
         {
@@ -108,10 +109,11 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
 			var jumper = GetComponent<ConstantForce2D> ();
 			if (m_Grounded && jump && m_Anim.GetBool ("Ground") && m_JumpTimer <= 0.0f) {
-				// Add a vertical force to the player.
-				m_JumpTimer = m_JumpDelay;
+                // Add a vertical force to the player.
+              	m_JumpTimer = m_JumpDelay;
 				m_Grounded = false;
-				m_Anim.SetBool ("Ground", false);
+                jumpsound.Play();
+                m_Anim.SetBool ("Ground", false);
 				//m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 				jumper.enabled = true;
 			}

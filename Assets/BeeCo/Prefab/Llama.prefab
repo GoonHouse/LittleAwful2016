@@ -84,6 +84,7 @@ GameObject:
   - 58: {fileID: 5875678}
   - 247: {fileID: 24782184}
   - 114: {fileID: 11443474}
+  - 82: {fileID: 8221524}
   m_Layer: 9
   m_Name: Llama
   m_TagString: Player
@@ -1399,7 +1400,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.91, y: 1.809, z: -5}
+  m_LocalPosition: {x: 0.2641706, y: -3.135, z: -5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 489154}
@@ -2225,6 +2226,81 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02}
+--- !u!82 &8221524
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110834}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24392940, guid: d5ae5dddbf4af4147b9c04bfd9625dc9,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 64fd2ceed639ed8449385397e645d1f0, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9505548
 Animator:
   serializedVersion: 3
@@ -2253,7 +2329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e149c793d5cd8840b1197fe442c58c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTextPrefab: {fileID: 120042, guid: a63765d6865b6594ca6f51a22aa20ab4, type: 2}
 --- !u!114 &11453462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2278,13 +2353,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxSpeed: 5
   m_JumpForce: 0
-  m_CrouchSpeed: 0.36
+  m_CrouchSpeed: 1
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
   m_JumpTimer: 0
   m_JumpDelay: 0.1
+  jumpsound: {fileID: 8221524}
 --- !u!137 &13717720
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2600,7 +2676,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.000066240784, y: 0.058544632}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.445426
+  m_Distance: 1.4454262
   m_DampingRatio: 1
   m_Frequency: 1.6
 --- !u!231 &23115062
@@ -2619,7 +2695,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.0181809, y: 0.0022286214}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.7865475
+  m_Distance: 0.7865474
   m_DampingRatio: 1
   m_Frequency: 1.2
 --- !u!231 &23122514
@@ -2638,7 +2714,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.18594407
+  m_Distance: 0.18594386
   m_DampingRatio: 1
   m_Frequency: 1.5
 --- !u!231 &23130816
@@ -2657,7 +2733,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.042553432, y: 0.033280678}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.5050805
+  m_Distance: 1.5050803
   m_DampingRatio: 1
   m_Frequency: 1.6
 --- !u!231 &23149788
@@ -2676,7 +2752,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.044874858, y: 0.016140165}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9710379
+  m_Distance: 0.9710386
   m_DampingRatio: 1
   m_Frequency: 1.5
 --- !u!231 &23155234
@@ -2695,7 +2771,7 @@ SpringJoint2D:
   m_Anchor: {x: 0.00027111886, y: 0.00018072141}
   m_ConnectedAnchor: {x: 0.0004522165, y: 0.05702577}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.381706
+  m_Distance: 1.3817058
   m_DampingRatio: 0.1
   m_Frequency: 1.2
 --- !u!231 &23158694
@@ -2714,7 +2790,7 @@ SpringJoint2D:
   m_Anchor: {x: 0.0007053506, y: -0.00015698608}
   m_ConnectedAnchor: {x: -2.44841, y: 1.7102003}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.60759264
+  m_Distance: 0.6075926
   m_DampingRatio: 1
   m_Frequency: 3
 --- !u!231 &23164572
@@ -2733,7 +2809,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.4445305, y: 0.43673182}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.006687924
+  m_Distance: 0.0066880626
   m_DampingRatio: 1
   m_Frequency: 1000
 --- !u!231 &23164724
@@ -2752,7 +2828,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.000066240784, y: 0.058544632}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.4454237
+  m_Distance: 1.4454234
   m_DampingRatio: 1
   m_Frequency: 1.5
 --- !u!231 &23168272
@@ -2771,7 +2847,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.042850573, y: 0.008840401}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.337547
+  m_Distance: 1.3375466
   m_DampingRatio: 1
   m_Frequency: 1.5
 --- !u!231 &23171004
@@ -2790,7 +2866,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.042850573, y: 0.008840401}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.3862873
+  m_Distance: 1.3862871
   m_DampingRatio: 1
   m_Frequency: 1.4
 --- !u!231 &23172242
@@ -2828,7 +2904,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.000066240784, y: 0.058544632}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.4454237
+  m_Distance: 1.4454238
   m_DampingRatio: 1
   m_Frequency: 1.6
 --- !u!231 &23176164
@@ -2847,7 +2923,7 @@ SpringJoint2D:
   m_Anchor: {x: 0.000083579595, y: -0.0000986551}
   m_ConnectedAnchor: {x: 1.167944, y: 6.683128}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.568012
+  m_Distance: 1.5680118
   m_DampingRatio: 0.1
   m_Frequency: 1.1
 --- !u!231 &23179922
@@ -2866,7 +2942,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.000066240784, y: 0.058544632}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.445425
+  m_Distance: 1.4454253
   m_DampingRatio: 1
   m_Frequency: 1.4
 --- !u!232 &23200846
@@ -2885,7 +2961,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.7499999
+  m_Distance: 0.75
   m_MaxDistanceOnly: 0
 --- !u!232 &23203742
 DistanceJoint2D:
@@ -2903,7 +2979,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.99999905
+  m_Distance: 0.9999998
   m_MaxDistanceOnly: 0
 --- !u!232 &23214852
 DistanceJoint2D:
@@ -2921,7 +2997,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.47398186
+  m_Distance: 0.4739819
   m_MaxDistanceOnly: 0
 --- !u!232 &23215952
 DistanceJoint2D:
@@ -2957,7 +3033,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0.00018078677, y: 0.00027108518}
   m_ConnectedAnchor: {x: 0.0028733895, y: 0.0043240157}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.68150264
+  m_Distance: 0.6815029
   m_MaxDistanceOnly: 0
 --- !u!232 &23219748
 DistanceJoint2D:
@@ -2975,7 +3051,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.3180204
+  m_Distance: 0.31802028
   m_MaxDistanceOnly: 0
 --- !u!232 &23231610
 DistanceJoint2D:
@@ -3029,7 +3105,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.7499999
+  m_Distance: 0.74999976
   m_MaxDistanceOnly: 0
 --- !u!232 &23253386
 DistanceJoint2D:
@@ -3065,7 +3141,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.75000024
+  m_Distance: 0.75
   m_MaxDistanceOnly: 0
 --- !u!232 &23271760
 DistanceJoint2D:
@@ -3153,7 +3229,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0015475232, y: -0.0060999887}
+  m_ConnectedAnchor: {x: 0.0015475184, y: -0.006099997}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3176,7 +3252,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0013000006, y: 0.004400007}
+  m_ConnectedAnchor: {x: 0.0013000006, y: 0.0044}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3199,7 +3275,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.007694138, y: 0.0100272335}
-  m_ConnectedAnchor: {x: 0.005304728, y: -0.002870999}
+  m_ConnectedAnchor: {x: 0.005304728, y: -0.0028710049}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3222,7 +3298,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.00019999642, y: 0.006800005}
+  m_ConnectedAnchor: {x: -0.00019999642, y: 0.0068000015}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3245,7 +3321,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0024761877, y: -0.008799994}
+  m_ConnectedAnchor: {x: 0.0024761877, y: -0.008800004}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
