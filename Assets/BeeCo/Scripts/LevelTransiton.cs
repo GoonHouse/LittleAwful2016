@@ -14,6 +14,10 @@ public class LevelTransiton : MonoBehaviour {
 	
 	}
 
+    public void StartGamePlatformer(string nextSceneName = "platformer") {
+        SceneManager.LoadScene(nextSceneName);
+    }
+
     public void Platformer(float adjustMoney = 0.0f, string nextSceneName = "platformer") {
         SceneManager.LoadScene(nextSceneName);
         God.playerStats.moneyAdjust = adjustMoney;
