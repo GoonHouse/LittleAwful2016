@@ -71,13 +71,13 @@ public class HaggleLogic : MonoBehaviour {
             God.levelTransition.Platformer(-p);
         });
 
+        God.SpawnAt(theLevel, Vector3.zero);
+
         var bricks = GameObject.FindGameObjectsWithTag("Brick");
         foreach (GameObject brick in bricks) {
             totalNumberOfBricks += 1;
             numberOfBricks += 1;
         }
-
-        God.SpawnAt(theLevel, Vector3.zero);
 
         OnWaitForPlayerStart();
     }
