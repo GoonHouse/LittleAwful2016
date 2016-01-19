@@ -255,7 +255,7 @@ public class HaggleBall : MonoBehaviour {
 
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){
-           // GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
+            GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
         }
     }
 
