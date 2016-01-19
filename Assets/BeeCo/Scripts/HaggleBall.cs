@@ -26,6 +26,8 @@ public class HaggleBall : MonoBehaviour {
 
     public AudioSource brickhit;
     public AudioSource paddlehit;
+    public AudioSource nope;
+    public AudioSource hurtsound;
 
     // Damage
     public float damageDone = 1.0f;
@@ -231,6 +233,7 @@ public class HaggleBall : MonoBehaviour {
             SpeakMoney(-priceIncrease);
 
             God.haggleLogic.AdjustPrice(priceIncrease);
+            hurtsound.Play();
         }
         
     }
@@ -272,6 +275,7 @@ public class HaggleBall : MonoBehaviour {
 
         if ( doShout ) {
             Speak("NOPE");
+            nope.Play();
         }
 
         timerUnchanged.x = 0.0f;
