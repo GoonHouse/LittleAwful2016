@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum BallRestlessness {
     Normal,
@@ -26,6 +27,7 @@ public class HaggleBall : MonoBehaviour {
 
     public AudioSource brickhit;
     public AudioSource paddlehit;
+    public List<AudioClip> paddleSounds;
     public AudioSource nope;
     public AudioSource hurtsound;
 
@@ -263,7 +265,7 @@ public class HaggleBall : MonoBehaviour {
             GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
         } else if(coll.gameObject.CompareTag("Player"))
         {
-            paddlehit.Play();
+            paddlehit.PlayOneShot(paddleSounds[Random.Range(0, paddleSounds.Count - 1)]);
         }
     }
 
