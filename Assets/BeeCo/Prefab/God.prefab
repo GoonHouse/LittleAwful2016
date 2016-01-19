@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11416740}
   - 82: {fileID: 8235468}
   - 114: {fileID: 11474346}
+  - 82: {fileID: 8244616}
   m_Layer: 0
   m_Name: God
   m_TagString: Untagged
@@ -41,10 +42,11 @@ AudioSource:
   m_GameObject: {fileID: 109364}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24338634, guid: d5ae5dddbf4af4147b9c04bfd9625dc9,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 36c49b3b0a9fa74419b68c8feba7d28b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.213
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -95,7 +97,82 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &8244616
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109364}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24390466, guid: d5ae5dddbf4af4147b9c04bfd9625dc9,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9bbff573e8ab9e844b670c2bfa90b737, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
     m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -192,6 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457425fac9355cc4b9b6236229db592b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maingame: {fileID: 24500003, guid: d5ae5dddbf4af4147b9c04bfd9625dc9, type: 2}
+  ballgame: {fileID: 24545476, guid: d5ae5dddbf4af4147b9c04bfd9625dc9, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
