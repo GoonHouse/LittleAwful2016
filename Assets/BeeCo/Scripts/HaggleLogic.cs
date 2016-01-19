@@ -15,6 +15,7 @@ public enum RoundStates {
 
 public class HaggleLogic : MonoBehaviour {
     public float startPrice = 5.0f;
+	public GameObject level;
     public float baseTimeLimit = 45.00f;
     public GameObject theLevel;
 
