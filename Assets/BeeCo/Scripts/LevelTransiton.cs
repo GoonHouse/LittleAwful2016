@@ -23,7 +23,7 @@ public class LevelTransiton : MonoBehaviour {
         return GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void BreakOut(float price, float time) {
+    public void BreakOut(float price, float time, GameObject theLevel) {
         if (SceneManager.GetActiveScene().name != "breakout") {
             God.playerStats.lastPos = FindPlayer().transform.position;
             God.playerStats.lastCameraPos = Camera.main.transform.position;
@@ -33,5 +33,6 @@ public class LevelTransiton : MonoBehaviour {
 
         God.haggleLogic.startPrice = price;
         God.haggleLogic.baseTimeLimit = time;
+        God.haggleLogic.theLevel = theLevel;
     }
 }
