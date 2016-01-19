@@ -2633,6 +2633,10 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &554223750 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109364, guid: 046502e4badaa8d469c3afaf15dd0ae5, type: 2}
+  m_PrefabInternal: {fileID: 2141281059}
 --- !u!1 &572358112
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,8 +3371,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141281060}
-        m_MethodName: Platformer
-        m_Mode: 4
+        m_MethodName: StartGamePlatformer
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4517,8 +4521,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2141281060}
-        m_MethodName: Quit
+      - m_Target: {fileID: 554223750}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
