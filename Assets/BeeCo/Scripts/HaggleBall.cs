@@ -25,6 +25,7 @@ public class HaggleBall : MonoBehaviour {
     public GameObject burstEffect;
 
     public AudioSource brickhit;
+    public AudioSource paddlehit;
 
     // Damage
     public float damageDone = 1.0f;
@@ -241,7 +242,6 @@ public class HaggleBall : MonoBehaviour {
             brickhit.Play();
             if( paddle ) {
                 paddle.BumpCombo();
-
                 comboRatio = paddle.GetComboRatio();
             }
             
@@ -258,6 +258,9 @@ public class HaggleBall : MonoBehaviour {
             // this.GetComponent<healthScript>().health -= 1;
         } else if(coll.gameObject.CompareTag("HurtBall")){
             GetHurt( God.KineticEnergy(GetComponent<Rigidbody2D>()) );
+        } else if(coll.gameObject.CompareTag("Player"))
+        {
+            paddlehit.Play();
         }
     }
 
