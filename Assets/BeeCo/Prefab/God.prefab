@@ -137,18 +137,8 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0, z: 0}
   lastCameraPos: {x: 0, y: 0, z: 0}
   moneyAdjust: 0
-  inventory:
-  - {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
-  - {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
-  - {fileID: 173852, guid: 666a7939c499b2045bc980700c24d479, type: 2}
-  basePrices:
-  - 69.99
-  - 3.2
-  - 40.2
-  pricesPaid:
-  - 50
-  - 9
-  - 40
+  basePrices: []
+  pricesPaid: []
   npcsThatSold: 01
 --- !u!114 &11470844
 MonoBehaviour:
@@ -163,6 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPrice: 5
   baseTimeLimit: 45
+  theLevel: {fileID: 0}
+  nextSceneName: platformer
   price: 0
   time: 0
   basePriceReduction: 0.15
