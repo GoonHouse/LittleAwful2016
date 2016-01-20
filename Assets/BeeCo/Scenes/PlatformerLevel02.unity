@@ -12393,7 +12393,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: textsToSay.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalPosition.x
