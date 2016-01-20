@@ -466,6 +466,8 @@ MonoBehaviour:
   burstEffect: {fileID: 128904, guid: ac01e3a32a644e04987307b3590c6358, type: 2}
   brickhit: {fileID: 8287084}
   paddlehit: {fileID: 8242164}
+  paddleSounds:
+  - {fileID: 8300000, guid: 3fbb071fc0b87cb4b91b3a427f2b2ee9, type: 3}
   nope: {fileID: 8278814}
   hurtsound: {fileID: 8251710}
   damageDone: 1
@@ -2065,6 +2067,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: paddleSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalScale.x
       value: 0.25
       objectReference: {fileID: 0}
@@ -2174,6 +2180,10 @@ Prefab:
       propertyPath: hurtsound
       value: 
       objectReference: {fileID: 8251710}
+    - target: {fileID: 0}
+      propertyPath: paddleSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fbb071fc0b87cb4b91b3a427f2b2ee9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157036}

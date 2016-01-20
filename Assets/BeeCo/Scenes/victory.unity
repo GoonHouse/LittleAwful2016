@@ -6113,6 +6113,10 @@ Prefab:
       propertyPath: thingsToSpawn.Array.data[30]
       value: 
       objectReference: {fileID: 173852, guid: 4f67ba334b87f99428badbdfd631df58, type: 2}
+    - target: {fileID: 11414004, guid: 27d32e830752e8041a3576cdfaf5e304, type: 2}
+      propertyPath: timeSpawnDelay
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27d32e830752e8041a3576cdfaf5e304, type: 2}
   m_IsPrefabParent: 0
