@@ -12417,11 +12417,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.3683029
+      value: 0.38268346
       objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9297058
+      value: 0.9238795
       objectReference: {fileID: 0}
     - target: {fileID: 458544, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_RootOrder
@@ -12446,6 +12446,26 @@ Prefab:
     - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: textsToSay.Array.data[3]
       value: Be careful in the market when you haggle, it may cost you dearly.
+      objectReference: {fileID: 0}
+    - target: {fileID: 112410, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495280, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268346
+      objectReference: {fileID: 0}
+    - target: {fileID: 495280, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9238795
+      objectReference: {fileID: 0}
+    - target: {fileID: 495280, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 495280, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
