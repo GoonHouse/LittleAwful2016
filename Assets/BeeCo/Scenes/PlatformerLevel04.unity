@@ -9344,7 +9344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: textsToSay.Array.data[1]
-      value: May I interest you in some fine foods today?
+      value: Maybe if I just let you run your mouth you'll talk yourself into a corner.
       objectReference: {fileID: 0}
     - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: textsToSay.Array.data[2]
@@ -9352,7 +9352,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: textsToSay.Array.data[0]
-      value: Welcome friend!
+      value: I have all the *time* in the world!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
