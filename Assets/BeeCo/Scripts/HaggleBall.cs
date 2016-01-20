@@ -64,10 +64,10 @@ public class HaggleBall : MonoBehaviour {
         gravitizationTime += strength * baseGravitizationTime;
         rigid.gravityScale = 1;
         rigid.mass += 50.0f;
-        var coll = GetComponent<CircleCollider2D>();
-        coll.sharedMaterial.bounciness = 0;
-        coll.sharedMaterial.friction = 1;
-        rigid.velocity = Vector3.zero;
+        //var coll = GetComponent<CircleCollider2D>();
+        //coll.sharedMaterial.bounciness = 0;
+        //coll.sharedMaterial.friction = 1;
+        //rigid.velocity = Vector3.zero;
         return gravitizationTime;
     }
 
@@ -76,9 +76,9 @@ public class HaggleBall : MonoBehaviour {
         gravitizationTime = 0.0f;
         rigid.gravityScale = 0;
         rigid.mass -= 50.0f;
-        var coll = GetComponent<CircleCollider2D>();
-        coll.sharedMaterial.bounciness = 1;
-        coll.sharedMaterial.friction = 0;
+        //var coll = GetComponent<CircleCollider2D>();
+        //coll.sharedMaterial.bounciness = 1;
+        //coll.sharedMaterial.friction = 0;
     }
 
     public virtual void Magnetize(GameObject mt, bool towards = true) {
