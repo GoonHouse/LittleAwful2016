@@ -8009,7 +8009,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112410, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 495280, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_LocalRotation.z

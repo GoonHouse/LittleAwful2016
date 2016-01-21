@@ -7121,6 +7121,14 @@ Prefab:
       propertyPath: textsToSay.Array.data[3]
       value: Be careful in the market when you haggle, it may cost you dearly.
       objectReference: {fileID: 0}
+    - target: {fileID: 11469830, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439008, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
   m_IsPrefabParent: 0
@@ -9397,6 +9405,10 @@ Prefab:
     - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484176, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
@@ -13940,6 +13952,14 @@ Prefab:
     - target: {fileID: 151700, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: m_Name
       value: TalkingSign (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469830, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439008, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
