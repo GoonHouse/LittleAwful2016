@@ -54,7 +54,6 @@ public class PowerUpItem : MonoBehaviour {
         var v = usePerAction * BallEffect();
         uses -= v;
         ResolveSuicide();
-
         return v;
     }
 
@@ -76,6 +75,8 @@ public class PowerUpItem : MonoBehaviour {
             }
 
             paddle.powerup = this;
+            var aud = GetComponent<AudioSource>();
+            aud.Play();
         }
 
         shouldMove = false;
