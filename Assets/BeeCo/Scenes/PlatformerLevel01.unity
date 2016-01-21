@@ -6535,6 +6535,109 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &840796118
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4896159
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420288, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484176, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138028, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_Name
+      value: NPCLlama (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 106536, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458784, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 119528, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123244, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113212, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180636, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181100, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140010, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[0]
+      value: Hello, will you please help me go to the market?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[1]
+      value: Click on the left or right of the screen to show me which way to go.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496894, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+      propertyPath: textsToSay.Array.data[2]
+      value: If I catch a power up you can click or hold the mouse button to activate
+        it, depending on the power up.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 58d9557d1aaaf3141aad2270e412845c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &847486774
 GameObject:
   m_ObjectHideFlags: 0
