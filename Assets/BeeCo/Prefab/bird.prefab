@@ -147,9 +147,11 @@ MonoBehaviour:
   timeToPos: 0.7
   endPos: {x: 0, y: 0, z: 0}
   startPos: {x: 0, y: 0, z: 0}
+  timeToLeave: 0.7
+  timeToWait: 2
   distX: 7
   distY: -10
-  shouldBird: 0
+  birdState: 1
   speech: {fileID: 185032}
   words: {fileID: 11470196}
 --- !u!114 &11470196
@@ -165,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
