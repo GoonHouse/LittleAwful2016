@@ -31,6 +31,8 @@ public class BirdScript : MonoBehaviour {
             timeTaken += Time.fixedDeltaTime;
             if (timeTaken <= timeToPos) {
                 transform.position = Vector3.Slerp(startPos, endPos, timeTaken / timeToPos);
+                var aud = GetComponent<AudioSource>();
+                aud.Play();
             } else {
                 speech.SetActive(true);
                 transform.position = endPos;
