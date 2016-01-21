@@ -30,14 +30,14 @@ public class BirdScript : MonoBehaviour {
         if( birdState == 1 ) {
             timeTaken += Time.fixedDeltaTime;
             if (timeTaken <= timeToPos) {
-                transform.position = Vector3.Slerp(startPos, endPos, timeTaken / timeToPos);
-                var aud = GetComponent<AudioSource>();
-                aud.Play();
+                transform.position = Vector3.Slerp(startPos, endPos, timeTaken / timeToPos);  
             } else {
                 speech.SetActive(true);
                 transform.position = endPos;
                 timeTaken = 0.0f;
                 birdState = 2;
+                var aud = GetComponent<AudioSource>();
+                aud.Play();
             }
         } else if( birdState == 2 ) {
             timeTaken += Time.fixedDeltaTime;
