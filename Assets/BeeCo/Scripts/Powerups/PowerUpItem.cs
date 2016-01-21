@@ -4,7 +4,7 @@ using System.Collections;
 public class PowerUpItem : MonoBehaviour {
     // should we go towards something
     public bool shouldMove = false;
-    public float moveRate = 1.0f;
+    public float moveRate = 3.0f;
 
     // the paddle
     public Paddle paddle;
@@ -26,7 +26,7 @@ public class PowerUpItem : MonoBehaviour {
 	public virtual void FixedUpdate () {
 	    if( shouldMove ) {
             var pos = transform.position;
-            pos.x -= moveRate * Time.fixedDeltaTime;
+            pos.x -= 3.0f * Time.fixedDeltaTime;
             transform.position = pos;
         }
 	}
