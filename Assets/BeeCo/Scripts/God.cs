@@ -63,7 +63,7 @@ public class God : MonoBehaviour {
 
             var pos = levelTransition.FindPlayer().transform.position;
             pos.x += 5;
-            pos.y -= 13;
+            pos.y -= 14;
 
             Vector3 v = Quaternion.AngleAxis(UnityEngine.Random.Range(0.0f, 360.0f), Vector3.forward) * Vector3.up;
 
