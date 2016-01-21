@@ -51,7 +51,7 @@ public class HaggleLogic : MonoBehaviour {
     }
 
     public void EnterGame() {
-        statusText = GameObject.Find("status").GetComponent<Text>();
+        //statusText = GameObject.Find("status").GetComponent<Text>();
         priceText = GameObject.Find("price").GetComponent<Text>();
         timeText = GameObject.Find("time").GetComponent<Text>();
         retryButton = GameObject.Find("Retry").GetComponent<Button>();

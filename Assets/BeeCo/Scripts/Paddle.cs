@@ -114,10 +114,10 @@ public class Paddle : MonoBehaviour {
         }
 
         // Update status.
-        var s = string.Format("Combo: {0:D2}/{1:D2} {2:F3}; Balls: {3:D2}/{4:D2};", 
-            combo, maxCombo, comboTimer, numBallsCanSpawn, spawnedBalls.Count
-        );
-        God.haggleLogic.statusText.text = s;
+        //var s = string.Format("Combo: {0:D2}/{1:D2} {2:F3}; Balls: {3:D2}/{4:D2};", 
+        //    combo, maxCombo, comboTimer, numBallsCanSpawn, spawnedBalls.Count
+        //);
+        //God.haggleLogic.statusText.text = s;
     }
 
     void OnTriggerEnter2D(Collider2D coll) {
