@@ -145,10 +145,10 @@ public class HaggleBall : MonoBehaviour {
         // Stale Direction Logic
         // Stale flag.
         var deltaTimePayload = new Vector3(0.0f, 0.0f);
-        if (God.Round(lastPos.x, 2) == God.Round(transform.localPosition.x, 2)) {
+        if (God.Round(lastPos.x, 1) == God.Round(transform.localPosition.x, 1)) {
             deltaTimePayload.x = Time.fixedDeltaTime;
         }
-        if (God.Round(lastPos.y, 2) == God.Round(transform.localPosition.y, 2)) {
+        if (God.Round(lastPos.y, 1) == God.Round(transform.localPosition.y, 1)) {
             deltaTimePayload.y = Time.fixedDeltaTime;
         }
         timerUnchanged += deltaTimePayload;
