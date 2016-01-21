@@ -75,8 +75,8 @@ public class PowerUpItem : MonoBehaviour {
             }
 
             paddle.powerup = this;
-            var aud = GetComponent<AudioSource>();
-            aud.Play();
+            // var aud = GetComponent<AudioSource>();
+            // aud.Play();
         }
 
         shouldMove = false;
