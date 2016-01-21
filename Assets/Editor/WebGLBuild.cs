@@ -31,7 +31,7 @@ class WebGLBuild {
 			}
 			i++;
 		}
-		EditorUserBuildSettings.webGLOptimizationLevel = 2;
+		//EditorUserBuildSettings.webGLOptimizationLevel = 2;
 		BuildPipeline.BuildPlayer(GetScenes(), outPath, BuildTarget.WebGL, BuildOptions.None);
 	}
 }
