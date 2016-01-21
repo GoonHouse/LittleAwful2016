@@ -62,8 +62,9 @@ public class HaggleBall : MonoBehaviour {
     public virtual float Gravitize(float strength = 1.0f) {
         isGravitized = true;
         gravitizationTime += strength * baseGravitizationTime;
-        rigid.gravityScale = 1;
+        rigid.gravityScale = 3;
         rigid.mass += 50.0f;
+        rigid.velocity /= 2.0f;
         //var coll = GetComponent<CircleCollider2D>();
         //coll.sharedMaterial.bounciness = 0;
         //coll.sharedMaterial.friction = 1;
@@ -76,6 +77,7 @@ public class HaggleBall : MonoBehaviour {
         gravitizationTime = 0.0f;
         rigid.gravityScale = 0;
         rigid.mass -= 50.0f;
+        rigid.velocity *= 2.0f;
         //var coll = GetComponent<CircleCollider2D>();
         //coll.sharedMaterial.bounciness = 1;
         //coll.sharedMaterial.friction = 0;
@@ -110,8 +112,8 @@ public class HaggleBall : MonoBehaviour {
 
     // Restlessness Timer
     public BallRestlessness restlessness = BallRestlessness.Normal;
-    public float noChangeTime = 3.0f;
-    public float noChangeWarnTime = 2.0f;
+    public float noChangeTime = 2.0f;
+    public float noChangeWarnTime = 1.0f;
     public Vector2 minMoveSpeed = new Vector2(0.05f, 0.05f);
     public Vector3 timerUnchanged = new Vector3(0.0f, 0.0f, 0.0f);
     public Vector3 lastPos;
