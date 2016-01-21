@@ -64,6 +64,11 @@ public class God : MonoBehaviour {
             var pos = levelTransition.FindPlayer().transform.position;
             pos.x += 5;
             pos.y -= 13;
+
+            Vector3 v = Quaternion.AngleAxis(UnityEngine.Random.Range(0.0f, 360.0f), Vector3.forward) * Vector3.up;
+
+            pos += v * UnityEngine.Random.Range(-2.0f, 2.0f);
+
             var b = SpawnAt(bird, pos);
             var bs = b.GetComponent<BirdScript>();
             bs.startPos = pos;
