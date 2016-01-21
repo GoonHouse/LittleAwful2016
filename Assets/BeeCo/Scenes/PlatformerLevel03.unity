@@ -8140,7 +8140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: textsToSay.Array.data[0]
-      value: Llearth (0.001 llameters)
+      value: Llearth (0.001 Llamameters)
       objectReference: {fileID: 0}
     - target: {fileID: 11402472, guid: 11ae4951a039a294488b6856fd46d9a3, type: 2}
       propertyPath: textsToSay.Array.data[1]
