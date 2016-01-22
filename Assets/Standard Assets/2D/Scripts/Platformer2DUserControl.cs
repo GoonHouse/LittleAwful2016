@@ -20,11 +20,6 @@ namespace UnityStandardAssets._2D
 
         private void Update()
         {
-            // Jump when we move
-            if (!m_Jump){
-                m_Jump = CrossPlatformInputManager.GetButton("Horizontal");
-            }
-            
             // Read the jump input in Update so button presses aren't missed.
             if (!m_Jump && !EventSystem.current.IsPointerOverGameObject()) {
                 m_Jump = Input.GetMouseButton(0);
@@ -35,7 +30,6 @@ namespace UnityStandardAssets._2D
         private void FixedUpdate()
         {
             // Read the inputs.
-            bool crouch = Input.GetKey(KeyCode.LeftControl);
             float h = 0.0f;
             if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
                 float offsetDistance = 1.0f;
@@ -48,16 +42,10 @@ namespace UnityStandardAssets._2D
                 } else if (p.x - transform.position.x < -offsetDistance) {
                     h = -1;
                 }
-                //    if (Mathf.Abs(p.x - transform.position.x) > offsetDistance) {
-                //    h = p.x - transform.position.x;
-                //} else {
-                //    Debug.Log(p.x - transform.position.x);
-                //}
-                //h = h / offsetDistance;
             }
 
             // Pass all parameters to the character control script.
-            m_Character.Move(h, crouch, m_Jump);
+            m_Character.Move(h, false, m_Jump);
             m_Jump = false;
         }
     }

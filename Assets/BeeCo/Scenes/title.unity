@@ -4072,11 +4072,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490674, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -262
+      value: -340
       objectReference: {fileID: 0}
     - target: {fileID: 22490674, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 524
+      value: 681
       objectReference: {fileID: 0}
     - target: {fileID: 175006, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}
       propertyPath: m_IsActive
@@ -4239,7 +4239,8 @@ Prefab:
         Art, Visual Design\n<color=navy><size=35>MockingQuantum</size></color>\nSound
         Design, Sound Scripts\n<color=navy><size=30>EntranceJew</size></color>\nProgramming\n<color=navy><size=30>Noyemi</size></color>\nMusic\n\n<size=50>Special
         Thanks</size>\n<color=teal><i><size=40>From EntranceJew</size></i></color>\n<color=navy><size=35>EntranceJew</size></color>\nFor
-        Entrance & Jew."
+        Entrance & Jew.\n<color=teal><i><size=40>From HellBird</size></i></color>\n<color=navy><size=35>Forer</size></color>\nFor
+        sacrificing himself to the insatiable HellBird to save humanity from itself."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed047f34dfbf9a441bc9a57a1f8ee0f9, type: 2}

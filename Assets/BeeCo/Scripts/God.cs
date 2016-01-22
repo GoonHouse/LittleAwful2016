@@ -49,13 +49,6 @@ public class God : MonoBehaviour {
         topSecret.messageRecievedEvent.AddListener(HandleHolySignal);
     }
 
-    // Update is called once per frame
-    void Update() {
-        if( Input.GetKeyDown("h")) {
-            Bird("hail satan");
-        }
-    }
-
     public void Bird(string msg) {
         if (SceneManager.GetActiveScene().name != "breakout" &&
             SceneManager.GetActiveScene().name != "title" &&
