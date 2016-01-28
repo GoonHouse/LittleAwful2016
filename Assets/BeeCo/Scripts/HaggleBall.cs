@@ -12,7 +12,7 @@ public enum BallRestlessness {
 public class HaggleBall : MonoBehaviour {
     public float speed = 30.0f;
 
-    public float forceDownscale = 10000.0f;
+    public float forceDownscale = 10000.0f; 
 
     public float ballMinSpeed = 5.0f;
     public float ballMaxSpeed = 25.0f;
@@ -134,11 +134,6 @@ public class HaggleBall : MonoBehaviour {
     public virtual void SpeakMoney(float amount) {
         var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
         hitText.GetComponent<FloatTextAway>().SetMoney(amount);
-    }
-
-    public virtual void Speak(string text) {
-        var hitText = (GameObject)Instantiate(hitTextPrefab, transform.position, Quaternion.identity);
-        hitText.GetComponent<FloatTextAway>().SetText(text);
     }
 
     public virtual void AccumulateStaleness() {
@@ -272,13 +267,11 @@ public class HaggleBall : MonoBehaviour {
     }
 
     public virtual void FuckOff(float howFast = 1.0f, bool doShout = false){
-        if( preAngerColor != null ) {
-            var sr = GetComponent<SpriteRenderer>();
-            sr.color = preAngerColor;
-        }
+        var sr = GetComponent<SpriteRenderer>();
+        sr.color = preAngerColor;
 
         if ( doShout ) {
-            Speak("NOPE");
+            God.main.Speak(gameObject, "NOPE");
             nope.Play();
         }
 

@@ -17,10 +17,11 @@ public class MainMenuButtons : MonoBehaviour {
 	private List<string> foundSaves;
 	private string saveToLoad;
 
+    /*
 	public void Start(){
 		// patrol for saves here
-		// foundSaves = PlayerValues.pv.ScanForSaves (maxNoDays);
-        /*
+		 foundSaves = PlayerValues.pv.ScanForSaves (maxNoDays);
+        
 		if (foundSaves.Count > 0) {
 			saveToLoad = foundSaves [foundSaves.Count - 1];
 			loadFileText.text = loadFileText.text + "\n" + saveToLoad;
@@ -29,20 +30,25 @@ public class MainMenuButtons : MonoBehaviour {
 			loadButton.SetActive(false);
 			clearAllButton.SetActive(false);
 		}
-        */
+        
 	}
+    */
 
+    /*
 	public void StartGame() {
 		game.TransitionTo (1.0f);
-		// Application.LoadLevel ("Day1");
+		Application.LoadLevel ("Day1");
 	}
+    */
 
+    /*
 	public void LoadGame(){
 		// load via
 		game.TransitionTo (1.0f);
-		// PlayerValues.pv.Load (saveToLoad);
-		// Application.LoadLevel ("Day1");
+		 PlayerValues.pv.Load (saveToLoad);
+		 Application.LoadLevel ("Day1");
 	}
+    */
 
 	public void ShowCredits(){
 		creditsPanel.SetActive (true);
@@ -60,11 +66,13 @@ public class MainMenuButtons : MonoBehaviour {
 		optionsPanel.SetActive (false);
 	}
 
+    /*
 	public void ClearAllSaves(){
 		foreach (string saveToWipe in foundSaves) {
-			// PlayerValues.pv.DeleteSave (saveToWipe);
+			 PlayerValues.pv.DeleteSave (saveToWipe);
 		}
 		loadButton.SetActive(false);
 		clearAllButton.SetActive(false);
 	}
+    */
 }

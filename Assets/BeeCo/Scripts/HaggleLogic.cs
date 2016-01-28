@@ -72,10 +72,8 @@ public class HaggleLogic : MonoBehaviour {
         God.SpawnAt(theLevel, new Vector3(8.5f, 0.5f));
 
         var bricks = GameObject.FindGameObjectsWithTag("Brick");
-        foreach (GameObject brick in bricks) {
-            totalNumberOfBricks += 1;
-            numberOfBricks += 1;
-        }
+        totalNumberOfBricks = bricks.Length;
+        numberOfBricks = bricks.Length;
 
         OnWaitForPlayerStart();
     }
