@@ -6546,6 +6546,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1199743047}
   - 212: {fileID: 1199743046}
+  - 114: {fileID: 1199743048}
   m_Layer: 0
   m_Name: HazeBackground
   m_TagString: Untagged
@@ -6595,6 +6596,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1199743048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199743045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfcd46ce495ad14c949234cb2c2e88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToFlash: 3
+  currentTime: 0
+  fromColor:
+    serializedVersion: 2
+    rgba: 0
+  toColor:
+    serializedVersion: 2
+    rgba: 0
+  sr: {fileID: 0}
 --- !u!1 &1213774376
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,6 +9525,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1808401326}
   - 212: {fileID: 1808401325}
+  - 114: {fileID: 1808401327}
   m_Layer: 0
   m_Name: HazeForeground
   m_TagString: Untagged
@@ -9553,6 +9575,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &1808401327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808401324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfcd46ce495ad14c949234cb2c2e88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToFlash: 1
+  currentTime: 0
+  fromColor:
+    serializedVersion: 2
+    rgba: 0
+  toColor:
+    serializedVersion: 2
+    rgba: 0
+  sr: {fileID: 0}
 --- !u!1 &1820492169
 GameObject:
   m_ObjectHideFlags: 0
