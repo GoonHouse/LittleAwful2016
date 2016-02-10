@@ -2,13 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum BallRestlessness {
-    Normal,
-    Puffing,
-    StoppingPuff,
-    DidFuckOff,
-}
-
 public class HaggleBall : MonoBehaviour {
     public float speed = 30.0f;
 
