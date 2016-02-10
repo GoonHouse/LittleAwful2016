@@ -13,6 +13,7 @@ GameObject:
   - 212: {fileID: 21255304}
   - 96: {fileID: 9637444}
   - 82: {fileID: 8283750}
+  - 114: {fileID: 11429966}
   - 114: {fileID: 11431346}
   - 114: {fileID: 11495062}
   - 114: {fileID: 11403114}
@@ -205,6 +206,21 @@ MonoBehaviour:
   fromGirth: 0
   toGirth: 0
   tr: {fileID: 0}
+--- !u!114 &11429966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec538c24f7596d4a9042dc5a2ba9656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filteredTags:
+  - Brick
+  damageAmount: 1
+  isScaledByForce: 0
 --- !u!114 &11431346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,7 +294,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: filteredTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damageAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: filteredTags.Array.data[0]
+      value: Brick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 198842}

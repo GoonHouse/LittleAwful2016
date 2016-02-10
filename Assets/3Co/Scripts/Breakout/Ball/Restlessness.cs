@@ -94,19 +94,19 @@ public class Restlessness : MonoBehaviour {
     void FixedUpdate () {
 
         if (restlessness == BallRestlessness.Normal && IsTimeToWarn()) {
-            Debug.Log("adh'em DEES");
+            //Debug.Log("adh'em DEES");
             restlessness = BallRestlessness.StoppingPuff;
             var sr = GetComponent<SpriteRenderer>();
             preAngerColor = sr.color;
             sr.color = God.redFull;
             changeDelay = noChangeTime - noChangeWarnTime;
-            Debug.Log("WHOA BURSTS!");
+            //Debug.Log("WHOA BURSTS!");
             var g = God.SpawnAt(burstEffect, transform.position);
             Destroy(g, changeDelay);
         }
 
         if (restlessness == BallRestlessness.StoppingPuff && IsTimeToFuckOff()){
-            Debug.Log("adderall ruined my life");
+            //Debug.Log("adderall ruined my life");
             FuckOff(1.0f, true);
         }
 
