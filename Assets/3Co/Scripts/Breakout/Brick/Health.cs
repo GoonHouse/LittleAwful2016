@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,6 +11,8 @@ public struct SpriteState {
 }
 
 public class Health : MonoBehaviour {
+    public UnityEvent onHurt;
+    public UnityEvent onDeath;
 
     public float maxHealth = 3;
     public float health = 3;
@@ -32,6 +35,8 @@ public class Health : MonoBehaviour {
                 health = maxHealth;
             }
 
+            onHurt.Invoke();
+
             var h = Mathf.RoundToInt(health) - 1;
             sr.sprite = hurtStates[h].sprite;
             sr.color = hurtStates[h].color;
@@ -45,6 +50,7 @@ public class Health : MonoBehaviour {
                 pui.Detach();
             }
             */
+            onDeath.Invoke();
 
             Destroy(gameObject, damageDelay);
         }
@@ -53,6 +59,7 @@ public class Health : MonoBehaviour {
     }
 
     void OnDestroy() {
+        onDeath.Invoke();
         //God.haggleLogic.numberOfBricks -= 1;
     }
 }
