@@ -2,20 +2,20 @@
 using System.Collections;
 
 [System.Serializable]
-public class DebugPowerup : BasePowerup {
-    public override void PowerupUpdate(float dt) {
+public class DebugPowerup : IPowerup {
+    public void Update(float dt) {
         Debug.Log("oh boy i love horses: " + dt);
     }
 
-    public override void PowerupOnTriggerEnter(Collider other) {
+    public void OnTriggerEnter(Collider other) {
     }
 
-    public override void PowerupToPatrolState() {
+    public void ToPatrolState() {
     }
 
-    public override void PowerupToAlertState() {
+    public void ToAlertState() {
     }
 
-    public override void PowerupToChaseState() {
+    public void ToChaseState() {
     }
 }

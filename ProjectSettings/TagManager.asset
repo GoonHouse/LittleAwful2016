@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Llama
   - Powerup
+  - Ball
   layers:
   - Default
   - TransparentFX

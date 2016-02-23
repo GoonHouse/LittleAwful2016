@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
-public class BasePowerup {
+public interface IPowerup {
+    void Update(float dt);
 
-    public virtual void PowerupUpdate(float dt) { }
+    void OnTriggerEnter(Collider other);
 
-    public virtual void PowerupOnTriggerEnter(Collider other) { }
+    void ToPatrolState();
 
-    public virtual void PowerupToPatrolState() { }
+    void ToAlertState();
 
-    public virtual void PowerupToAlertState() { }
-
-    public virtual void PowerupToChaseState() { }
+    void ToChaseState();
 }
