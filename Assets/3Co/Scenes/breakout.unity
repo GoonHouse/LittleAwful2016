@@ -235,6 +235,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11453278, guid: 0dd7bbe1165ea6c49b01561194d90ad2, type: 2}
+      propertyPath: tagFilters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 412098, guid: 0dd7bbe1165ea6c49b01561194d90ad2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 7.94
@@ -266,6 +270,10 @@ Prefab:
     - target: {fileID: 412098, guid: 0dd7bbe1165ea6c49b01561194d90ad2, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453278, guid: 0dd7bbe1165ea6c49b01561194d90ad2, type: 2}
+      propertyPath: tagFilters.Array.data[0]
+      value: Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0dd7bbe1165ea6c49b01561194d90ad2, type: 2}
