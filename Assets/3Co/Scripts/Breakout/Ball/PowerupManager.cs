@@ -12,11 +12,17 @@ public class PowerupManager : MonoBehaviour {
 	void Start () {
         
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    void Update() {
+        foreach (IPowerup powerup in powerups) {
+            powerup.Update(Time.deltaTime);
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 	    foreach(IPowerup powerup in powerups) {
-            powerup.Update(Time.fixedDeltaTime);
+            powerup.FixedUpdate(Time.fixedDeltaTime);
         }
 	}
 

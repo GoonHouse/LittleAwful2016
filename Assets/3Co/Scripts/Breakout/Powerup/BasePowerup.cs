@@ -11,11 +11,25 @@ public class BasePowerup : IPowerup {
     public string effectToChild;
     public GameObject childedEffect;
 
+    // = AMMO/CONSUMPTION/BATTERY
+    public bool continuousUse = false;
+    public float maxAmmo = 3.0f;
+    public float ammoPerUse = 1.0f;
+    public float numAmmo;
+
     virtual public void Init() {
+        numAmmo = maxAmmo;
     }
 
     virtual public void Update(float dt) {
-        Debug.Log("oh boy i love horses: " + dt);
+        if( Input.GetMouseButtonDown(0) && CanUse() ) {
+            ConsumeAmmo();
+            DoUse();
+        }
+    }
+
+    virtual public void FixedUpdate(float dt) {
+        //Debug.Log("oh boy i love fixed horses: " + dt);
     }
 
     virtual public void OnTriggerEnter(Collider other) {
@@ -35,6 +49,18 @@ public class BasePowerup : IPowerup {
         } else {
             Debug.LogWarning("WHAT HAPPENED");
         }
+    }
+
+    virtual public bool CanUse() {
+        return (numAmmo >= ammoPerUse);
+    }
+
+    virtual public void ConsumeAmmo() {
+        numAmmo -= ammoPerUse;
+    }
+
+    virtual public void DoUse() {
+        Debug.Log("oh boy i love horses: " + Time.deltaTime);
     }
 
     // ON signals

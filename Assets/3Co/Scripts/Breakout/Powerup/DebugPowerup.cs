@@ -5,6 +5,7 @@ using System.Collections;
 public class DebugPowerup : BasePowerup {
 
     override public void Init() {
+        base.Init();
         effectToChild = "Effects/DebugTrail";
     }
 }
