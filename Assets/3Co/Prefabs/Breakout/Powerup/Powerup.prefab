@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c007dca413ca7344fbe2fcf3e3cb442a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagFilters:
+  - Ball
   nameOfClass: DebugPowerup
 --- !u!114 &11457770
 MonoBehaviour:
