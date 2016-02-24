@@ -124,9 +124,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11461406, guid: e29fa2e947c62c040a7a623090bfdb47, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e29fa2e947c62c040a7a623090bfdb47, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &186596751 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 182656, guid: e29fa2e947c62c040a7a623090bfdb47, type: 2}
+  m_PrefabInternal: {fileID: 15414688}
+--- !u!114 &186596752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186596751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e006b0b86488cb24790b8a1644f03660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 3
 --- !u!1 &269239346
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +811,7 @@ Prefab:
       propertyPath: m_Name
       value: Ball (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 11403114, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
+    - target: {fileID: 0}
       propertyPath: timeToFlash
       value: 0.25
       objectReference: {fileID: 0}
@@ -889,6 +906,10 @@ Prefab:
     - target: {fileID: 103930, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
       propertyPath: m_Name
       value: Brick (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257296, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}

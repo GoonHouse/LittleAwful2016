@@ -2,20 +2,36 @@
 using System.Collections;
 
 [System.Serializable]
-public class DebugPowerup : IPowerup {
-    public void Update(float dt) {
-        Debug.Log("oh boy i love horses: " + dt);
+public class DebugPowerup : BasePowerup {
+
+    public string effectToChild = "Effects/DebugTrail";
+    public GameObject childedEffect;
+
+    override public void Update(float dt) {
+        //Debug.Log("oh boy i love horses: " + dt);
     }
 
-    public void OnTriggerEnter(Collider other) {
+    override public void OnTriggerEnter(Collider other) {
     }
 
-    public void ToPatrolState() {
+    override public void OnCollect(GameObject go) {
+        Debug.Log("got connected to: " + go.name);
+        childedEffect = GameObject.Instantiate(
+            Resources.Load(effectToChild) as GameObject,
+            go.transform.position,
+            go.transform.rotation
+        ) as GameObject;
+        childedEffect.transform.SetParent(go.transform, true);
+        Debug.Log(childedEffect);
+        Debug.Log(childedEffect.name);
     }
 
-    public void ToAlertState() {
+    override public void ToPatrolState() {
     }
 
-    public void ToChaseState() {
+    override public void ToAlertState() {
+    }
+
+    override public void ToChaseState() {
     }
 }

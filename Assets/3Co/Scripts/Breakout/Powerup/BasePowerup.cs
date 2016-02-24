@@ -1,14 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface IPowerup {
-    void Update(float dt);
+[System.Serializable]
+public class BasePowerup : IPowerup {
+    virtual public void Update(float dt) {
+        Debug.Log("oh boy i love horses: " + dt);
+    }
 
-    void OnTriggerEnter(Collider other);
+    virtual public void OnTriggerEnter(Collider other) {
+    }
 
-    void ToPatrolState();
+    virtual public void OnCollect(GameObject go) {
+        Debug.Log("got connected to: " + go.name);
+    }
 
-    void ToAlertState();
+    virtual public void ToPatrolState() {
+    }
 
-    void ToChaseState();
+    virtual public void ToAlertState() {
+    }
+
+    virtual public void ToChaseState() {
+    }
 }

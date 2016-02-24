@@ -26,7 +26,9 @@ public class PowerupManager : MonoBehaviour {
                 System.Reflection.Assembly.GetExecutingAssembly().FullName,
                 bp.nameOfClass
             ).Unwrap();
+            g.OnCollect(gameObject);
             powerups.Add(g);
+            Destroy(go);
         }
     }
 }

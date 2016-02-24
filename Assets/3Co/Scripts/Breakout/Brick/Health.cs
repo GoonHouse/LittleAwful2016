@@ -59,7 +59,7 @@ public class Health : MonoBehaviour {
     }
 
     void OnDestroy() {
-        onDeath.Invoke();
+        Debug.Log("gone, suckers");
         //God.haggleLogic.numberOfBricks -= 1;
     }
 }
