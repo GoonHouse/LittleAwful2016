@@ -7,7 +7,7 @@ public class AudioPool : MonoBehaviour {
     // these are hit noises, we will define these in the editor
     public List<AudioClip> pool;
     public AudioSource source;
-    public GameObject audioGhost;
+    //public GameObject audioGhost;
 
     // Use this for initialization
     void Start() {
@@ -16,9 +16,11 @@ public class AudioPool : MonoBehaviour {
             source = GetComponent<AudioSource>();
         }
 
+        /*
         if( audioGhost == null) {
             audioGhost = Resources.Load("Helpers/AudioGhost") as GameObject;
         }
+        */
     }
 
     public void PlayRandom() {
@@ -32,8 +34,8 @@ public class AudioPool : MonoBehaviour {
     
     public void PlayRandomGhost() {
         var randClip = pool[Random.Range(0, pool.Count - 1)];
-        var aus = Instantiate(audioGhost, transform.position, Quaternion.identity) as GameObject;
-        aus.GetComponent<AudioSource>().PlayOneShot(randClip);
-        Destroy(gameObject, randClip.length);
+        //var aus = Instantiate(audioGhost, transform.position, Quaternion.identity) as GameObject;
+        //aus.GetComponent<AudioSource>().PlayOneShot(randClip);
+        //Destroy(gameObject, randClip.length);
     }
 }

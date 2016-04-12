@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11421416}
   - 82: {fileID: 8257296}
   - 114: {fileID: 11451326}
+  - 114: {fileID: 11447504}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Brick
@@ -151,7 +152,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11451326}
-        m_MethodName: PlayRandomGhost
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11447504}
+        m_MethodName: FakeDestroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -176,6 +188,18 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 5f6eccf4006b1b54bb686ad05b932bed, type: 3}
     color: {r: 0.73333335, g: 0.5803922, b: 0.46666667, a: 1}
   damageDelay: 0.05
+--- !u!114 &11447504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929028f5c482e0a4b89666954491d0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 6
 --- !u!114 &11451326
 MonoBehaviour:
   m_ObjectHideFlags: 1

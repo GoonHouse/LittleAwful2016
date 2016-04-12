@@ -51,15 +51,13 @@ public class Health : MonoBehaviour {
             }
             */
             onDeath.Invoke();
-
-            Destroy(gameObject, damageDelay);
         }
 
         return health;
     }
 
     void OnDestroy() {
-        Debug.Log("gone, suckers");
+        //onDeath.Invoke();
         //God.haggleLogic.numberOfBricks -= 1;
     }
 }
