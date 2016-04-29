@@ -5,11 +5,12 @@ using System.Collections.Generic;
 public class PowerupManager : MonoBehaviour {
 
     public List<IPowerup> powerups = new List<IPowerup>();
+    public List<string> powerupNames = new List<string>();
 
     //@TODO: setup a death signal to politely pop a hole in the containing powerup list
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         
     }
 
@@ -29,6 +30,7 @@ public class PowerupManager : MonoBehaviour {
     // methods for handling powerups
     public void CollectPowerup(IPowerup powerup) {
         Debug.Log("COLLECTING POWERUP " + powerup);
+        powerupNames.Add(powerup.ToString());
         powerup.OnCollect(gameObject);
         powerups.Add(powerup);
     }

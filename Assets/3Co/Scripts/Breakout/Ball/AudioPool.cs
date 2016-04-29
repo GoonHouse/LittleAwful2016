@@ -11,6 +11,8 @@ public class AudioPool : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        //transform.pa
+
         // get my own audio source, with defined settings on it
         if( source == null) {
             source = GetComponent<AudioSource>();

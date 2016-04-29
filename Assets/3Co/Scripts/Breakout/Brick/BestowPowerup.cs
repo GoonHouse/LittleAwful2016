@@ -6,6 +6,7 @@ public class BestowPowerup : MonoBehaviour {
 
     public List<string> tagFilters;
     public string nameOfClass;
+    //public Component scriptToGive;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +18,11 @@ public class BestowPowerup : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D coll) {
+    void OnTriggerEnter2D(Collider2D coll) {
         var go = coll.gameObject;
         if( tagFilters.Contains(go.tag)) {
             Debug.Log("ALLOWING " + go.tag);
+            //go.AddComponent(System.Type.GetType(nameOfClass));
             var pm = go.GetComponent<PowerupManager>();
             if( pm != null) {
                 Debug.Log("POWERUP MANAGER NOT EMPTY");
@@ -32,6 +34,8 @@ public class BestowPowerup : MonoBehaviour {
                 pm.CollectPowerup(g);
                 Destroy(gameObject);
             }
+        } else {
+            Debug.Log("FUCK OFF, YOU" + coll.gameObject);
         }
     }
 }
