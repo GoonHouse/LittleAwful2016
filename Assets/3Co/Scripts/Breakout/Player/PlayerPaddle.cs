@@ -85,7 +85,7 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
     void Update() {
         UpdatePositionMouse();
 
-        if(familiars[activeFamiliarIndex] != null) {
+        if(GetActiveFamiliar() != null && GetActiveFamiliar().GetEnergyLeft() > 0.0f) {
             familiars[activeFamiliarIndex].transform.Rotate(0.0f, 0.0f, 2.0f);
         }
 
