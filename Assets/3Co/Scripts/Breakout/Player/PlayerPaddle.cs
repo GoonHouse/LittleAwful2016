@@ -62,7 +62,7 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
         spawnedBalls.Remove(ball);
     }
 
-    public void SpawnBall() {
+    virtual public bool SpawnBall() {
         if (numBallsCanSpawn > 0) {
             var pos = transform.position;
             pos.x += 1.0f;
@@ -70,7 +70,9 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
             ball.transform.SetParent(GameObject.Find("BallHell").transform, true);
             ball.GetComponent<PowerupManager>().owner = gameObject;
             spawnedBalls.Add(ball);
+            return true;
         }
+        return false;
     }
 
     virtual public bool PrimaryButton() {
@@ -129,7 +131,9 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
         }
 
         if (SecondaryButton()) {
-            SpawnBall();
+            var af = GetActiveFamiliar();
+            var fb = GetFocusedBall();
+            Debug.Log(af.ConsumeShot(this, fb));
         }
 
         if ( focusedBall != null) {

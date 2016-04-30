@@ -57,8 +57,6 @@ public class DebugBridge : MonoBehaviour {
     public void Consume() {
         var af = paddle.GetActiveFamiliar();
         var fb = paddle.GetFocusedBall();
-        if(fb != null) {
-            Debug.Log(af.ConsumeShot(paddle, fb));
-        }
+        Debug.Log(af.ConsumeShot(paddle, fb));
     }
 }

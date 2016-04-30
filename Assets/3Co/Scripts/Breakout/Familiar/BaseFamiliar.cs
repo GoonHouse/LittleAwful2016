@@ -5,6 +5,7 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
 
     public float baseEnergy = 100.0f;
     public float baseEnergyPerUse = 20.0f;
+    public bool requiresTarget = true;
 
     private float energy;
 
@@ -23,17 +24,22 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
     }
 
     virtual public bool ConsumeShot(PlayerPaddle player, BaseBall ball) {
-        Debug.Log("ABOUT TO FUCKIN BLOW");
         if( energy >= baseEnergyPerUse) {
-            Debug.Log("SHIT EAH BOYIE");
-            energy -= baseEnergyPerUse;
-            var scale = ball.gameObject.transform.localScale;
-            scale *= 2;
-            ball.gameObject.transform.localScale = scale;
-            return true;
+            if( requiresTarget && ball == null) {
+                return false;
+            } else {
+                energy -= baseEnergyPerUse;
+                return DoAbility(player, ball);
+            }
         } else {
-            Debug.Log("fug :D))");
             return false;
         }
+    }
+
+    virtual public bool DoAbility(PlayerPaddle player, BaseBall ball) {
+        var scale = ball.gameObject.transform.localScale;
+        scale *= 2;
+        ball.gameObject.transform.localScale = scale;
+        return true;
     }
 }
