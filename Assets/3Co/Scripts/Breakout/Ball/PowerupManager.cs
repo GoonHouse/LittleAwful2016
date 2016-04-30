@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class PowerupManager : MonoBehaviour {
 
+    public GameObject owner;
+
     public List<IPowerup> powerups = new List<IPowerup>();
     public List<string> powerupNames = new List<string>();
 

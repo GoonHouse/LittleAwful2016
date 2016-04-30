@@ -4,27 +4,24 @@ using System.Collections.Generic;
 
 public class PlayerPaddle : MonoBehaviour {
     // Combo Stuff
-    public float comboTimer = 0.0f;
-    public float minComboTimeToExtend = 0.5f;
-    public float maxComboTimeToExtend = 1.0f;
     public int baseNumBallsCanSpawn = 1;
-    public int combo = 0;
-    public int maxCombo = 15;
+    
 
     // Ball Handling
     public int numBallsCanSpawn;
     public List<GameObject> spawnedBalls;
     public GameObject haggleBallPrefab;
 
+    public GameObject focusedBall;
+    public int focusedBallIndex;
+    public GameObject focusVisualiser;
+
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
 
-    // Powerups
-    public PowerUpItem powerup;
-
     // Use this for initialization
     void Start() {
-        spawnedBalls = new List<GameObject>();
+        //spawnedBalls = new List<GameObject>();
         numBallsCanSpawn = baseNumBallsCanSpawn;
     }
 
@@ -37,7 +34,7 @@ public class PlayerPaddle : MonoBehaviour {
     }
 
     public void Reset() {
-        CancelCombo();
+        GetComponent<Combos>().CancelCombo();
 
         foreach (GameObject ball in spawnedBalls) {
             Destroy(ball);
@@ -55,44 +52,8 @@ public class PlayerPaddle : MonoBehaviour {
             var pos = transform.position;
             pos.x += 1.0f;
             var ball = (GameObject)Instantiate(haggleBallPrefab, pos, Quaternion.identity);
-            ball.GetComponent<HaggleBall>().whoMadeMe = gameObject;
+            ball.GetComponent<PowerupManager>().owner = gameObject;
             spawnedBalls.Add(ball);
-        }
-    }
-
-    // Combo Stuff
-    public void CancelCombo() {
-        comboTimer = 0.0f;
-        combo = 0;
-    }
-
-    public void BumpCombo() {
-        combo++;
-        comboTimer = God.Scale(Mathf.Min(combo, maxCombo), 0, maxCombo, maxComboTimeToExtend, minComboTimeToExtend);
-    }
-
-    public float GetComboRatio(bool limit = true) {
-        var comboRatio = (float)combo / (float)maxCombo;
-        if (limit) {
-            comboRatio = Mathf.Min(comboRatio, 1.0f);
-        }
-        return comboRatio;
-    }
-
-    public void DoAbility() {
-        /*
-        if (God.haggleLogic.theRoundState == RoundStates.WaitForPlayerStarted) {
-            SpawnBall();
-            God.haggleLogic.OnWaitForPlayerFinish();
-        } else if (powerup) {
-            powerup.DoAction();
-        }
-        */
-    }
-
-    public void UnDoAbility() {
-        if (powerup) {
-            powerup.UnDoAction();
         }
     }
 
@@ -100,38 +61,51 @@ public class PlayerPaddle : MonoBehaviour {
     void Update() {
         UpdatePositionMouse();
 
-        if (Input.GetMouseButtonDown(0)) {
-            DoAbility();
-        } else if (Input.GetMouseButtonUp(0)) {
-            UnDoAbility();
+        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
+            /*
+            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+
+            if (hit && hit.collider != null) {
+                Debug.Log("CLICKED ON A: " + hit.transform.gameObject);
+                var maybeBall = hit.transform.gameObject;
+                if( maybeBall.GetComponent<PowerupManager>() ) {
+                    var i = 0;
+                    foreach (GameObject ball in spawnedBalls) {
+                        if( maybeBall == ball) {
+                            focusedBall = maybeBall;
+                            focusedBallIndex = i;
+                        }
+                        i++;
+                    }
+                }
+            }
+            */
+
+            Transform tMin = null;
+            float minDist = Mathf.Infinity;
+            Vector3 currentPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var goodI = 0;
+            var i = 0;
+            foreach(GameObject g in spawnedBalls) {
+                float dist = Vector3.Distance(g.transform.position, currentPos);
+                if( dist < minDist) {
+                    goodI = i;
+                    tMin = g.transform;
+                    minDist = dist;
+                }
+                i++;
+            }
+            focusedBall = tMin.gameObject;
+            focusedBallIndex = goodI;
         }
 
-        //if (God.haggleLogic.IsRoundActive()) {
-            // Combo logic.
-            if (comboTimer > 0) {
-                comboTimer -= Time.deltaTime;
-            } else {
-                CancelCombo();
-            }
-        //}
+        if (Input.GetMouseButtonDown(1)) {
+            SpawnBall();
+        }
 
-        // Update status.
-        //var s = string.Format("Combo: {0:D2}/{1:D2} {2:F3}; Balls: {3:D2}/{4:D2};", 
-        //    combo, maxCombo, comboTimer, numBallsCanSpawn, spawnedBalls.Count
-        //);
-        //God.haggleLogic.statusText.text = s;
-    }
-
-    void OnTriggerEnter2D(Collider2D coll) {
-        var g = coll.gameObject;
-        if (g.tag == "Powerup") {
-            var p = g.GetComponent<PowerUpItem>();
-            if (p) {
-                if (powerup) {
-                    powerup.Suicide();
-                }
-                p.Attach(gameObject);
-            }
+        if ( focusedBall != null) {
+            focusVisualiser.transform.position = focusedBall.transform.position;
         }
     }
 }
