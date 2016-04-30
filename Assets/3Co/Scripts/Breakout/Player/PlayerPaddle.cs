@@ -52,6 +52,7 @@ public class PlayerPaddle : MonoBehaviour {
             var pos = transform.position;
             pos.x += 1.0f;
             var ball = (GameObject)Instantiate(haggleBallPrefab, pos, Quaternion.identity);
+            ball.transform.SetParent(GameObject.Find("BallHell").transform, true);
             ball.GetComponent<PowerupManager>().owner = gameObject;
             spawnedBalls.Add(ball);
         }

@@ -5,11 +5,4 @@ public interface IPowerup {
 
     void Init();
 
-    void Update(float dt);
-
-    void FixedUpdate(float dt);
-
-    void OnTriggerEnter(Collider other);
-
-    void OnCollect(GameObject go);
 }

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/*
 [System.Serializable]
 public class PoofPowerup : BasePowerup {
 
@@ -9,3 +11,4 @@ public class PoofPowerup : BasePowerup {
         effectToChild = "Effects/DebugTrail";
     }
 }
+*/

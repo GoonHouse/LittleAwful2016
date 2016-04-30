@@ -22,15 +22,17 @@ public class BestowPowerup : MonoBehaviour {
         var go = coll.gameObject;
         if( tagFilters.Contains(go.tag)) {
             Debug.Log("ALLOWING " + go.tag);
-            //go.AddComponent(System.Type.GetType(nameOfClass));
             var pm = go.GetComponent<PowerupManager>();
             if( pm != null) {
                 Debug.Log("POWERUP MANAGER NOT EMPTY");
+                var g = go.AddComponent(System.Type.GetType(nameOfClass)) as ScriptedPowerup;
+                /*
                 var g = (IPowerup)System.Activator.CreateInstance(
                     System.Reflection.Assembly.GetExecutingAssembly().FullName,
                     nameOfClass
                 ).Unwrap();
-                g.Init();
+                */
+                //g.owner = ;
                 pm.CollectPowerup(g);
                 Destroy(gameObject);
             }

@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-/*
-[System.Serializable]
 
-public class BasePowerup : IPowerup {
+[System.Serializable]
+public class ScriptedPowerup : MonoBehaviour, IPowerup {
 
     // = PARENT
     public GameObject owner;
@@ -19,17 +18,25 @@ public class BasePowerup : IPowerup {
     public float numAmmo;
 
     virtual public void Init() {
+
+    }
+
+    virtual public void Awake() {
+
+    }
+
+    virtual public void Start() {
         numAmmo = maxAmmo;
     }
 
-    virtual public void Update(float dt) {
-        if( Input.GetMouseButtonDown(0) && CanUse() ) {
+    virtual public void Update() {
+        if (Input.GetMouseButtonDown(0) && CanUse()) {
             ConsumeAmmo();
             DoUse();
         }
     }
 
-    virtual public void FixedUpdate(float dt) {
+    virtual public void FixedUpdate() {
         //Debug.Log("oh boy i love fixed horses: " + dt);
     }
 
@@ -38,14 +45,14 @@ public class BasePowerup : IPowerup {
 
     // Methods
     virtual public void ToggleEffect(bool state) {
-        if (effectToChild != null && state ) {
+        if (effectToChild != null && state) {
             childedEffect = GameObject.Instantiate(
                 Resources.Load(effectToChild) as GameObject,
                 owner.transform.position,
                 owner.transform.rotation
             ) as GameObject;
             childedEffect.transform.SetParent(owner.transform, true);
-        } else if( childedEffect != null && !state) {
+        } else if (childedEffect != null && !state) {
             GameObject.Destroy(childedEffect);
         } else {
             Debug.LogWarning("WHAT HAPPENED");
@@ -71,4 +78,3 @@ public class BasePowerup : IPowerup {
         ToggleEffect(true);
     }
 }
-*/
