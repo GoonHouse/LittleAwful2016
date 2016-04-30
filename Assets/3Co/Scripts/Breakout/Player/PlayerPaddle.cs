@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerPaddle : MonoBehaviour {
+public class PlayerPaddle : MonoBehaviour, IPlayer {
     // Combo Stuff
     public int baseNumBallsCanSpawn = 1;
     
@@ -58,11 +58,19 @@ public class PlayerPaddle : MonoBehaviour {
         }
     }
 
+    virtual public bool PrimaryButton() {
+        return Input.GetMouseButtonDown(0);
+    }
+
+    virtual public bool SecondaryButton() {
+        return Input.GetMouseButtonDown(1);
+    }
+
     // Update is called once per frame
     void Update() {
         UpdatePositionMouse();
 
-        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
+        if (PrimaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
             /*
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
@@ -101,7 +109,7 @@ public class PlayerPaddle : MonoBehaviour {
             focusedBallIndex = goodI;
         }
 
-        if (Input.GetMouseButtonDown(1)) {
+        if (SecondaryButton()) {
             SpawnBall();
         }
 

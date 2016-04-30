@@ -13,9 +13,9 @@ GameObject:
   - 212: {fileID: 21255304}
   - 82: {fileID: 8283750}
   - 114: {fileID: 11429966}
-  - 114: {fileID: 11431346}
   - 114: {fileID: 11495062}
   - 114: {fileID: 11416700}
+  - 114: {fileID: 11480998}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: -2.43, z: 0}
+  m_LocalPosition: {x: -6.852113, y: 0.6955549, z: 2.2890625}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80701c32e41ce5846ac7c29fdab15dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  powerups: []
   powerupNames: []
 --- !u!114 &11429966
 MonoBehaviour:
@@ -167,7 +169,7 @@ MonoBehaviour:
   - Brick
   damageAmount: 1
   isScaledByForce: 0
---- !u!114 &11431346
+--- !u!114 &11480998
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -175,11 +177,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 198842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0b8a1135faa31458bf81378cf281cc, type: 3}
+  m_Script: {fileID: 11500000, guid: c5b74a70a0dcd74498f10d467c0e46d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballMinSpeed: 5
-  ballMaxSpeed: 25
+  baseMinSpeed: 5
+  baseMaxSpeed: 25
 --- !u!114 &11495062
 MonoBehaviour:
   m_ObjectHideFlags: 1

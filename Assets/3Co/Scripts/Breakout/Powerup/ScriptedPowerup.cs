@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class ScriptedPowerup : MonoBehaviour, IPowerup {
+public abstract class ScriptedPowerup : MonoBehaviour, IPowerup {
 
     // = PARENT
     public GameObject owner;
