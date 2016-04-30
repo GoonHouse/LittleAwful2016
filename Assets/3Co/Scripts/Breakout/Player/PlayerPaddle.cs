@@ -16,6 +16,10 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
     public int focusedBallIndex;
     public GameObject focusVisualiser;
 
+    // watashi
+    public List<BaseFamiliar> familiars;
+    public int activeFamiliarIndex = 0;
+
     // how far the paddle can move relative from its top / bottom
     private float extents = 3.50f;
 
@@ -23,6 +27,17 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
     void Start() {
         //spawnedBalls = new List<GameObject>();
         numBallsCanSpawn = baseNumBallsCanSpawn;
+    }
+
+    public BaseFamiliar GetActiveFamiliar() {
+        return familiars[activeFamiliarIndex];
+    }
+
+    public BaseBall GetFocusedBall() {
+        if( focusedBall != null) {
+            return focusedBall.GetComponent<BaseBall>();
+        }
+        return null;
     }
 
     void UpdatePositionMouse() {
@@ -69,6 +84,10 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
     // Update is called once per frame
     void Update() {
         UpdatePositionMouse();
+
+        if(familiars[activeFamiliarIndex] != null) {
+            familiars[activeFamiliarIndex].transform.Rotate(0.0f, 0.0f, 2.0f);
+        }
 
         if (PrimaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
             /*
