@@ -13,6 +13,8 @@ public abstract class BaseBall : MonoBehaviour, IBall {
     public float baseMinSpeed = 5.0f;
     public float baseMaxSpeed = 25.0f;
 
+    public GameObject owner;
+
     private float minSpeed;
     private float maxSpeed;
 

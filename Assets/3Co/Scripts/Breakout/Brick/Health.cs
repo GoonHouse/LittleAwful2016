@@ -17,6 +17,8 @@ public class Health : MonoBehaviour {
     public float maxHealth = 3;
     public float health = 3;
 
+    public bool useHurtStates = true;
+
     public List<SpriteState> hurtStates;
 
     public float damageDelay = 0.05f;
@@ -25,6 +27,10 @@ public class Health : MonoBehaviour {
 
     public void Start() {
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    public float GetHealth() {
+        return health / maxHealth;
     }
 
     public float TakeDamage(float amount = 1.0f) {
@@ -37,9 +43,11 @@ public class Health : MonoBehaviour {
 
             onHurt.Invoke();
 
-            var h = Mathf.RoundToInt(health) - 1;
-            sr.sprite = hurtStates[h].sprite;
-            sr.color = hurtStates[h].color;
+            if( useHurtStates) {
+                var h = Mathf.RoundToInt(health) - 1;
+                sr.sprite = hurtStates[h].sprite;
+                sr.color = hurtStates[h].color;
+            }
         }
 
         if (health <= 0.0f) {

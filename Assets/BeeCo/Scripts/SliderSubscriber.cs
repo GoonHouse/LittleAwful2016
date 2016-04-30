@@ -8,6 +8,6 @@ public class SliderSubscriber : MonoBehaviour {
     public string format = "{0:P}";
 
 	public void ChangeText(){
-		textToChange.text = toReadFrom.value.ToString(format);
+		textToChange.text = System.String.Format(format, toReadFrom.value);
 	}
 }

@@ -27,6 +27,10 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
     void Start() {
         //spawnedBalls = new List<GameObject>();
         numBallsCanSpawn = baseNumBallsCanSpawn;
+
+        if (focusedBall == null) {
+            FocusBallNearest(transform.position);
+        }
     }
 
     public BaseFamiliar GetActiveFamiliar() {
@@ -69,6 +73,7 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
             var ball = (GameObject)Instantiate(haggleBallPrefab, pos, Quaternion.identity);
             ball.transform.SetParent(GameObject.Find("BallHell").transform, true);
             ball.GetComponent<PowerupManager>().owner = gameObject;
+            ball.GetComponent<BaseBall>().owner = gameObject;
             spawnedBalls.Add(ball);
             return true;
         }
@@ -112,22 +117,7 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
             }
             */
 
-            Transform tMin = null;
-            float minDist = Mathf.Infinity;
-            Vector3 currentPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var goodI = 0;
-            var i = 0;
-            foreach(GameObject g in spawnedBalls) {
-                float dist = Vector3.Distance(g.transform.position, currentPos);
-                if( dist < minDist) {
-                    goodI = i;
-                    tMin = g.transform;
-                    minDist = dist;
-                }
-                i++;
-            }
-            focusedBall = tMin.gameObject;
-            focusedBallIndex = goodI;
+            FocusBallNearest(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
 
         if (SecondaryButton()) {
@@ -139,5 +129,45 @@ public class PlayerPaddle : MonoBehaviour, IPlayer {
         if ( focusedBall != null) {
             focusVisualiser.transform.position = focusedBall.transform.position;
         }
+
+        var mouse = Input.GetAxis("Mouse ScrollWheel");
+        if (mouse < 0.0f) {
+            TargetNudge(1);
+        } else if( mouse > 0.0f) {
+            TargetNudge(-1);
+        }
+
+        if(Input.GetMouseButtonDown(2)) {
+            FocusBallNearest(transform.position);
+        }
+    }
+
+    public void FocusBallNearest(Vector3 position) {
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        var goodI = 0;
+        var i = 0;
+        foreach (GameObject g in spawnedBalls) {
+            float dist = Vector3.Distance(g.transform.position, position);
+            if (dist < minDist) {
+                goodI = i;
+                tMin = g.transform;
+                minDist = dist;
+            }
+            i++;
+        }
+        focusedBall = tMin.gameObject;
+        focusedBallIndex = goodI;
+    }
+
+    int Mod(int a, int b) {
+        return (a % b + b) % b;
+    }
+
+    public void TargetNudge(int direction) {
+        var numFamiliars = familiars.Count;
+        var newPos = (activeFamiliarIndex + direction);
+        activeFamiliarIndex = Mod(newPos, numFamiliars);
+        //act = paddle.spawnedBalls[paddle.focusedBallIndex];
     }
 }
