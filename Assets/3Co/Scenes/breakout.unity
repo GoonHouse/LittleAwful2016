@@ -759,6 +759,7 @@ GameObject:
   - 81: {fileID: 475981434}
   - 114: {fileID: 475981439}
   - 114: {fileID: 475981440}
+  - 114: {fileID: 475981441}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -865,6 +866,17 @@ MonoBehaviour:
   enemy: {fileID: 2022050773}
   playerHealth: {fileID: 2069024676}
   enemyHealth: {fileID: 1320898424}
+--- !u!114 &475981441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475981433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c91cb9a4e10a5941a306dac8a494b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &495334974 stripped
 Transform:
   m_PrefabParentObject: {fileID: 497078, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
@@ -2422,6 +2434,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1315174201}
+  - 114: {fileID: 1315174202}
   m_Layer: 0
   m_Name: PlayerLeft
   m_TagString: Untagged
@@ -2444,6 +2457,17 @@ Transform:
   - {fileID: 980632926}
   m_Father: {fileID: 954532912}
   m_RootOrder: 0
+--- !u!114 &1315174202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315174200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f2885e54841e3428d1eb59d865dc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1320898421
 GameObject:
   m_ObjectHideFlags: 0
