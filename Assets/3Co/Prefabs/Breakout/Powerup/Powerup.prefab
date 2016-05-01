@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &412098
 Transform:
   m_ObjectHideFlags: 1
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.7399397, y: -0.7906468, z: 0}
+  m_LocalPosition: {x: 5.23, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagFilters:
   - Ball
-  nameOfClass: DebugPowerup
+  nameOfClass: DebugScriptedPowerup
 --- !u!114 &11457770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,6 +194,7 @@ MonoBehaviour:
       PublicKeyToken=null
   maxHealth: 3
   health: 3
+  useHurtStates: 1
   hurtStates:
   - name: red
     sprite: {fileID: 21300000, guid: 20844bd7409384e46a1e0db7fd826e2c, type: 3}

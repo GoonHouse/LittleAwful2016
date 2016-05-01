@@ -16,7 +16,7 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
 	
 	// Update is called once per frame
 	virtual public void Update () {
-	
+	    
 	}
 
     virtual public float GetEnergyLeft() {

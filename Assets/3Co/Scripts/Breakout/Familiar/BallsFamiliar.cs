@@ -7,7 +7,6 @@ public class BallsFamiliar : BaseFamiliar {
         var npos = transform.position;
         npos.x += 1.0f;
         if( !player.CanSpawnSomethingHere(pos) ) {
-            Debug.Log("EVERYTHING IS FUCKED I GUESS");
             return false;
         }
         var tball = (GameObject)Instantiate(player.ball, npos, Quaternion.identity);

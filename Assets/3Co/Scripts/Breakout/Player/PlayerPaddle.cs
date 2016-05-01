@@ -31,15 +31,28 @@ public class PlayerPaddle : AbstractPlayer {
     void Update() {
         GoWhereIShould();
 
-        if(GetActiveFamiliar() != null && GetActiveFamiliar().GetEnergyLeft() > 0.0f) {
-            familiars[activeFamiliarIndex].transform.Rotate(0.0f, 0.0f, 2.0f);
+        foreach(BaseFamiliar fam in familiars) {
+            var line = fam.gameObject.GetComponent<LineRenderer>();
+            line.enabled = false;
+            if (GetActiveFamiliar().GetComponent<BaseFamiliar>() == fam && fam.GetEnergyLeft() > 0.0f) {
+                var circle = fam.gameObject.GetComponent<Circle>();
+                line.enabled = true;
+                circle.segments = (int)fam.baseEnergy;
+                circle.visualParts = fam.GetEnergyLeft();
+            }
         }
 
-        if (PrimaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
+        /*
+        if(GetActiveFamiliar() != null && GetActiveFamiliar().GetEnergyLeft() > 0.0f) {
+            familiars[activeFamiliarIndex].GetComponent<Circle>().enabled = true;
+        }
+        */
+
+        if (SecondaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
             FocusBallNearest(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
 
-        if (SecondaryButton()) {
+        if (PrimaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             UseActiveFamiliar(pos);
         }

@@ -13,6 +13,9 @@ public abstract class BaseBall : MonoBehaviour, IBall {
     public float baseMinSpeed = 5.0f;
     public float baseMaxSpeed = 25.0f;
 
+    // when the ball needs to go from not moving to moving, do this
+    public float forceOfRandomDirection = 300.0f;
+
     public AbstractPlayer creator;
     public GameObject owner;
 
@@ -20,9 +23,13 @@ public abstract class BaseBall : MonoBehaviour, IBall {
     private float maxSpeed;
 
     // Use this for initialization
-    public virtual void Awake () {
+    public virtual void Awake() {
         minSpeed = baseMinSpeed;
         maxSpeed = baseMaxSpeed;
+    }
+
+    public virtual void Start() {
+        GoInRandomDirection();
     }
 	
 	// Update is called once per frame
@@ -49,5 +56,11 @@ public abstract class BaseBall : MonoBehaviour, IBall {
         } else if (rigid.velocity.magnitude > maxSpeed) {
             rigid.velocity = rigid.velocity.normalized * maxSpeed;
         }
+    }
+
+    public virtual void GoInRandomDirection(float howFast = 1.0f, bool doShout = false) {
+        Vector3 v = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) * Vector3.up;
+
+        GetComponent<Rigidbody2D>().AddForce(v * forceOfRandomDirection);
     }
 }
