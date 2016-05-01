@@ -36,10 +36,11 @@ public class PlayerPaddle : AbstractPlayer {
             familiars[activeFamiliarIndex].GetComponent<Circle>().enabled = true;
         }
         */
-
+        /*
         if (SecondaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
             FocusBallNearest(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
+        */
 
         if (PrimaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -57,8 +58,10 @@ public class PlayerPaddle : AbstractPlayer {
             TargetNudge(-1);
         }
 
+        /*
         if(Input.GetMouseButtonDown(2)) {
             FocusBallNearest(transform.position);
         }
+        */
     }
 }

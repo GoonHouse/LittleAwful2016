@@ -92,7 +92,7 @@ public abstract class AbstractPlayer : MonoBehaviour {
 
     virtual public bool UseActiveFamiliar(Vector3 pos) {
         var af = GetActiveFamiliar();
-        var fb = GetFocusedBall();
+        var fb = GetNearest<BaseBall>(pos);
         return af.ConsumeShot(this, fb, pos);
     }
 
@@ -107,17 +107,25 @@ public abstract class AbstractPlayer : MonoBehaviour {
         return null;
     }
 
-    public void FocusBallNearest(Vector3 position) {
+    public static T[] FindObjectsOfThisType<T>() {
+        T[] objects = UnityEngine.Object.FindObjectsOfType(typeof(T)) as T[];
+        return objects;
+    }
+
+    public T GetNearest<T>(Vector3 position) where T : MonoBehaviour {
         Transform tMin = null;
         float minDist = Mathf.Infinity;
-        foreach (BaseBall g in GameObject.FindObjectsOfType<BaseBall>()) {
+        T toUse = default(T);
+        foreach (T g in FindObjectsOfThisType<T>()) {
             float dist = Vector3.Distance(g.transform.position, position);
             if (dist < minDist) {
                 tMin = g.transform;
+                toUse = g;
                 minDist = dist;
             }
         }
-        focusedThing = tMin.gameObject;
+        //focusedThing = tMin.gameObject;
+        return toUse;
     }
 
     public void TargetNudge(int direction) {
