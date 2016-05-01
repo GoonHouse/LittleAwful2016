@@ -29,18 +29,7 @@ public class PlayerPaddle : AbstractPlayer {
 
     // Update is called once per frame
     void Update() {
-        GoWhereIShould();
-
-        foreach(BaseFamiliar fam in familiars) {
-            var line = fam.gameObject.GetComponent<LineRenderer>();
-            line.enabled = false;
-            if (GetActiveFamiliar().GetComponent<BaseFamiliar>() == fam && fam.GetEnergyLeft() > 0.0f) {
-                var circle = fam.gameObject.GetComponent<Circle>();
-                line.enabled = true;
-                circle.segments = (int)fam.baseEnergy;
-                circle.visualParts = fam.GetEnergyLeft();
-            }
-        }
+        base.Update();
 
         /*
         if(GetActiveFamiliar() != null && GetActiveFamiliar().GetEnergyLeft() > 0.0f) {

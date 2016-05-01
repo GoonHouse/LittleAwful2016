@@ -43,7 +43,25 @@ public abstract class AbstractPlayer : MonoBehaviour {
         return false;
     }
 
-    virtual public void FindAPlaceToSpawn(GameObject thing) {
+    virtual public void UpdateFamiliars() {
+        foreach (BaseFamiliar fam in familiars) {
+            var line = fam.gameObject.GetComponent<LineRenderer>();
+            line.enabled = false;
+            if (GetActiveFamiliar().GetComponent<BaseFamiliar>() == fam && fam.GetEnergyLeft() > 0.0f) {
+                var circle = fam.gameObject.GetComponent<Circle>();
+                line.enabled = true;
+                circle.segments = (int)fam.baseEnergy;
+                circle.visualParts = fam.GetEnergyLeft();
+            }
+        }
+    }
+
+    virtual public void Update() {
+        GoWhereIShould();
+        UpdateFamiliars();
+    }
+
+    virtual public Vector3 FindAPlaceToSpawn(GameObject thing) {
         var coll = brickZone.GetComponent<BoxCollider2D>().bounds;
 
         Vector3 pos;
@@ -58,6 +76,8 @@ public abstract class AbstractPlayer : MonoBehaviour {
         pos.x = Random.Range(min.x, max.x);
         pos.y = Random.Range(min.y, max.y);
         pos.z = Random.Range(min.z, max.z);
+
+        return pos;
     }
 
     virtual public bool PrimaryButton() {
