@@ -4,6 +4,7 @@ using System.Collections;
 public class HurtWall : MonoBehaviour {
 
     public GameObject owner;
+    public bool selfInflict = false;
 
     // Use this for initialization
     void Start() {
@@ -18,8 +19,10 @@ public class HurtWall : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll) {
         if( coll.gameObject.tag == "Ball") {
             var bb = coll.gameObject.GetComponent<BaseBall>();
-            if (bb != null && bb.owner != owner) {
-                coll.gameObject.GetComponent<DoDamage>().Hurt(owner);
+            if (bb != null) {
+                if( !selfInflict || (selfInflict && bb.owner != owner)) {
+                    coll.gameObject.GetComponent<DoDamage>().Hurt(owner);
+                }
             }
         }
     }

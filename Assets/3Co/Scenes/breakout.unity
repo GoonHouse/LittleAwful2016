@@ -1543,12 +1543,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 621168783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 909375c8c71d66e4cb911470dde2b914, type: 3}
+  m_Script: {fileID: 11500000, guid: 83d8d77db32578045b2ef24dd58fe90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseEnergy: 100
-  baseEnergyPerUse: 20
-  requiresTarget: 1
+  baseEnergyPerUse: 1
+  requiresTarget: 0
+  brick: {fileID: 103930, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
 --- !u!212 &621168786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2182,11 +2183,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   extents: 3.5
   patrolProgress: 0
-  moveSpeed: 3
+  moveSpeed: 1.11
   goingDown: 1
   brick: {fileID: 103930, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
   brickZone: {fileID: 1451326670}
-  brickSpawnTimerDelay: 1
+  brickSpawnTimerDelay: 2
   brickSpawnTimer: 0
 --- !u!114 &819200416
 MonoBehaviour:
@@ -2399,8 +2400,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  maxHealth: 3
-  health: 3
+  maxHealth: 50
+  health: 50
   useHurtStates: 0
   hurtStates: []
   damageDelay: 0.05
@@ -2761,11 +2762,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 497078, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.852113
+      value: -7.82
       objectReference: {fileID: 0}
     - target: {fileID: 497078, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.6955549
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 497078, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2791,14 +2792,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11416700, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 980632920}
     - target: {fileID: 11480998, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
       propertyPath: owner
       value: 
       objectReference: {fileID: 980632920}
+    - target: {fileID: 11416700, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 980632920}
+    - target: {fileID: 11495062, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480998, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
+      propertyPath: baseMaxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036904, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1598ebe4386aa3c4388b32af3035e9c5, type: 2}
   m_IsPrefabParent: 0
