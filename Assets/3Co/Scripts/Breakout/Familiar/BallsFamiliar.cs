@@ -3,8 +3,19 @@ using System.Collections;
 
 public class BallsFamiliar : BaseFamiliar {
 
-    override public bool DoAbility(PlayerPaddle player, BaseBall ball) {
-        return player.SpawnBall();
+    override public bool DoAbility(AbstractPlayer player, BaseBall ball, Vector3 pos) {
+        var npos = transform.position;
+        npos.x += 1.0f;
+        if( !player.CanSpawnSomethingHere(pos) ) {
+            Debug.Log("EVERYTHING IS FUCKED I GUESS");
+            return false;
+        }
+        var tball = (GameObject)Instantiate(player.ball, npos, Quaternion.identity);
+        tball.transform.SetParent(GameObject.Find("BallHell").transform, true);
+        tball.GetComponent<PowerupManager>().owner = gameObject;
+        tball.GetComponent<BaseBall>().owner = gameObject;
+        tball.GetComponent<BaseBall>().creator = player;
+        return true;
     }
 
 }

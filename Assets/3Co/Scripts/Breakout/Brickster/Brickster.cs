@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Brickster : MonoBehaviour {
+public class Brickster : AbstractPlayer {
 
     // how far the paddle can move relative from its top / bottom
-    public float extents = 3.50f;
     public float patrolProgress = 0.5f;
     public float moveSpeed = 0.5f;
     public float goingDown = 1.0f;
-
-    public GameObject brick;
-    public GameObject brickZone;
 
     public float brickSpawnTimerDelay = 1.0f;
     public float brickSpawnTimer;
@@ -22,8 +18,8 @@ public class Brickster : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
-        top = new Vector2(rigid.position.x, -extents);
-        bottom = new Vector2(rigid.position.x, extents);
+        top = new Vector2(rigid.position.x, -howFarToGo);
+        bottom = new Vector2(rigid.position.x, howFarToGo);
 
         brickSpawnTimer = brickSpawnTimerDelay;
     }

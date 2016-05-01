@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.852113, y: 0.6955549, z: 2.2890625}
+  m_LocalPosition: {x: -7.82, y: -2.51, z: 2.2890625}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 402842}
@@ -72,13 +72,13 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198842}
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.19634955
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
@@ -196,7 +196,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_StartWidth: 1
   m_EndWidth: 0
   m_Colors:
@@ -276,7 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMinSpeed: 5
-  baseMaxSpeed: 25
+  baseMaxSpeed: 20
+  creator: {fileID: 0}
   owner: {fileID: 0}
 --- !u!114 &11495062
 MonoBehaviour:
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198842}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69bac081c0aa51447bcd7c77921e5eae, type: 3}
   m_Name: 
