@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: 5957ba3ab9f2cf94e98d56a7401eab2e
+timeCreated: 1462202768
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Arrows_0
+    21300002: Arrows_1
+    21300004: Arrows_2
+    21300006: Arrows_3
+    21300008: Arrows_4
+    21300010: Arrows_5
+    21300012: Arrows_6
+    21300014: Arrows_7
+    21300016: Arrows_8
+    21300018: Arrows_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 512
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Arrows_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1936
+        width: 153
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 71, y: 0, z: 14, w: 0}
+      outline:
+      - - {x: 71.5, y: 8}
+        - {x: 18.5, y: 32}
+        - {x: -31.5, y: 32}
+        - {x: -76.5, y: 11}
+        - {x: -76.5, y: -6}
+        - {x: -22.5, y: -32}
+        - {x: 3.5, y: -32}
+        - {x: 71.5, y: -12}
+        - {x: 76.5, y: -8}
+        - {x: 76.5, y: 4}
+    - name: Arrows_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1938
+        width: 95
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.5, y: 45}
+        - {x: 23.5, y: 37}
+        - {x: -27.5, y: 29}
+        - {x: -47.5, y: -11}
+        - {x: -47.5, y: -23}
+        - {x: -43.5, y: -27}
+        - {x: -4.5, y: -45}
+        - {x: 30.5, y: -45}
+        - {x: 47.5, y: -2}
+        - {x: 47.5, y: 43}
+        - {x: 44.5, y: 45}
+    - name: Arrows_2
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1864
+        width: 72
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 37, y: 0, z: 11, w: 0}
+      outline:
+      - - {x: 5, y: 17}
+        - {x: -20, y: 17}
+        - {x: -36, y: 3}
+        - {x: -36, y: -14}
+        - {x: -27, y: -17}
+        - {x: 26, y: -17}
+        - {x: 34, y: -14}
+        - {x: 36, y: -10}
+        - {x: 36, y: 9}
+    - name: Arrows_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1869
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 19}
+        - {x: -28, y: 7}
+        - {x: -29, y: 3}
+        - {x: -29, y: -13}
+        - {x: -25, y: -19}
+        - {x: 21, y: -19}
+        - {x: 29, y: -16}
+        - {x: 29, y: 19}
+    - name: Arrows_4
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1670
+        width: 134
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 66, y: 0, z: 17, w: 0}
+      outline:
+      - - {x: -24, y: 50}
+        - {x: -67, y: 9}
+        - {x: -67, y: -12}
+        - {x: -38, y: -50}
+        - {x: 67, y: -50}
+        - {x: 67, y: 33}
+        - {x: -4, y: 50}
+    - name: Arrows_5
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1670
+        width: 161
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.5, y: 55.5}
+        - {x: -80.5, y: 6.5}
+        - {x: -80.5, y: -40.5}
+        - {x: -69.5, y: -55.5}
+        - {x: 15.5, y: -55.5}
+        - {x: 80.5, y: -9.5}
+        - {x: 80.5, y: 49.5}
+        - {x: 51.5, y: 55.5}
+    - name: Arrows_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1306
+        width: 583
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 182, y: 0, z: 115, w: 0}
+      outline:
+      - - {x: 185.5, y: -58}
+        - {x: 261.5, y: -66}
+        - {x: 288.5, y: -65}
+        - {x: 291.5, y: -61}
+        - {x: 291.5, y: 62}
+        - {x: 290.5, y: 66}
+        - {x: 255.5, y: 68}
+        - {x: 208.5, y: 60}
+        - {x: 185.5, y: 58}
+        - {x: 70.5, y: 58}
+        - {x: 7.5, y: 57}
+        - {x: -66.5, y: 56}
+        - {x: -117.5, y: 57}
+        - {x: -116.5, y: 154}
+        - {x: -121.5, y: 158}
+        - {x: -135.5, y: 158}
+        - {x: -148.5, y: 148}
+        - {x: -202.5, y: 86}
+        - {x: -265.5, y: 29}
+        - {x: -291.5, y: 7}
+        - {x: -291.5, y: -7}
+        - {x: -256.5, y: -37}
+        - {x: -189.5, y: -102}
+        - {x: -168.5, y: -127}
+        - {x: -137.5, y: -158}
+        - {x: -117.5, y: -158}
+        - {x: -117.5, y: -56}
+        - {x: -66.5, y: -56}
+        - {x: 70.5, y: -58}
+    - name: Arrows_7
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1307
+        width: 447
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 106.5, y: -42}
+        - {x: 136.5, y: -18}
+        - {x: 181.5, y: 36}
+        - {x: 223.5, y: 101}
+        - {x: 223.5, y: 119}
+        - {x: 133.5, y: 172}
+        - {x: 129.5, y: 173}
+        - {x: 113.5, y: 173}
+        - {x: 98.5, y: 151}
+        - {x: 64.5, y: 73}
+        - {x: 21.5, y: 42}
+        - {x: -49.5, y: 41}
+        - {x: -49.5, y: 139}
+        - {x: -57.5, y: 147}
+        - {x: -70.5, y: 143}
+        - {x: -99.5, y: 112}
+        - {x: -134.5, y: 71}
+        - {x: -223.5, y: -8}
+        - {x: -223.5, y: -22}
+        - {x: -188.5, y: -52}
+        - {x: -71.5, y: -173}
+        - {x: -49.5, y: -173}
+        - {x: -49.5, y: -72}
+        - {x: 16.5, y: -73}
+        - {x: 81.5, y: -56}
+    - name: Arrows_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 679
+        width: 1048
+        height: 536
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 371, y: 0, z: 35, w: 0}
+      outline:
+      - - {x: -183, y: -245}
+        - {x: -185, y: -233}
+        - {x: -189, y: -210}
+        - {x: -191, y: -207}
+        - {x: -196, y: -173}
+        - {x: -198, y: -162}
+        - {x: -199, y: -142}
+        - {x: -200, y: -141}
+        - {x: -194, y: -116}
+        - {x: -182, y: -115}
+        - {x: -150, y: -114}
+        - {x: -149, y: -113}
+        - {x: 113, y: -113}
+        - {x: 114, y: -114}
+        - {x: 358, y: -114}
+        - {x: 359, y: -113}
+        - {x: 518, y: -113}
+        - {x: 521, y: -112}
+        - {x: 524, y: -109}
+        - {x: 524, y: -25}
+        - {x: 522, y: -17}
+        - {x: 523, y: 8}
+        - {x: 524, y: 16}
+        - {x: 524, y: 109}
+        - {x: 521, y: 112}
+        - {x: 518, y: 113}
+        - {x: 359, y: 113}
+        - {x: 358, y: 114}
+        - {x: 114, y: 114}
+        - {x: 113, y: 113}
+        - {x: -149, y: 113}
+        - {x: -150, y: 114}
+        - {x: -181, y: 114}
+        - {x: -182, y: 115}
+        - {x: -200, y: 116}
+        - {x: -199, y: 142}
+        - {x: -198, y: 162}
+        - {x: -194, y: 187}
+        - {x: -190, y: 206}
+        - {x: -186, y: 228}
+        - {x: -183, y: 245}
+        - {x: -183, y: 254}
+        - {x: -180, y: 256}
+        - {x: -178, y: 263}
+        - {x: -180, y: 266}
+        - {x: -183, y: 268}
+        - {x: -198, y: 268}
+        - {x: -205, y: 262}
+        - {x: -227, y: 241}
+        - {x: -240, y: 228}
+        - {x: -254, y: 216}
+        - {x: -272, y: 199}
+        - {x: -287, y: 188}
+        - {x: -328, y: 157}
+        - {x: -343, y: 145}
+        - {x: -351, y: 137}
+        - {x: -362, y: 130}
+        - {x: -389, y: 109}
+        - {x: -399, y: 98}
+        - {x: -403, y: 93}
+        - {x: -416, y: 81}
+        - {x: -435, y: 68}
+        - {x: -451, y: 59}
+        - {x: -464, y: 51}
+        - {x: -491, y: 33}
+        - {x: -504, y: 22}
+        - {x: -524, y: 8}
+        - {x: -524, y: -6}
+        - {x: -523, y: -8}
+        - {x: -514, y: -15}
+        - {x: -504, y: -22}
+        - {x: -491, y: -33}
+        - {x: -473, y: -45}
+        - {x: -451, y: -59}
+        - {x: -436, y: -68}
+        - {x: -417, y: -81}
+        - {x: -403, y: -92}
+        - {x: -403, y: -94}
+        - {x: -389, y: -109}
+        - {x: -372, y: -122}
+        - {x: -358, y: -133}
+        - {x: -354, y: -134}
+        - {x: -342, y: -146}
+        - {x: -325, y: -160}
+        - {x: -318, y: -165}
+        - {x: -287, y: -188}
+        - {x: -272, y: -199}
+        - {x: -254, y: -216}
+        - {x: -250, y: -219}
+        - {x: -240, y: -228}
+        - {x: -227, y: -241}
+        - {x: -201, y: -265}
+        - {x: -198, y: -268}
+        - {x: -182, y: -268}
+        - {x: -178, y: -263}
+        - {x: -178, y: -259}
+        - {x: -183, y: -253}
+    - name: Arrows_9
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 679
+        width: 774
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: -219.5}
+        - {x: -58, y: -182.5}
+        - {x: -61, y: -150.5}
+        - {x: -57, y: -125.5}
+        - {x: -45, y: -124.5}
+        - {x: 3, y: -123.5}
+        - {x: 15, y: -122.5}
+        - {x: 31, y: -121.5}
+        - {x: 55, y: -119.5}
+        - {x: 106, y: -115.5}
+        - {x: 126, y: -111.5}
+        - {x: 156, y: -103.5}
+        - {x: 194, y: -88.5}
+        - {x: 212, y: -80.5}
+        - {x: 253, y: -56.5}
+        - {x: 264, y: -46.5}
+        - {x: 284, y: -25.5}
+        - {x: 294, y: -8.5}
+        - {x: 313, y: 27.5}
+        - {x: 323, y: 49.5}
+        - {x: 335, y: 69.5}
+        - {x: 387, y: 157.5}
+        - {x: 387, y: 169.5}
+        - {x: 384, y: 173.5}
+        - {x: 332, y: 204.5}
+        - {x: 317, y: 211.5}
+        - {x: 304, y: 216.5}
+        - {x: 258, y: 248.5}
+        - {x: 236, y: 261.5}
+        - {x: 208, y: 277.5}
+        - {x: 197, y: 277.5}
+        - {x: 192, y: 273.5}
+        - {x: 142, y: 189.5}
+        - {x: 131, y: 171.5}
+        - {x: 117, y: 146.5}
+        - {x: 108, y: 137.5}
+        - {x: 83, y: 124.5}
+        - {x: 67, y: 119.5}
+        - {x: 51, y: 111.5}
+        - {x: 25, y: 105.5}
+        - {x: 21, y: 103.5}
+        - {x: -13, y: 104.5}
+        - {x: -63, y: 106.5}
+        - {x: -61, y: 152.5}
+        - {x: -46, y: 235.5}
+        - {x: -42, y: 249.5}
+        - {x: -42, y: 256.5}
+        - {x: -49, y: 261.5}
+        - {x: -57, y: 261.5}
+        - {x: -64, y: 256.5}
+        - {x: -90, y: 231.5}
+        - {x: -117, y: 206.5}
+        - {x: -191, y: 147.5}
+        - {x: -206, y: 135.5}
+        - {x: -252, y: 99.5}
+        - {x: -280, y: 71.5}
+        - {x: -314, y: 49.5}
+        - {x: -327, y: 41.5}
+        - {x: -354, y: 23.5}
+        - {x: -387, y: -1.5}
+        - {x: -387, y: -16.5}
+        - {x: -386, y: -17.5}
+        - {x: -354, y: -42.5}
+        - {x: -336, y: -54.5}
+        - {x: -280, y: -90.5}
+        - {x: -252, y: -118.5}
+        - {x: -221, y: -142.5}
+        - {x: -188, y: -169.5}
+        - {x: -150, y: -197.5}
+        - {x: -114, y: -228.5}
+        - {x: -61, y: -277.5}
+        - {x: -45, y: -277.5}
+        - {x: -41, y: -272.5}
+        - {x: -41, y: -268.5}
+        - {x: -48, y: -242.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
