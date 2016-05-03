@@ -14,8 +14,8 @@ public class ShakeCamera : MonoBehaviour {
 
 	public float unfuckFactor = 0.001f;
 
-    private float shakeAmount = 0.0f;
-    private float shakeTime = 0.0f;
+    private float shakeAmount = 1.0f;
+    private float shakeTime = 2.0f;
 
     private Vector3 startPos;
 
