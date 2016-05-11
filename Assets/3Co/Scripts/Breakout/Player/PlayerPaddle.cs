@@ -58,13 +58,16 @@ public class PlayerPaddle : AbstractPlayer {
         if (SecondaryButton() && NotUI()) {
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             focusedThing = GetNearest<BaseBall>(pos).gameObject;
+            focusVisualiser.GetComponent<ActivityJiggler>().StartJiggle();
         }
 
-        if ( focusedThing != null ) {
-            focusVisualiser.transform.position = focusedThing.transform.position;
-            focusVisualiser.transform.Rotate(0.0f, 0.0f, 0.3f);
+        if (focusedThing != null) {
+            var pos = focusedThing.transform.position;
+            pos.z = focusVisualiser.transform.position.z;
+            focusVisualiser.transform.position = pos;
 
-            if( SecondaryButtonRelease() && NotUI()) {
+            if (SecondaryButtonRelease() && NotUI()) {
+                focusVisualiser.GetComponent<ActivityJiggler>().StopJiggle();
                 focusedThing = null;
             }
         }

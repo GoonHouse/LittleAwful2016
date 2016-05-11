@@ -97,7 +97,6 @@ public abstract class AbstractPlayer : MonoBehaviour {
 
     virtual public bool UseActiveFamiliar(Vector3 pos) {
         var af = GetActiveFamiliar();
-        var fb = GetNearest<BaseBall>(pos);
         return af.ConsumeShot(this, pos);
     }
 
