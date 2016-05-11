@@ -16,13 +16,14 @@ public class HurtWall : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter2D(Collider2D coll) {
-        if( coll.gameObject.tag == "Ball") {
+    void OnCollisionEnter2D(Collision2D coll) {
+        if( coll.gameObject.tag == "Ball" ) {
             var bb = coll.gameObject.GetComponent<BaseBall>();
             if (bb != null) {
-                if( !selfInflict || (selfInflict && bb.owner != owner)) {
-                    coll.gameObject.GetComponent<DoDamage>().Hurt(owner);
-                }
+                var dd = bb.gameObject.GetComponent<DoDamage>();
+                var impactForce = dd.GetCollisionForce(coll.rigidbody);
+                Camera.main.GetComponent<ShakeCamera>().Jostle(impactForce);
+                dd.Hurt(owner, impactForce);
             }
         }
     }

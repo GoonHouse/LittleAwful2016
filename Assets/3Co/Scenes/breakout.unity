@@ -310,6 +310,10 @@ Prefab:
       propertyPath: m_Size.x
       value: 2.52
       objectReference: {fileID: 0}
+    - target: {fileID: 6184760, guid: 912619e7cc865a04abf4648bd1ae5e89, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 21226206, guid: 912619e7cc865a04abf4648bd1ae5e89, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 912619e7cc865a04abf4648bd1ae5e89, type: 2}
@@ -1450,6 +1454,10 @@ Prefab:
     - target: {fileID: 6184760, guid: 912619e7cc865a04abf4648bd1ae5e89, type: 2}
       propertyPath: m_Size.x
       value: 2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184760, guid: 912619e7cc865a04abf4648bd1ae5e89, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 21226206, guid: 912619e7cc865a04abf4648bd1ae5e89, type: 2}
@@ -4662,6 +4670,10 @@ Prefab:
     - target: {fileID: 489238, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421416, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
+      propertyPath: onHurt.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}

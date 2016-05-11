@@ -21,22 +21,18 @@ public class StatusIndicator : MonoBehaviour {
 
     public void DetermineState(AbstractPlayer player) {
         if ( !fam.CanShoot() ) {
-            Debug.Log("fart");
             SetState("no_uses");
             return;
         }
 
         if (player.GetActiveFamiliar().GetComponent<BaseFamiliar>() == fam) {
             // we are active
-            Debug.Log("meme");
             if (fam.requiresTarget && player.focusedThing == null) {
-                Debug.Log("gazorpo");
                 SetState("no_target");
                 return;
             }
         }
 
-        Debug.Log("yukka");
         SetState("default");
     }
 
