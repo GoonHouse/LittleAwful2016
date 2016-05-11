@@ -47,8 +47,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 497078}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.82, y: -2.51, z: 2.2890625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 402842}
@@ -197,7 +197,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 0.25
-  m_StartWidth: 1
+  m_StartWidth: 0.5
   m_EndWidth: 0
   m_Colors:
     m_Color[0]:
@@ -257,13 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2fbb779e1db8e40ae8a81d131faebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToFlash: 3
-  currentTime: 0
-  maxGirth: 1
-  minGirth: 0
-  fromGirth: 0
-  toGirth: 0
-  tr: {fileID: 9646398}
+  maxScaleRatio: 2
 --- !u!114 &11480998
 MonoBehaviour:
   m_ObjectHideFlags: 1
