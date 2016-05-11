@@ -1001,8 +1001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseEnergy: 100
-  baseEnergyPerUse: 20
-  baseEnergyGainedPerSecond: 2
+  baseEnergyPerUse: 33
+  baseEnergyGainedPerSecond: 3
   requiresTarget: 1
 --- !u!212 &499564012
 SpriteRenderer:
@@ -1652,7 +1652,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11419478, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
       propertyPath: baseEnergyGainedPerSecond
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11418626, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
       propertyPath: baseEnergyGainedPerSecond
@@ -1660,7 +1660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11435102, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
       propertyPath: baseEnergyGainedPerSecond
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 12017398, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
       propertyPath: m_Parameters.m_EndColor.rgba
@@ -1697,6 +1697,34 @@ Prefab:
     - target: {fileID: 12062470, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
       propertyPath: m_Parameters.m_StartColor.rgba
       value: 4294904656
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419478, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: baseEnergy
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418626, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: baseEnergyPerUse
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418626, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: baseEnergy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418626, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: requiresTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435102, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: baseEnergy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435102, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: baseEnergyPerUse
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419478, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
+      propertyPath: baseEnergyPerUse
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7f972f8be1dee54fa01b306672cf5b6, type: 2}
@@ -3482,7 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseEnergy: 100
-  baseEnergyPerUse: 20
+  baseEnergyPerUse: 50
   baseEnergyGainedPerSecond: 2
   requiresTarget: 0
 --- !u!212 &1702434474
@@ -3709,9 +3737,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d8d77db32578045b2ef24dd58fe90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseEnergy: 100
-  baseEnergyPerUse: 1
-  baseEnergyGainedPerSecond: 2
+  baseEnergy: 64
+  baseEnergyPerUse: 8
+  baseEnergyGainedPerSecond: 1
   requiresTarget: 0
   brick: {fileID: 103930, guid: 18e1bfbad46e7f24899e9bfacea90d18, type: 2}
 --- !u!212 &1836117785

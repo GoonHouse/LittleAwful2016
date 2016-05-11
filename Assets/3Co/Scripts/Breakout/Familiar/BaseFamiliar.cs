@@ -19,14 +19,16 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
 	
 	// Update is called once per frame
 	virtual public void Update () {
-        var canUse = energy >= baseEnergyPerUse;
-        energy += energyGainedPerSecond * Time.deltaTime;
-        if( !canUse && ( energy >= baseEnergyPerUse )) {
-            Instantiate(
-                Resources.Load("Effects/BurstEffect") as GameObject,
-                transform.position,
-                transform.rotation
-            );
+        if( energy <= baseEnergy) {
+            var canUse = energy >= baseEnergyPerUse;
+            energy += energyGainedPerSecond * Time.deltaTime;
+            if (!canUse && (energy >= baseEnergyPerUse)) {
+                Instantiate(
+                    Resources.Load("Effects/BurstEffect") as GameObject,
+                    transform.position,
+                    transform.rotation
+                );
+            }
         }
 	}
 
