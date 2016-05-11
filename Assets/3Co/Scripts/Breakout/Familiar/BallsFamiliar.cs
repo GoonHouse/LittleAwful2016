@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallsFamiliar : BaseFamiliar {
 
-    override public bool DoAbility(AbstractPlayer player, BaseBall ball, Vector3 pos) {
+    override public bool DoAbility(AbstractPlayer player, Vector3 pos) {
         var npos = transform.position;
         npos.x += 1.0f;
         if( !player.CanSpawnSomethingHere(pos) ) {

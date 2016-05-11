@@ -90,10 +90,15 @@ public abstract class AbstractPlayer : MonoBehaviour {
         return false;
     }
 
+    virtual public bool SecondaryButtonRelease() {
+        Debug.Log("poot");
+        return false;
+    }
+
     virtual public bool UseActiveFamiliar(Vector3 pos) {
         var af = GetActiveFamiliar();
         var fb = GetNearest<BaseBall>(pos);
-        return af.ConsumeShot(this, fb, pos);
+        return af.ConsumeShot(this, pos);
     }
 
     public BaseFamiliar GetActiveFamiliar() {

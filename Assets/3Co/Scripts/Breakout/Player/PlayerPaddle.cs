@@ -14,12 +14,20 @@ public class PlayerPaddle : AbstractPlayer {
     // BALLS WHERE
     // HELP
 
+    virtual public bool NotUI() {
+        return !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+    }
+
     override public bool PrimaryButton() {
         return Input.GetMouseButtonDown(0);
     }
 
     override public bool SecondaryButton() {
         return Input.GetMouseButtonDown(1);
+    }
+
+    override public bool SecondaryButtonRelease() {
+        return Input.GetMouseButtonUp(1);
     }
 
     override public void GoWhereIShould() {
@@ -42,13 +50,23 @@ public class PlayerPaddle : AbstractPlayer {
         }
         */
 
-        if (PrimaryButton() && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
+        if (PrimaryButton() && NotUI()) {
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             UseActiveFamiliar(pos);
         }
 
+        if (SecondaryButton() && NotUI()) {
+            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            focusedThing = GetNearest<BaseBall>(pos).gameObject;
+        }
+
         if ( focusedThing != null ) {
             focusVisualiser.transform.position = focusedThing.transform.position;
+            focusVisualiser.transform.Rotate(0.0f, 0.0f, 0.3f);
+
+            if( SecondaryButtonRelease() && NotUI()) {
+                focusedThing = null;
+            }
         }
 
         var mouse = Input.GetAxis("Mouse ScrollWheel");

@@ -5,7 +5,7 @@ public class BrickFamiliar : BaseFamiliar {
 
     public GameObject brick;
 
-    override public bool DoAbility(AbstractPlayer player, BaseBall ball, Vector3 pos) {
+    override public bool DoAbility(AbstractPlayer player, Vector3 pos) {
         pos.z = 0;
         if( player.CanSpawnSomethingHere( pos ) ) {
             var bbrick = (GameObject)GameObject.Instantiate(brick, pos, Quaternion.identity);

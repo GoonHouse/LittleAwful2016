@@ -23,12 +23,12 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
         return (energy / baseEnergy);
     }
 
-    virtual public bool ConsumeShot(AbstractPlayer player, BaseBall ball, Vector3 pos) {
+    virtual public bool ConsumeShot(AbstractPlayer player, Vector3 pos) {
         if( energy >= baseEnergyPerUse) {
-            if( requiresTarget && ball == null) {
+            if( requiresTarget && player.focusedThing == null) {
                 return false;
             } else {
-                var ret = DoAbility(player, ball, pos);
+                var ret = DoAbility(player, pos);
                 if( ret ) {
                     energy -= baseEnergyPerUse;
                 }
@@ -39,10 +39,11 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
         }
     }
 
-    virtual public bool DoAbility(AbstractPlayer player, BaseBall ball, Vector3 pos) {
-        var scale = ball.gameObject.transform.localScale;
-        scale *= 2;
-        ball.gameObject.transform.localScale = scale;
+    virtual public bool DoAbility(AbstractPlayer player, Vector3 pos) {
+        var ball = player.focusedThing;
+        var scale = ball.transform.localScale;
+        scale *= 1.25f;
+        ball.transform.localScale = scale;
         return true;
     }
 }
