@@ -47,6 +47,12 @@ public abstract class AbstractPlayer : MonoBehaviour {
         foreach (BaseFamiliar fam in familiars) {
             var line = fam.gameObject.GetComponent<LineRenderer>();
             line.enabled = false;
+
+            if( fam.status != null ) {
+                Debug.Log("beepis");
+                fam.status.DetermineState(this);
+            }
+
             if (GetActiveFamiliar().GetComponent<BaseFamiliar>() == fam && fam.GetEnergyLeft() > 0.0f) {
                 var circle = fam.gameObject.GetComponent<Circle>();
                 line.enabled = true;

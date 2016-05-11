@@ -10,6 +10,7 @@ TagManager:
   - Llama
   - Powerup
   - Ball
+  - HurtWall
   layers:
   - Default
   - TransparentFX

@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filteredTags:
   - Brick
+  - HurtWall
   damageAmount: 1
   isScaledByForce: 0
 --- !u!114 &11456280

@@ -8,6 +8,8 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
     public float baseEnergyGainedPerSecond = 2.00f;
     public bool requiresTarget = true;
 
+    public StatusIndicator status;
+
     private float energy;
     private float energyGainedPerSecond;
 
@@ -15,6 +17,7 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
     virtual public void Awake () {
         energy = baseEnergy;
         energyGainedPerSecond = baseEnergyGainedPerSecond;
+        //status = GetComponentInChildren<StatusIndicator>();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,10 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
 
     virtual public float GetEnergyLeft() {
         return (energy / baseEnergy);
+    }
+
+    virtual public bool CanShoot() {
+        return (energy >= baseEnergyPerUse);
     }
 
     virtual public bool ConsumeShot(AbstractPlayer player, Vector3 pos) {
