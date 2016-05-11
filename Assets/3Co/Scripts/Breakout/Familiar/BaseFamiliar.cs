@@ -5,18 +5,29 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
 
     public float baseEnergy = 100.0f;
     public float baseEnergyPerUse = 20.0f;
+    public float baseEnergyGainedPerSecond = 2.00f;
     public bool requiresTarget = true;
 
     private float energy;
+    private float energyGainedPerSecond;
 
     // Use this for initialization
     virtual public void Awake () {
         energy = baseEnergy;
+        energyGainedPerSecond = baseEnergyGainedPerSecond;
 	}
 	
 	// Update is called once per frame
 	virtual public void Update () {
-	    
+        var canUse = energy >= baseEnergyPerUse;
+        energy += energyGainedPerSecond * Time.deltaTime;
+        if( !canUse && ( energy >= baseEnergyPerUse )) {
+            Instantiate(
+                Resources.Load("Effects/BurstEffect") as GameObject,
+                transform.position,
+                transform.rotation
+            );
+        }
 	}
 
     virtual public float GetEnergyLeft() {

@@ -180,7 +180,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -202,19 +202,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294902015
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 2164195583
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 1442775295
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 1090453759
     m_Color[4]:
       serializedVersion: 2
-      rgba: 16777215
+      rgba: 872349951
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &11416700
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMinSpeed: 5
   baseMaxSpeed: 20
+  forceOfRandomDirection: 300
   creator: {fileID: 0}
   owner: {fileID: 0}
 --- !u!114 &11495062
