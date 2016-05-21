@@ -9,6 +9,7 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
     public bool requiresTarget = true;
 
     public StatusIndicator status;
+    public AbstractPlayer player;
 
     private float energy;
     private float energyGainedPerSecond;
@@ -59,11 +60,25 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
         }
     }
 
+    virtual public bool QueueAbilities(Spell spell) {
+        spell.OnArriveEffects.Add(new TestArriveEffect());
+        return true;
+    }
+
     virtual public bool DoAbility(AbstractPlayer player, Vector3 pos) {
-        var ball = player.focusedThing;
-        var scale = ball.transform.localScale;
-        scale *= 1.25f;
-        ball.transform.localScale = scale;
+        var ce = (GameObject)Instantiate(
+            Resources.Load("Effects/CastEffect") as GameObject,
+            player.transform.position,
+            player.transform.rotation
+        );
+        var spell = ce.GetComponent<Spell>();
+
+        if (!QueueAbilities(spell)) {
+            return false;
+        };
+
+        spell.Cast(player, this, 1.0f);
+
         return true;
     }
 }

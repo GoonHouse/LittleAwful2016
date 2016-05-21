@@ -2,22 +2,27 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public interface IEffector {
+public interface IBall {
 
 }
 
-public abstract class BaseBall : MonoBehaviour, IBall {
+public interface IGetMinSpeed {
+    float Action(Rigidbody2D rigid, float nowMin, float baseMin);
+}
 
-    public List<Effect> powerups;
+public interface IGetMaxSpeed {
+    float Action(Rigidbody2D rigid, float nowMax, float baseMax);
+}
+
+public abstract class BaseBall : MonoBehaviour, IBall {
+    public List<IGetMinSpeed> GetMinSpeed = new List<IGetMinSpeed>();
+    public List<IGetMaxSpeed> GetMaxSpeed = new List<IGetMaxSpeed>();
 
     public float baseMinSpeed = 5.0f;
     public float baseMaxSpeed = 25.0f;
 
     // when the ball needs to go from not moving to moving, do this
     public float forceOfRandomDirection = 300.0f;
-
-    public AbstractPlayer creator;
-    public GameObject owner;
 
     private float minSpeed;
     private float maxSpeed;
@@ -50,6 +55,14 @@ public abstract class BaseBall : MonoBehaviour, IBall {
 
     public virtual void ApplySpeedLimit() {
         var rigid = GetComponent<Rigidbody2D>();
+
+        foreach (IGetMinSpeed min in GetMinSpeed) {
+            minSpeed = min.Action(rigid, minSpeed, baseMinSpeed);
+        }
+
+        foreach (IGetMaxSpeed max in GetMaxSpeed) {
+            maxSpeed = max.Action(rigid, maxSpeed, baseMaxSpeed);
+        }
 
         if (rigid.velocity.magnitude < minSpeed) {
             rigid.velocity = rigid.velocity.normalized * minSpeed;

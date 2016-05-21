@@ -1,34 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallEmbiggener : IOnArrive {
+/*
+public class KeepGoingFaster : IGetMaxSpeed, IGetMinSpeed {
+    public float Action(Rigidbody2D rigid, float nowSpeed, float baseSpeed) {
+        return nowSpeed * 1.005f;
+    }
+}
+
+public class GoReallyFastAllTheTime : IGetMaxSpeed, IGetMinSpeed {
+    public float Action(Rigidbody2D rigid, float nowSpeed, float baseSpeed) {
+        return 80.0f;
+    }
+}
+
+public class MakeABallGoFast : IOnArrive {
     public void Action(Transform origin, Transform destination) {
-        var scale = destination.localScale;
+        var bb = destination.gameObject.GetComponent<BaseBall>();
+        bb.GetMinSpeed.Add(new KeepGoingFaster());
+        bb.GetMaxSpeed.Add(new GoReallyFastAllTheTime());
+    }
+}
+*/
+
+public class BallEmbiggener : IOnArrive {
+    public void Action(Spell spell) {
+        var scale = spell.player.focusedThing.transform.localScale;
         scale *= 1.25f;
-        destination.localScale = scale;
+        spell.player.focusedThing.transform.localScale = scale;
     }
 }
 
 public class AFamiliar : BaseFamiliar {
-    // don't overwrite nothing because we do jack and also shit
-    //public class Base
-    override public bool DoAbility(AbstractPlayer player, Vector3 pos) {
-        var ce = (GameObject)Instantiate(
-            Resources.Load("Effects/CastEffect") as GameObject,
-            player.transform.position,
-            player.transform.rotation
-        );
-        var spell = ce.GetComponent<Spell>();
-
-        spell.OnArriveEffects.Add(new TestArriveEffect());
+    override public bool QueueAbilities(Spell spell) {
+        base.QueueAbilities(spell);
         spell.OnArriveEffects.Add(new BallEmbiggener());
-
-        spell.Cast(player.transform, player.focusedThing.transform, 1.0f);
-        
-        //var ball = player.focusedThing;
-        //var scale = ball.transform.localScale;
-        //scale *= 1.25f;
-        //ball.transform.localScale = scale;
         return true;
     }
 }

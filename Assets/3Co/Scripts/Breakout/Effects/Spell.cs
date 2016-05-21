@@ -3,43 +3,59 @@ using System.Collections;
 using System.Collections.Generic;
 
 public interface IOnCast {
-    void Action(Transform origin, Transform destination);
+    void Action(Spell spell);
 }
 
 public interface IOnArrive {
-    void Action(Transform origin, Transform destination);
+    void Action(Spell spell);
 }
 
 public class TestArriveEffect : IOnArrive {
-    public void Action(Transform origin, Transform destination) {
+    public void Action(Spell spell) {
+        Quaternion rot = Quaternion.identity;
+        Vector3 pos = spell.transform.position;
+        if( spell.destinationTransform ){
+            rot = spell.destinationTransform.rotation;
+            pos = spell.destinationTransform.position;
+        }
         var go = (GameObject)GameObject.Instantiate(
             Resources.Load("Effects/BurstEffect") as GameObject,
-            destination.position,
-            destination.rotation
+            pos,
+            rot
         );
-        go.transform.SetParent(destination);
+        //go.transform.SetParent(destination);
     }
 }
 
 public class Spell : MonoBehaviour {
     public List<IOnCast> OnCastEffects = new List<IOnCast>();
     public List<IOnArrive> OnArriveEffects = new List<IOnArrive>();
-    public Transform origin;
-    public Transform destination;
+
+    public Transform destinationTransform;
+    public Vector3 destination;
     public float travelTime;
+
+    public AbstractPlayer player;
+    public BaseFamiliar fam;
+    public GameObject focusedThing;
 
     private float timeTraveled;
     private bool wasCast = false;
 
-    public void Cast(Transform origin, Transform destination, float travelTime) {
-        this.origin = origin;
-        this.destination = destination;
+    public void Cast(AbstractPlayer player, BaseFamiliar fam, float travelTime) {
+        this.player = player;
+        this.fam = fam;
         this.travelTime = travelTime;
+        this.focusedThing = player.focusedThing;
+
+        if( player.focusedThing != null) {
+            destinationTransform = player.focusedThing.transform;
+        }
 
         wasCast = true;
 
         foreach (IOnCast oc in OnCastEffects) {
-            oc.Action(origin, destination);
+            oc.Action(this);
         }
     }
 
@@ -47,11 +63,17 @@ public class Spell : MonoBehaviour {
         if( wasCast ) {
             timeTraveled += Time.deltaTime;
 
-            transform.position = Vector3.Lerp(origin.position, destination.position, timeTraveled / travelTime);
+            Vector3 dest;
+            if( destinationTransform != null) {
+                dest = destinationTransform.transform.position;
+            } else {
+                dest = destination;
+            }
+            transform.position = Vector3.Lerp(fam.transform.position, dest, timeTraveled / travelTime);
 
             if( timeTraveled >= travelTime) {
                 foreach (IOnArrive oa in OnArriveEffects) {
-                    oa.Action(origin, destination);
+                    oa.Action(this);
                 }
 
                 Destroy(gameObject);
