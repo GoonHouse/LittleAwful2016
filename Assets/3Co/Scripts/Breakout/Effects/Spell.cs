@@ -51,6 +51,8 @@ public class Spell : MonoBehaviour {
         if( player.focusedThing != null) {
             destinationTransform = player.focusedThing.transform;
         }
+        destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        destination.z = 0.0f;
 
         wasCast = true;
 

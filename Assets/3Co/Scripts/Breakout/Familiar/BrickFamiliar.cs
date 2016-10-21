@@ -2,31 +2,32 @@
 using System.Collections;
 
 public class SpawnABrick : IOnArrive {
-    public void Action(Transform origin, Transform destination) {
-        var 
-
-        pos.z = 0;
-        if (player.CanSpawnSomethingHere(pos)) {
-            var bbrick = (GameObject)GameObject.Instantiate(brick, pos, Quaternion.identity);
-            bbrick.transform.SetParent(GameObject.Find("BrickHell").transform, true);
-            return true;
+    public void Action(Spell spell) {
+        Quaternion rot = Quaternion.identity;
+        Vector3 pos = spell.transform.position;
+        if (spell.destinationTransform) {
+            rot = spell.destinationTransform.rotation;
+            pos = spell.destinationTransform.position;
         }
-        return false;
-
-        var go = (GameObject)GameObject.Instantiate(
-            Resources.Load("Effects/BurstEffect") as GameObject,
-            destination.position,
-            destination.rotation
-        );
-        //go.transform.SetParent(destination);
+        if (spell.player.CanSpawnSomethingHere(pos)) {
+            var bbrick = (GameObject)GameObject.Instantiate(spell.player.brick, pos, Quaternion.identity);
+            bbrick.transform.SetParent(GameObject.Find("BrickHell").transform, true);
+            var go = (GameObject)GameObject.Instantiate(
+                Resources.Load("Effects/BurstEffect") as GameObject,
+                pos,
+                rot
+            );
+            return;
+        } else {
+            Debug.Log("boners?");
+        }
     }
 }
 
 public class BrickFamiliar : BaseFamiliar {
-
-    public GameObject brick;
-
-    override public bool DoAbility(AbstractPlayer player, Vector3 pos) {
-        
+    override public bool QueueAbilities(Spell spell) {
+        base.QueueAbilities(spell);
+        spell.OnArriveEffects.Add(new SpawnABrick());
+        return true;
     }
 }

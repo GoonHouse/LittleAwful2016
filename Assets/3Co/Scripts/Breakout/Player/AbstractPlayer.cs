@@ -49,7 +49,6 @@ public abstract class AbstractPlayer : MonoBehaviour {
             line.enabled = false;
 
             if( fam.status != null ) {
-                Debug.Log("beepis");
                 fam.status.DetermineState(this);
             }
 

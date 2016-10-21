@@ -72,6 +72,7 @@ public abstract class BaseFamiliar : MonoBehaviour, IFamiliar {
             player.transform.rotation
         );
         var spell = ce.GetComponent<Spell>();
+        spell.destination = pos;
 
         if (!QueueAbilities(spell)) {
             return false;
