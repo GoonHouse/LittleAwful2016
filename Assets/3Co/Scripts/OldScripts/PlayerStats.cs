@@ -29,6 +29,7 @@ public class PlayerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // ay
+        // debug
 	}
 
     public void OnLevelWasLoaded(int level) {
