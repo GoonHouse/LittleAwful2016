@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour {
         // ay
         // debug
         // now what
+        // i hate tests
 	}
 
     public void OnLevelWasLoaded(int level) {
